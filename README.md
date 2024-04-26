@@ -1,2 +1,2 @@
-# sparse_blossom_on_FPGA
+# sparse blossom on FPGA
 Implementation of the Sparse Blossom algorithm for Quantum Error Correction on FPGA
