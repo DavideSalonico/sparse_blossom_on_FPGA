@@ -51,5 +51,38 @@ void f_set_region_growing(region_t region_idx, flood_event_t* out_events){}
 
 void f_set_region_shrinking(region_t region_idx, region_shrink_data_t region_shrink_data){}
 
+void read_syndrome(int syndrome[N_DEC_NODES], hls::stream<int>&syndr_stream){
+	read: for(int i=0; i<N_DEC_NODES; i++){
+#pragma HLS  PIPELINE II=1
+		int tmp = syndrome[i];
+		syndr_stream.write(tmp);
+	}
+}
+
+void compute_s(hls::stream<int>&syndr_stream, hls:stream<int>&corr_stream){
+	static int corr_internal[N_OBS]={0};
+	// TODO
+}
+
+void write_corrections(hls::stream<int>&corr_stream, int corrections[N_OBS]){
+	write: for(int i =0; i<N_OBS; i++){
+#pragma HLS  PIPELINE II=1
+		int tmp = corr_stream.read();
+		corrections[i] = tmp;
+	}
+}
+
+void f_decode(int syndrome[N_DEC_NODES], int corrections[N_OBS]){
+	//#pragma HLS INTERFACE ...
+
+	hls::stream<int>syndr_stream;
+	hls::stream<int>corr_stream;
+
+#pragma HLS dataflow
+	read_syndrome(syndrome, syndr_stream);
+	compute_s(syndr_stream, corr_stream);
+	write_corrections(corr_stream, corrections);
+}
+
 
 

@@ -2,7 +2,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
-#include "cache.h"
+#include "cache.h" // include DaCH src path in the cflags
 
 //insert define
 #define N_DEC_NODES 1000
@@ -57,6 +57,5 @@ typedef enum f_event_type{
 //typedef region_data
 
 extern "C" {
-	init();
-	decode(syndrome, corrections, weights);
+	
 }
