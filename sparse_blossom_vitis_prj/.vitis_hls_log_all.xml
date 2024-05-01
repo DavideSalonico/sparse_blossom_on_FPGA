@@ -1,2 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog"/>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="sparse_blossom_vitis_prj" solutionName="solution1" date="2024-05-01T12:00:55.915+0200"/>
+      </csimLog>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [HLS 207-5555] unexpected pragma argument ';', expects identifier (kernel.cpp:216:26)" projectName="sparse_blossom_vitis_prj" solutionName="solution1" date="2024-05-01T11:51:49.885+0200" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="flooder.cpp" path="/home/users/davide.salonico/sparse_blossom_prj/flooder.cpp"/>
-    <originFiles name="flooder.h" path="/home/users/davide.salonico/sparse_blossom_prj/flooder.h"/>
+    <originFiles name="kernel.cpp" path="/home/users/davide.salonico/sparse_blossom_prj/kernel.cpp"/>
+    <originFiles name="kernel.hpp" path="/home/users/davide.salonico/sparse_blossom_prj/kernel.hpp"/>
   </source>
-  <testbench/>
+  <testbench>
+    <originFiles name="testbench.cpp" path="/home/users/davide.salonico/sparse_blossom_prj/testbench.cpp"/>
+  </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

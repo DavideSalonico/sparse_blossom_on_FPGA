@@ -1,15 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="com.autoesl.autopilot.project" top="">
-  <files>
-    <file name="flooder.cpp" sc="0" tb="false" cflags="" csimflags=""/>
-    <file name="flooder.h" sc="0" tb="false" cflags="" csimflags=""/>
-  </files>
-  <solutions>
-    <solution name="solution1" status="active"/>
-  </solutions>
-  <includePaths/>
-  <libraryPaths/>
-  <Simulation>
-    <SimFlow name="csim"/>
-  </Simulation>
+<project xmlns="com.autoesl.autopilot.project" name="sparse_blossom_vitis_prj" top="compute_corr">
+    <includePaths/>
+    <libraryPaths/>
+    <Simulation argv="">
+        <SimFlow name="csim" ldflags="" mflags="" csimMode="0" lastCsimMode="0"/>
+    </Simulation>
+    <files xmlns="">
+        <file name="../../testbench.cpp" sc="0" tb="1" cflags=" -Wno-unknown-pragmas" csimflags=" -Wno-unknown-pragmas" blackbox="false"/>
+        <file name="kernel.hpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="kernel.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+    </files>
+    <solutions xmlns="">
+        <solution name="solution1" status="active"/>
+        <solution name="solution1" status="active"/>
+    </solutions>
 </project>
+

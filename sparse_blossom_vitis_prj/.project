@@ -42,14 +42,19 @@
 			<location>/home/users/davide.salonico/sparse_blossom_prj/sparse_blossom_vitis_prj/solution1/.tcls</location>
 		</link>
 		<link>
-			<name>source/flooder.cpp</name>
+			<name>source/kernel.cpp</name>
 			<type>1</type>
-			<location>/home/users/davide.salonico/sparse_blossom_prj/flooder.cpp</location>
+			<location>/home/users/davide.salonico/sparse_blossom_prj/kernel.cpp</location>
 		</link>
 		<link>
-			<name>source/flooder.h</name>
+			<name>source/kernel.hpp</name>
 			<type>1</type>
-			<location>/home/users/davide.salonico/sparse_blossom_prj/flooder.h</location>
+			<location>/home/users/davide.salonico/sparse_blossom_prj/kernel.hpp</location>
+		</link>
+		<link>
+			<name>testbench/testbench.cpp</name>
+			<type>1</type>
+			<location>/home/users/davide.salonico/sparse_blossom_prj/testbench.cpp</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>

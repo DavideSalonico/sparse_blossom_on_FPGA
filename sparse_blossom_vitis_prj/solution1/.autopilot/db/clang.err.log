@@ -1,0 +1,4 @@
+kernel.cpp:216:26: warning: unexpected pragma argument ';', expects identifier [-Winvalid-hls-pragmas]
+#pragma HLS PIPELINE II=1;
+                         ^
+1 warning generated.

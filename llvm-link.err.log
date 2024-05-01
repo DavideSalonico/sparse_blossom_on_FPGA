@@ -1,0 +1,2 @@
+llvm-link: Not enough positional command line arguments specified!
+Must specify at least 1 positional argument: See: /home/xilinx/software/Vitis_HLS/2022.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link -help

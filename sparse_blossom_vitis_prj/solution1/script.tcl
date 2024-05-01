@@ -4,13 +4,15 @@
 ## Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
 ############################################################
 open_project sparse_blossom_vitis_prj
-add_files flooder.cpp
-add_files flooder.h
+set_top compute_corr
+add_files kernel.cpp
+add_files kernel.hpp
+add_files -tb testbench.cpp
 open_solution "solution1" -flow_target vivado
 set_part {xcvu11p-flga2577-1-e}
-create_clock -period 3 -name default
+create_clock -period 10 -name default
 #source "./sparse_blossom_vitis_prj/solution1/directives.tcl"
-#csim_design
+csim_design
 csynth_design
-#cosim_design
+cosim_design
 export_design -format ip_catalog

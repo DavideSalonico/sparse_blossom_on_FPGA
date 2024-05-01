@@ -1,0 +1,63 @@
+INFO-FLOW: Workspace /home/users/davide.salonico/sparse_blossom_prj/sparse_blossom_vitis_prj/sol1 opened at Wed May 01 11:36:07 CEST 2024
+Execute     send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute     send_msg_by_id INFO @200-435@%s%s 'open_solution -flow_target vivado' config_interface -m_axi_latency=0 
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+Execute     config_interface -m_axi_latency=0 
+Command   open_solution done; 0.13 sec.
+Execute   csim_design 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-7] User does not set_part, FPO V7 c-model will be used by default.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO-FLOW: Caught error in csim_design: 4
+    while executing
+"ap_internal_csim_design "
+Command   csim_design done; error code: 2; 1.24 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1.08 seconds. CPU system time: 0.16 seconds. Elapsed time: 1.24 seconds; current allocated memory: 0.145 MB.
+Execute   csim_design 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-7] User does not set_part, FPO V7 c-model will be used by default.
+Execute     source csim/.lst_opt.tcl 
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO-FLOW: Caught error in csim_design: 4
+    while executing
+"ap_internal_csim_design "
+Command   csim_design done; error code: 2; 1.21 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1.01 seconds. CPU system time: 0.2 seconds. Elapsed time: 1.21 seconds; current allocated memory: 0.082 MB.
+Execute   csim_design 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-7] User does not set_part, FPO V7 c-model will be used by default.
+Execute     source csim/.lst_opt.tcl 
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO-FLOW: Caught error in csim_design: 4
+    while executing
+"ap_internal_csim_design "
+Command   csim_design done; error code: 2; 1.26 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1.08 seconds. CPU system time: 0.2 seconds. Elapsed time: 1.26 seconds; current allocated memory: 0.047 MB.
+Execute   help 
+Execute     get_help -width 120 -stderr 
+Execute   set_top compute_corr 
+INFO: [HLS 200-1510] Running: set_top compute_corr 
+Execute   csim_design 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-7] User does not set_part, FPO V7 c-model will be used by default.
+Execute     source csim/.lst_opt.tcl 
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO-FLOW: Caught error in csim_design: 4
+    while executing
+"ap_internal_csim_design "
+Command   csim_design done; error code: 2; 0.13 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0.08 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.13 seconds; current allocated memory: 0.105 MB.
+Execute   cleanup_all 
