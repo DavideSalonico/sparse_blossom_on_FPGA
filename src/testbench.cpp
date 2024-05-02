@@ -22,11 +22,11 @@
 #include <random>
 #include "kernel.hpp"
 
-/*
 // XRT includes
 #include "xrt/xrt_bo.h"
 #include "xrt/xrt_device.h"
 #include "xrt/xrt_kernel.h"
+/*
 
 int DATA_SIZE = (4 * 1024) / sizeof(uint32_t); //TODO: Change
 
@@ -58,7 +58,7 @@ int main(int argc, char* argv[]) {
     // Compute the size of array in bytes
     uint32_t size_in_bytes = DATA_SIZE * sizeof(uint32_t); //TODO: Change
 
-    auto krnl = xrt::kernel(device, uuid, "decode");
+    auto krnl = xrt::kernel(device, uuid, "top");
 
     xrt::bo::flags flags = xrt::bo::flags::host_only;
     std::cout << "Creating Buffers ...\n";
