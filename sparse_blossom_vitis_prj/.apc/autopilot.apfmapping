@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="kernel.cpp" path="/home/users/davide.salonico/sparse_blossom_prj/kernel.cpp"/>
-    <originFiles name="kernel.hpp" path="/home/users/davide.salonico/sparse_blossom_prj/kernel.hpp"/>
+    <originFiles name="kernel.cpp" path="/home/users/davide.salonico/sparse_blossom_prj/src/kernel.cpp"/>
+    <originFiles name="kernel.hpp" path="/home/users/davide.salonico/sparse_blossom_prj/src/kernel.hpp"/>
+    <originFiles name="pqueue.h" path="/home/users/davide.salonico/sparse_blossom_prj/src/pqueue.h"/>
   </source>
   <testbench>
-    <originFiles name="testbench.cpp" path="/home/users/davide.salonico/sparse_blossom_prj/testbench.cpp"/>
+    <originFiles name="testbench.cpp" path="/home/users/davide.salonico/sparse_blossom_prj/src/testbench.cpp"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

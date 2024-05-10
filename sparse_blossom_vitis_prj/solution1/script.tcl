@@ -5,9 +5,10 @@
 ############################################################
 open_project sparse_blossom_vitis_prj
 set_top compute_corr
-add_files kernel.cpp
-add_files kernel.hpp
-add_files -tb testbench.cpp
+add_files src/kernel.cpp
+add_files src/kernel.hpp
+add_files src/pqueue.h
+add_files -tb src/testbench.cpp
 open_solution "solution1" -flow_target vivado
 set_part {xcvu11p-flga2577-1-e}
 create_clock -period 10 -name default

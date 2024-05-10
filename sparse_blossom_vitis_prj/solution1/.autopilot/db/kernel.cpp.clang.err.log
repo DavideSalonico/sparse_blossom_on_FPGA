@@ -1,0 +1,5 @@
+In file included from src/kernel.cpp:6:
+src/kernel.hpp:4:10: fatal error: 'DaCH/src/cache.h' file not found
+#include "DaCH/src/cache.h" // or include DaCH src path in the cflags
+         ^~~~~~~~~~~~~~~~~~
+1 error generated.

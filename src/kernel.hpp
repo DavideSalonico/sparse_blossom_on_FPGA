@@ -25,7 +25,7 @@ typedef ap_uint<NODE_BIT> node_idx_t;
 typedef ap_uint<REGION_BIT> region_idx_t;
 typedef ap_uint<OBS_BIT> obs_mask_t;
 
-typedef uint32_t weight_t;           //TODO: define more efficient
+typedef uint32_t weight_t;    //TODO: define more efficient
 
 #define NULL_NODE 0
 #define NULL_REGION 0

@@ -1,3 +1,4 @@
 {
-    "C_Cpp.errorSquiggles": "disabled"
+    "C_Cpp.errorSquiggles": "disabled",
+    "cmake.sourceDirectory": "/home/users/davide.salonico/sparse_blossom_prj/PyMatching"
 }

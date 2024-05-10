@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<BindInfo>
-	<BindNode BINDTYPE="op" DISPLAY="bind_op icmp" ID="" IMPL="auto" LATENCY="0" OPTYPE="icmp" PRAGMA="" RTLNAME="icmp_ln210_fu_72_p2" SOURCE="kernel.cpp:210" VARIABLE="icmp_ln210" MODULE="compute_corr_Pipeline_compute" LOOP="compute" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
-	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln210_fu_78_p2" SOURCE="kernel.cpp:210" VARIABLE="add_ln210" MODULE="compute_corr_Pipeline_compute" LOOP="compute" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
-	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="corr_internal_d0" SOURCE="kernel.cpp:212" VARIABLE="add_ln212" MODULE="compute_corr_Pipeline_compute" LOOP="compute" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
-	<BindNode BINDTYPE="op" DISPLAY="bind_op icmp" ID="" IMPL="auto" LATENCY="0" OPTYPE="icmp" PRAGMA="" RTLNAME="icmp_ln215_fu_75_p2" SOURCE="kernel.cpp:215" VARIABLE="icmp_ln215" MODULE="compute_corr_Pipeline_write_and_reset" LOOP="write_and_reset" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
-	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln215_fu_81_p2" SOURCE="kernel.cpp:215" VARIABLE="add_ln215" MODULE="compute_corr_Pipeline_write_and_reset" LOOP="write_and_reset" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
-	<BindNode BINDTYPE="storage" DISPLAY="bind_storage ram_1p" ID="" IMPL="auto" LATENCY="1" OPTYPE="ram_1p" PRAGMA="" RTLNAME="corr_internal_U" SOURCE="" VARIABLE="corr_internal" MODULE="compute_corr" LOOP="" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
-</BindInfo>
