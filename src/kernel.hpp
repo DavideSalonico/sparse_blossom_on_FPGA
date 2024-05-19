@@ -145,6 +145,13 @@ enum radius_status_t{
     SHRINKING = -1
 }
 
+typedef struct{
+    int num_nodes;
+    int num_obs;
+    node_data_t nodes[MAX_N_NODES];
+    region_data_t regions[N_REGIONS] = NULL;
+    altTreeNode_data_t alttree[ALTTREEEDGE_MAX] = NULL;
+} FpgaGraph;
 
 #define RD_ENABLED true
 #define WR_ENABLED true
@@ -152,13 +159,13 @@ enum radius_status_t{
 #define MAIN_SIZE_NODE MAX_N_NODES  // size of the original array.
 #define MAIN_SIZE_REGION N_REGIONS  // size of the original array.
 #define MAIN_SIZE_ALT_TREE 10000    // size of the original array.
-#define N_SETS 1                    // the number of L2 sets (1 for fully-associative cache).
-#define N_WAYS 1                    // the number of L2 ways (1 for direct-mapped cache).
-#define N_WORDS_PER_LINE 32          // the size of the cache line, in words.
+#define N_SETS 16                   // the number of L2 sets (1 for fully-associative cache).
+#define N_WAYS 16                   // the number of L2 ways (1 for direct-mapped cache).
+#define N_WORDS_PER_LINE 16         // the size of the cache line, in words.
 #define LRU true                    // the replacement policy least-recently used if true, last-in first-out otherwise.
 #define N_L1_SETS 0                 // the number of L1 sets.
 #define N_L1_WAYS 0                 // the number of L1 ways.
-#define SWAP_TAG_SET false           // the address bits mapping
+#define SWAP_TAG_SET false          // the address bits mapping
 #define LATENCY 2                   // the request-response distance of the L2 cache
 
 typedef cache<node_data_t, RD_ENABLED, WR_ENABLED, MAIN_SIZE_NODE, N_SETS, N_WAYS, N_WORDS_PER_LINE, LRU, SWAP_TAG_SET, LATENCY> node_cache;
@@ -166,8 +173,13 @@ typedef cache<region_data_t, RD_ENABLED, WR_ENABLED, MAIN_SIZE_REGION, N_SETS, N
 typedef cache<altTreeNode_data_t, RD_ENABLED, WR_ENABLED, MAIN_SIZE_ALT_TREE, N_SETS, N_WAYS, N_WORDS_PER_LINE, LRU, SWAP_TAG_SET, LATENCY> alt_tree_cache;
 
 typedef ap_uint<MAX_N_NODES> syndr_t;
-typedef ap_uint<MAX_N_OBS> err_t;
+typedef ap_uint<MAX_N_OBS> corrections_t;
 
-extern "C" void top(int *, int *, int *, syndr_t *, err_t *);
+enum choice_t{
+    LOAD_GRAPH = 0,
+    DECODE = 1
+}
+
+extern "C" void top(int *, int *);
 
 #endif

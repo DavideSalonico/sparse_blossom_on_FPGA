@@ -424,7 +424,8 @@ void compute_corr(T1 nodes, T2 regions, T3 alt_tree, syndr_t syndrome[MAX_N_NODE
    //errors = ...
 }
 
-void top(int *nodes, int *regions, int *alt_tree, syndr_t syndrome[MAX_N_NODES], err_t errors[MAX_N_OBS]){
+//operation = LOAD_GRAPH | DECODE
+void top(int operation, int *fpga_graph){
 #pragma HLS interface m_axi port=nodes bundle=gmem0
 #pragma HLS interface m_axi port=regions bundle=gmem1
 #pragma HLS interface m_axi port=alt_tree bundle=gmem2
