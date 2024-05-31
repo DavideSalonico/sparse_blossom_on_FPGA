@@ -1,7 +1,10 @@
-#include "/home/dado/sparse_blossom/sparse_blossom_on_FPGA/DaCH/src/cache.h" // or include DaCH src path in the cflags
+#iniclude "cache.h" // or include DaCH src path in the cflags
 #include <math.h>
 #include <ap_int.h>
 #include <cstdlib>
+#include <fstream>
+#include <iostream>
+#include <iomanip>
 
 #define N_DEC_NODES 1000
 #define NODE_IDX_BIT log(2, N_DEC_NODES)
@@ -9,7 +12,6 @@
 #define N_REGIONS N_DEC_NODES
 #define REGION_IDX_BIT log(2, N_REGIONS)
 #define N_OBS 1400
-#define LLONG_MAX 2147483647
 #define SHELL_AREA_MAX 4
 #define BLOSSOM_CHILDREN_MAX 4
 #define ALTTREEEDGE_MAX 2
@@ -17,7 +19,7 @@
 //typedefs
 typedef int flood_type_t;
 typedef int node_t;         //index of detector node
-typedef int time_t;
+typedef int pm_time_t;
 typedef int region_t;
 typedef int obs_mask_t[N_OBS];
 typedef int obs_int_t;
@@ -165,9 +167,10 @@ typedef struct
 #define SWAP_TAG_SET false         // the address bits mapping
 #define LATENCY 2                  // the request-response distance of the L2 cache
 
-typedef cache<node_data_t, RD_ENABLED, WR_ENABLED, MAIN_SIZE_NODE, N_SETS, N_WAYS, N_WORDS_PER_LINE, LRU, SWAP_TAG_SET, LATENCY> node_cache;
-typedef cache<region_data_t, RD_ENABLED, WR_ENABLED, MAIN_SIZE_REGION, N_SETS, N_WAYS, N_WORDS_PER_LINE.LRU, SWAP_TAG_SET, LATENCY> region_cache;
-typedef cache<altTreeNode_data_t, RD_ENABLED, WR_ENABLED, MAIN_SIZE_ALT_TREE, N_SETS, N_WAYS, N_WORDS_PER_LINE, LRU, SWAP_TAG_SET, LATENCY> alt_tree_cache;
+// typedef cache<data_type, true, false, RD_PORTS, N * M, A_L2_SETS, A_L2_WAYS, A_WORDS, false, A_L1_SETS, A_L1_WAYS, false, A_L2_LATENCY> cache_a
+typedef cache<node_data_t, RD_ENABLED, WR_ENABLED, 1, MAIN_SIZE_NODE, N_SETS, N_WAYS, N_WORDS_PER_LINE, LRU, 1, 1, SWAP_TAG_SET, LATENCY> node_cache;
+typedef cache<region_data_t, RD_ENABLED, WR_ENABLED, 1, MAIN_SIZE_REGION, N_SETS, N_WAYS, N_WORDS_PER_LINE.LRU, 1, 1, SWAP_TAG_SET, LATENCY> region_cache;
+typedef cache<altTreeNode_data_t, RD_ENABLED, WR_ENABLED, 1, MAIN_SIZE_ALT_TREE, N_SETS, N_WAYS, N_WORDS_PER_LINE, LRU, 1, 1, SWAP_TAG_SET, LATENCY> alt_tree_cache;
 
 typedef ap_uint<MAX_N_NODES> syndr_t;
 typedef ap_uint<MAX_N_OBS> corrections_t;
@@ -178,8 +181,7 @@ enum choice_t
     DECODE = 1
 }
 
-extern "C" void
-sparse_top(choice_t choice, , FpgaGraph* graph, syndrome[], corrections_t corrections[])
+extern void sparse_top(choice_t choice, , FpgaGraph* graph, syndrome[], corrections_t corrections[])
 {
 #pragma HLS INTERFACE m_axi port = a_arr offset = slave bundle = gmem0 latency = 0 depth = 1024
 #pragma HLS INTERFACE m_axi port = b_arr offset = slave bundle = gmem1 latency = 0 depth = 1024
