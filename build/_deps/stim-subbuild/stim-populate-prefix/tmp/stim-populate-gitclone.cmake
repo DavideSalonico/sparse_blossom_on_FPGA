@@ -1,0 +1,66 @@
+
+if(NOT "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-subbuild/stim-populate-prefix/src/stim-populate-stamp/stim-populate-gitinfo.txt" IS_NEWER_THAN "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-subbuild/stim-populate-prefix/src/stim-populate-stamp/stim-populate-gitclone-lastrun.txt")
+  message(STATUS "Avoiding repeated git clone, stamp file is up to date: '/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-subbuild/stim-populate-prefix/src/stim-populate-stamp/stim-populate-gitclone-lastrun.txt'")
+  return()
+endif()
+
+execute_process(
+  COMMAND ${CMAKE_COMMAND} -E remove_directory "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src"
+  RESULT_VARIABLE error_code
+  )
+if(error_code)
+  message(FATAL_ERROR "Failed to remove directory: '/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src'")
+endif()
+
+# try the clone 3 times in case there is an odd git clone issue
+set(error_code 1)
+set(number_of_tries 0)
+while(error_code AND number_of_tries LESS 3)
+  execute_process(
+    COMMAND "/usr/bin/git"  clone --no-checkout "https://github.com/quantumlib/Stim.git" "stim-src"
+    WORKING_DIRECTORY "/home/users/davide.salonico/sparse_blossom_prj/build/_deps"
+    RESULT_VARIABLE error_code
+    )
+  math(EXPR number_of_tries "${number_of_tries} + 1")
+endwhile()
+if(number_of_tries GREATER 1)
+  message(STATUS "Had to git clone more than once:
+          ${number_of_tries} times.")
+endif()
+if(error_code)
+  message(FATAL_ERROR "Failed to clone repository: 'https://github.com/quantumlib/Stim.git'")
+endif()
+
+execute_process(
+  COMMAND "/usr/bin/git"  checkout da4594c5ede00a063ec2b84bd830f846b5d097dd --
+  WORKING_DIRECTORY "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src"
+  RESULT_VARIABLE error_code
+  )
+if(error_code)
+  message(FATAL_ERROR "Failed to checkout tag: 'da4594c5ede00a063ec2b84bd830f846b5d097dd'")
+endif()
+
+set(init_submodules TRUE)
+if(init_submodules)
+  execute_process(
+    COMMAND "/usr/bin/git"  submodule update --recursive --init 
+    WORKING_DIRECTORY "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src"
+    RESULT_VARIABLE error_code
+    )
+endif()
+if(error_code)
+  message(FATAL_ERROR "Failed to update submodules in: '/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src'")
+endif()
+
+# Complete success, update the script-last-run stamp file:
+#
+execute_process(
+  COMMAND ${CMAKE_COMMAND} -E copy
+    "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-subbuild/stim-populate-prefix/src/stim-populate-stamp/stim-populate-gitinfo.txt"
+    "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-subbuild/stim-populate-prefix/src/stim-populate-stamp/stim-populate-gitclone-lastrun.txt"
+  RESULT_VARIABLE error_code
+  )
+if(error_code)
+  message(FATAL_ERROR "Failed to copy script-last-run stamp file: '/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-subbuild/stim-populate-prefix/src/stim-populate-stamp/stim-populate-gitclone-lastrun.txt'")
+endif()
+

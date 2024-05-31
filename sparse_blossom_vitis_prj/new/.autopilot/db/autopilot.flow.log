@@ -1,0 +1,50 @@
+INFO-FLOW: Workspace /home/users/davide.salonico/sparse_blossom_prj/sparse_blossom_vitis_prj/new opened at Mon May 20 14:01:16 CEST 2024
+Execute     send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute     send_msg_by_id INFO @200-435@%s%s 'open_solution -flow_target vivado' config_interface -m_axi_latency=0 
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+Execute     config_interface -m_axi_latency=0 
+Command   open_solution done; 0.12 sec.
+Execute   is_hidden add_files 
+Execute   is_hidden add_file 
+Execute   add_files data_tranfer_host.c 
+INFO: [HLS 200-1510] Running: add_files data_tranfer_host.c 
+WARNING: [HLS 200-40] Cannot find design file 'data_tranfer_host.c'
+Execute   is_hidden run_link_or_opt 
+Execute   is_hidden add_files 
+Execute   add_files dummy_kernel.c 
+INFO: [HLS 200-1510] Running: add_files dummy_kernel.c 
+WARNING: [HLS 200-40] Cannot find design file 'dummy_kernel.c'
+Execute   add_files src/dummy_kernel.c 
+INFO: [HLS 200-1510] Running: add_files src/dummy_kernel.c 
+INFO: [HLS 200-10] Adding design file 'src/dummy_kernel.c' to the project
+Execute   add_files src/data_tranfer_host.c 
+INFO: [HLS 200-1510] Running: add_files src/data_tranfer_host.c 
+WARNING: [HLS 200-40] Cannot find design file 'src/data_tranfer_host.c'
+Execute   add_files src/data_tranfer_host.c 
+INFO: [HLS 200-1510] Running: add_files src/data_tranfer_host.c 
+WARNING: [HLS 200-40] Cannot find design file 'src/data_tranfer_host.c'
+Execute   add_files src/data_transfer_host.c 
+INFO: [HLS 200-1510] Running: add_files src/data_transfer_host.c 
+INFO: [HLS 200-10] Adding design file 'src/data_transfer_host.c' to the project
+Execute   add_files src/data_transfer_host.c 
+INFO: [HLS 200-1510] Running: add_files src/data_transfer_host.c 
+INFO: [HLS 200-10] Adding design file 'src/data_transfer_host.c' to the project
+Execute   add_files src/data_transfer_host.c 
+INFO: [HLS 200-1510] Running: add_files src/data_transfer_host.c 
+INFO: [HLS 200-10] Adding design file 'src/data_transfer_host.c' to the project
+Execute   add_files src/dummy_kernel.h 
+INFO: [HLS 200-1510] Running: add_files src/dummy_kernel.h 
+INFO: [HLS 200-10] Adding design file 'src/dummy_kernel.h' to the project
+Execute   is_hidden csim_design 
+Execute   csim_design 
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-7] User does not set_part, FPO V7 c-model will be used by default.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO-FLOW: Caught error in csim_design: 4
+    while executing
+"ap_internal_csim_design "
+Command   csim_design done; error code: 2; 0.25 sec.

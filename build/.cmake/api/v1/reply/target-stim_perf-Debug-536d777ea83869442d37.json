@@ -1,0 +1,1097 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "_deps/stim-build/out/stim_perf"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"target_compile_options",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/CMakeLists.txt",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 71,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 73,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 4,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 17,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g  "
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wpedantic"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-O3"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-fno-strict-aliasing"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-mno-avx2"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-msse2"
+				},
+				{
+					"fragment" : "-std=gnu++2a"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 4,
+					"path" : "/home/users/davide.salonico/sparse_blossom_prj/PyMatching/src"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34,
+				35,
+				36,
+				37,
+				38,
+				39,
+				40,
+				41,
+				42,
+				43,
+				44,
+				45,
+				46,
+				47,
+				48,
+				49,
+				50,
+				51,
+				52,
+				53,
+				54,
+				55,
+				56,
+				57,
+				58,
+				59,
+				60,
+				61,
+				62,
+				63,
+				64,
+				65,
+				66,
+				67,
+				68,
+				69,
+				70,
+				71,
+				72,
+				73,
+				74,
+				75,
+				76,
+				77,
+				78,
+				79,
+				80,
+				81,
+				82,
+				83,
+				84,
+				85,
+				86,
+				87,
+				88,
+				89,
+				90,
+				91,
+				92,
+				93,
+				94,
+				95,
+				96,
+				97,
+				98,
+				99,
+				100,
+				101,
+				102,
+				103,
+				104,
+				105,
+				106,
+				107,
+				108,
+				109,
+				110,
+				111,
+				112,
+				113,
+				114,
+				115,
+				116,
+				117,
+				118
+			]
+		}
+	],
+	"id" : "stim_perf::@d1cbcbd0a45b83c2b5dd",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "",
+				"role" : "flags"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "stim_perf",
+	"nameOnDisk" : "stim_perf",
+	"paths" : 
+	{
+		"build" : "_deps/stim-build",
+		"source" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34,
+				35,
+				36,
+				37,
+				38,
+				39,
+				40,
+				41,
+				42,
+				43,
+				44,
+				45,
+				46,
+				47,
+				48,
+				49,
+				50,
+				51,
+				52,
+				53,
+				54,
+				55,
+				56,
+				57,
+				58,
+				59,
+				60,
+				61,
+				62,
+				63,
+				64,
+				65,
+				66,
+				67,
+				68,
+				69,
+				70,
+				71,
+				72,
+				73,
+				74,
+				75,
+				76,
+				77,
+				78,
+				79,
+				80,
+				81,
+				82,
+				83,
+				84,
+				85,
+				86,
+				87,
+				88,
+				89,
+				90,
+				91,
+				92,
+				93,
+				94,
+				95,
+				96,
+				97,
+				98,
+				99,
+				100,
+				101,
+				102,
+				103,
+				104,
+				105,
+				106,
+				107,
+				108,
+				109,
+				110,
+				111,
+				112,
+				113,
+				114,
+				115,
+				116,
+				117,
+				118
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/circuit/circuit.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/circuit/circuit_instruction.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/circuit/gate_decomposition.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/circuit/gate_target.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/cmd/command_analyze_errors.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/cmd/command_convert.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/cmd/command_detect.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/cmd/command_diagram.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/cmd/command_explain_errors.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/cmd/command_gen.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/cmd/command_help.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/cmd/command_m2d.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/cmd/command_repl.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/cmd/command_sample.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/cmd/command_sample_dem.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/dem/dem_instruction.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/dem/detector_error_model.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/diagram/ascii_diagram.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/diagram/base64.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/diagram/basic_3d_diagram.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/diagram/circuit_timeline_helper.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/diagram/crumble.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/diagram/crumble_data.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/diagram/detector_slice/detector_slice_set.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/diagram/diagram_util.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/diagram/gate_data_3d.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/diagram/gate_data_3d_texture_data.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/diagram/gate_data_svg.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/diagram/gltf.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/diagram/graph/match_graph_3d_drawer.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/diagram/graph/match_graph_svg_drawer.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/diagram/json_obj.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/diagram/lattice_map.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/diagram/timeline/timeline_3d_drawer.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/diagram/timeline/timeline_ascii_drawer.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/diagram/timeline/timeline_svg_drawer.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/gates/gate_data_annotations.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/gates/gate_data_blocks.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/gates/gate_data_collapsing.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/gates/gate_data_controlled.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/gates/gate_data_hada.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/gates/gate_data_heralded.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/gates/gate_data_noisy.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/gates/gate_data_pair_measure.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/gates/gate_data_pauli.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/gates/gate_data_pauli_product.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/gates/gate_data_period_3.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/gates/gate_data_period_4.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/gates/gate_data_pp.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/gates/gate_data_swaps.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/gates/gates.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/gen/circuit_gen_params.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/gen/gen_color_code.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/gen/gen_rep_code.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/gen/gen_surface_code.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/io/measure_record.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/io/measure_record_batch_writer.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/io/measure_record_writer.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/io/raii_file.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/io/sparse_shot.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/io/stim_data_formats.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/main_namespaced.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/mem/bit_ref.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/mem/simd_util.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/mem/simd_word.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/mem/sparse_xor_vec.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/search/graphlike/algo.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/search/graphlike/edge.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/search/graphlike/graph.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/search/graphlike/node.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/search/graphlike/search_state.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/search/hyper/algo.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/search/hyper/edge.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/search/hyper/graph.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/search/hyper/node.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/search/hyper/search_state.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/search/sat/wcnf.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/simulators/error_analyzer.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/simulators/error_matcher.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/simulators/force_streaming.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/simulators/graph_simulator.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/simulators/matched_error.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/simulators/sparse_rev_frame_tracker.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/simulators/vector_simulator.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/stabilizers/flex_pauli_string.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/util_bot/arg_parse.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/util_bot/error_decomp.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/util_bot/probability_util.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/util_top/circuit_inverse_qec.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/util_top/circuit_inverse_unitary.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/util_top/circuit_to_detecting_regions.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/util_top/circuit_vs_amplitudes.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/util_top/export_crumble_url.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/util_top/export_qasm.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/util_top/export_quirk_url.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/util_top/simplified_circuit.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/util_top/transform_without_feedback.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/circuit/circuit.perf.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/gates/gates.perf.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/io/measure_record_reader.perf.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/main.perf.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/main_namespaced.perf.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/mem/simd_bit_table.perf.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/mem/simd_bits.perf.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/mem/simd_word.perf.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/mem/sparse_xor_vec.perf.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/search/graphlike/algo.perf.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/simulators/dem_sampler.perf.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/simulators/error_analyzer.perf.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/simulators/frame_simulator.perf.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/simulators/tableau_simulator.perf.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/stabilizers/pauli_string.perf.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/stabilizers/pauli_string_iter.perf.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/stabilizers/tableau.perf.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/stabilizers/tableau_iter.perf.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/util_bot/error_decomp.perf.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/util_bot/probability_util.perf.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/users/davide.salonico/sparse_blossom_prj/build/_deps/stim-src/src/stim/util_top/stabilizers_to_tableau.perf.cc",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}
