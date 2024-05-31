@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-#iniclude "cache.h" // or include DaCH src path in the cflags
-=======
-#include "cache.h"
->>>>>>> 73de56e349cb989fea819ae9a0b46c4f2a34b9de
+#iniclude "cache.h"
 #include <math.h>
 #include <ap_int.h>
 #include <cstdlib>
