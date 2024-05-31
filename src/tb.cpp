@@ -1,14 +1,13 @@
 #include "sparse_fpga.cpp"
 
-int main(int argc, char * argv[]) //change with real data_types
-{
+int main(int argc, char * argv[]){
     FpgaGraph graph = load_graph_from_file();
 
-    node_cache node_lut;
-    region_cache region_lut;
-    alt_tree_cache alt_tree_lut;
+    node_cache node_lut = {};
+    region_cache region_lut = {};
+    alt_tree_cache alt_tree_lut = {};
 
-    sparse_top(0, NULL, NULL, NULL);
+    sparse_top(0, node_lut, region_lut, alt_tree_lut);
 
     /*
     data_type a_arr[N * M];
