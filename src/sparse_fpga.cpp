@@ -1,158 +1,145 @@
-#include "DaCH/src/cache.h" // or include DaCH src path in the cflags
+#include "/home/dado/sparse_blossom/sparse_blossom_on_FPGA/DaCH/src/cache.h" // or include DaCH src path in the cflags
 #include <math.h>
-#include "ap_int.h"
+#include <ap_int.h>
+#include <cstdlib>
 
-#define MAX_N_NODES 1000 //??? Comprehend also boundary nodes
-#define MAX_N_OBS 1400   //???
+#define N_DEC_NODES 1000
+#define NODE_IDX_BIT log(2, N_DEC_NODES)
 #define N_NEIGH 4
-
-#define ALTTREEEDGE_MAX 10
-#define SHELL_AREA_MAX 50
-#define BLOSSOM_CHILDREN_MAX 10
-
-#define N_REGIONS MAX_N_NODES // Exagerated assumption
-
-#define NODE_BIT ceil(log2(MAX_N_NODES + 1))
-#define REGION_BIT ceil(log2(N_REGIONS + 1))
-#define OBS_BIT ceil(log2(MAX_N_OBS))
-
+#define N_REGIONS N_DEC_NODES
+#define REGION_IDX_BIT log(2, N_REGIONS)
+#define N_OBS 1400
 #define LLONG_MAX 2147483647
+#define SHELL_AREA_MAX 4
+#define BLOSSOM_CHILDREN_MAX 4
+#define ALTTREEEDGE_MAX 2
 
-typedef ap_uint<NODE_BIT> node_idx_t;
-typedef ap_uint<REGION_BIT> region_idx_t;
-typedef ap_uint<OBS_BIT> obs_mask_t;
+//typedefs
+typedef int flood_type_t;
+typedef int node_t;         //index of detector node
+typedef int time_t;
+typedef int region_t;
+typedef int obs_mask_t[N_OBS];
+typedef int obs_int_t;
+typedef int altTreeNode_t;
 
-typedef uint32_t weight_t; // TODO: define more efficient
 
-#define NULL_NODE 0
-#define NULL_REGION 0
+//TODO: change when merging cache implementation
+node_data_t node_lut[1000000];
+region_data_t region_lut[100000];
+altTreeNode_data_t altTreeNode_lut[100000];
 
-enum fe_type
-{
-    NODE = 0,
-    REGION_SHR = 1
-};
-
-typedef struct
-{
-    fe_type type;
+typedef struct {
+    flood_type_t type;
     time_t time;
-    node_idx_t node; // node index
+    node_t node; //node index
 } flood_event_t;
 
-typedef struct
-{
-    node_idx_t src;
-    node_idx_t dest;
-    obs_mask_t obs_mask;
+typedef struct{
+    node_t src;
+    node_t dest;
+    //obs_mask_t obs_mask;
+    obs_int_t obs_mask;
 } compressed_edge_t;
 
-typedef struct
-{
-    region_idx_t region;
-    compressed_edge_t ce;
-} region_edge_t;
-
-enum mwpm_type
-{
+enum mwpm_type{
     RegionHitRegionEventData,
     RegionHitBoundaryEventData,
     BlossomShatterEventData
 };
 
-typedef struct
-{ // Optimizable
-    region_idx_t region_src;
-    region_idx_t region_dst;
-    region_idx_t region;
+typedef struct{
+    region_t region_src;
+    region_t region_dst;
+    region_t region;
     compressed_edge_t ce;
-    region_idx_t blossom_region;
-    region_idx_t in_parent_region;
-    region_idx_t in_child_region;
+    region_t blossom_region;
+    region_t in_parent_region;
+    region_t in_child_region;
     enum mwpm_type type;
     /*
      RegionHitRegionEventData
-
          GraphFillRegion *region1; //region_src
          GraphFillRegion *region2; //region_dst
          CompressedEdge edge;
-     */
 
-    /*
      RegionHitBoundaryEventData
-
          GraphFillRegion *region; //region
          CompressedEdge edge;
 
-     */
-
-    /*
      BlossomShatterEventData
-
          GraphFillRegion *blossom_region;
          GraphFillRegion *in_parent_region;
          GraphFillRegion *in_child_region;
      */
 } mwpm_event_t;
 
-typedef struct
-{
-    node_idx_t index;
-    region_idx_t region_idx;
-    region_idx_t top_region_idx;
-    radius_t wrapped_radius_cached;
-    node_idx_t reached_from_source;
-    obs_mask_t obs_inter;
-    radius_t radius_of_arrival;
-    node_idx_t neigh[N_NEIGH]; // if node.neigh[2] == 0 -> node hasn't the neigh[2]
-    weight_t neigh_weights[N_NEIGH];
-    obs_mask_t neigh_obs[N_NEIGH];
+enum radius_status_t{
+    GROWING = 1,
+    FROZEN = 0,
+    SHRINKING = -1
+};
+
+typedef struct{
+    time_t value;
+    enum radius_status_t status;
+} radius_t;
+
+typedef struct{ 
+    node_t index;
+    region_t region_idx;
+    region_t top_region_idx;
+    int wrapped_radius_cached;
+    node_t reached_from_source;
+    //obs_mask_t obs_inter;
+    obs_int_t obs_inter;
+    int radius_of_arrival;
+    node_t neigh[4]; //if node.neigh[2] == 0 -> node hasn't the neigh[2]
+    int neigh_weights[4];
+    //obs_mask_t neigh_obs[4];
+    obs_int_t neigh_obs[4];
 } node_data_t;
 
-typedef struct
-{
-    region_idx_t index;
-    region_idx_t blossom_parent_region_idx;
-    region_idx_t blossom_parent_top_region_idx;
-    altTreeNode_t *alt_tree_node;
+
+//NEW
+typedef struct{
+    region_t region;
+    compressed_edge_t edge;
+}
+match_t;
+
+typedef struct{
+    region_t index;
+    region_t blossom_parent_region_idx;
+    region_t blossom_parent_top_region_idx;
+    altTreeNode_t alt_tree_node;
     radius_t radius;
-    // QueuedEventTracker shrink_event_traker
-    // Match match
-    node_data_t shell_area[SHELL_AREA_MAX];
-    region_edge_t blossom_children[BLOSSOM_CHILDREN_MAX];
+    //QueuedEventTracker shrink_event_traker
+    match_t match;
+    node_data_t shell_area[4]; //4 random
+    region_edge_t blossom_children[4]; //4 random
 } region_data_t;
 
-typedef int altTreeNode_t;
-
-typedef struct
-{
+typedef struct{
     compressed_edge_t edge;
     altTreeNode_t alt_tree_node;
 } altTreeEdge_t;
 
-typedef struct
-{
+typedef struct{ //ho aggiunto int state
     altTreeNode_t index;
-    region_idx_t inner_region_idx;
-    region_idx_t outer_region_idx;
+    region_t inner_region_idx;
+    region_t outer_region_idx;
     compressed_edge_t inner_to_outer_edge;
     altTreeEdge_t parent;
     altTreeEdge_t children[ALTTREEEDGE_MAX];
     bool visited;
+    int state;
 } altTreeNode_data_t;
 
-typedef struct
-{
-    time_t value;
-    radius_status_t status;
-} radius_t;
-
-enum radius_status_t
-{
-    GROWING = 1,
-    FROZEN = 0,
-    SHRINKING = -1
-}
+enum f_event_type{
+    NODE = 0,
+    REGION_SHR = 1
+};
 
 typedef struct
 {
@@ -192,30 +179,26 @@ enum choice_t
 }
 
 extern "C" void
-sparse_top(choice_t choice, syndr_t syndrome[], corrections_t corrections[])
+sparse_top(choice_t choice, , FpgaGraph* graph, syndrome[], corrections_t corrections[])
 {
 #pragma HLS INTERFACE m_axi port = a_arr offset = slave bundle = gmem0 latency = 0 depth = 1024
 #pragma HLS INTERFACE m_axi port = b_arr offset = slave bundle = gmem1 latency = 0 depth = 1024
 #pragma HLS INTERFACE m_axi port = c_arr offset = slave bundle = gmem2 latency = 0 depth = 1024
 #pragma HLS INTERFACE ap_ctrl_hs port = return
 
-    node_cache node_lut;
-    region_cache region_lut;
-    alt_tree_cache alt_tree_lut;
-
     if (choice == LOAD_GRAPH)
     {
-        FpgaGraph graph = load_graph_from_file();
+        FpgaGraph graph = graph;
 #pragma HLS dataflow disable_start_propagation
         node_lut(graph.nodes);
         region_lut(graph.regions);
         alt_tree_lut(graph.alt_tree);
-        cache_wrapper(load_graph<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
+        //cache_wrapper(load_graph<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
     }
     else
     {
 #pragma HLS dataflow disable_start_propagation
-        cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut)
+        cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
     }
 
 #ifndef __SYNTHESIS__
@@ -237,9 +220,44 @@ sparse_top(choice_t choice, syndr_t syndrome[], corrections_t corrections[])
 #endif /* PROFILE */
 #endif /* __SYNTHESIS__ */
 }
+/* 
+ * This is just a 
+ */
+void trackerDequeue(flood_event_t * fe){
+    fe->node = 100;
+    fe->time = 100;
+    fe->type = NODE;
+}
 
-int main() //change with real data_types
+template<typename T1, typename T2, typename T3>
+void decode(T1 nodes, T2 regions, T3 alt_tree, syndr_t syndrome[MAX_N_NODES], err_t errors[MAX_N_OBS]){
+   //PriorityQueue queue;
+
+   // Read syndrome and create right events
+
+   bool done;
+   while(!done){
+       flood_event_t fe = NULL;
+       trackerDequeue(&fe);
+       f_dispatcher(&fe, done);
+       if(done) break;
+   }
+
+   //Compute errors from alt_tree
+   //errors = ...
+}
+
+
+int main(int argc, char * argv[]) //change with real data_types
 {
+    FpgaGraph graph = load_graph_from_file();
+
+    node_cache node_lut;
+    region_cache region_lut;
+    alt_tree_cache alt_tree_lut;
+
+
+    /*
     data_type a_arr[N * M];
     data_type b_arr[M * P];
     data_type c_arr[N * P] = {0};
@@ -266,4 +284,5 @@ int main() //change with real data_types
     }
 
     return err;
+    */
 }

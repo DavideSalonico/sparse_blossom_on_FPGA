@@ -424,6 +424,7 @@ void compute_corr(T1 nodes, T2 regions, T3 alt_tree, syndr_t syndrome[MAX_N_NODE
    //errors = ...
 }
 
+/*
 //operation = LOAD_GRAPH | DECODE
 void top(int operation, int *fpga_graph){
 #pragma HLS interface m_axi port=nodes bundle=gmem0
@@ -436,3 +437,4 @@ void top(int operation, int *fpga_graph){
    alt_tree_cache alt_tree_lut(alt_tree);
    cache_wrapper(compute_corr<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
 }
+*/
