@@ -1,0 +1,28 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+INFO: [SIM 7] User does not set_part, FPO V7 c-model will be used by default.
+   Compiling ../../../../src/testbench.cpp in debug mode
+In file included from ../../../../src/testbench.cpp:23:
+../../../../src/kernel.hpp:22: warning: "LLONG_MAX" redefined
+ #define LLONG_MAX 2147483647
+ 
+In file included from /home/xilinx/software/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include-fixed/limits.h:194,
+                 from /home/xilinx/software/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include-fixed/syslimits.h:7,
+                 from /home/xilinx/software/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include-fixed/limits.h:34,
+                 from /home/xilinx/software/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/include/c++/8.3.0/climits:42,
+                 from /home/xilinx/software/Vitis_HLS/2022.2/include/hls_half.h:31,
+                 from /home/xilinx/software/Vitis_HLS/2022.2/include/etc/ap_private.h:52,
+                 from /home/xilinx/software/Vitis_HLS/2022.2/include/ap_common.h:666,
+                 from /home/xilinx/software/Vitis_HLS/2022.2/include/ap_int.h:10,
+                 from ../../../../src/kernel.hpp:6,
+                 from ../../../../src/testbench.cpp:23:
+/usr/include/limits.h:135: note: this is the location of the previous definition
+ #  define LLONG_MAX __LONG_LONG_MAX__
+ 
+../../../../src/testbench.cpp:26:10: fatal error: xrt/xrt_bo.h: No such file or directory
+ #include "xrt/xrt_bo.h"
+          ^~~~~~~~~~~~~~
+compilation terminated.
+make: *** [csim.mk:80: obj/testbench.o] Error 1
+ERR: [SIM 100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 3] *************** CSIM finish ***************

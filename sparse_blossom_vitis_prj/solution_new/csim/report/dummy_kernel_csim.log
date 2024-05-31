@@ -1,0 +1,11 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+INFO: [SIM 7] User does not set_part, FPO V7 c-model will be used by default.
+   Compiling ../../../../src/data_transfer_host.cpp in debug mode
+../../../../src/data_transfer_host.cpp:17:10: fatal error: cmdlineparser.h: No such file or directory
+ #include "cmdlineparser.h"
+          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [csim.mk:77: obj/data_transfer_host.o] Error 1
+ERR: [SIM 100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 3] *************** CSIM finish ***************

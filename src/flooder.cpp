@@ -2,7 +2,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
-#include "/home/dado/sparse_blossom/sparse_blossom_on_FPGA/src/sparse_fpga.cpp"
+#include "sparse_fpga.cpp"
 
 void no_mwpm_event(mwpm_event_t *mwpm_event){
    mwpm_event->region = 0;

@@ -1,4 +1,4 @@
-#include "/home/dado/sparse_blossom/sparse_blossom_on_FPGA/DaCH/src/cache.h" // or include DaCH src path in the cflags
+#include "cache.h"
 #include <math.h>
 #include <ap_int.h>
 #include <cstdlib>
@@ -23,11 +23,6 @@ typedef int obs_mask_t[N_OBS];
 typedef int obs_int_t;
 typedef int altTreeNode_t;
 
-
-//TODO: change when merging cache implementation
-node_data_t node_lut[1000000];
-region_data_t region_lut[100000];
-altTreeNode_data_t altTreeNode_lut[100000];
 
 typedef struct {
     flood_type_t type;
@@ -165,9 +160,9 @@ typedef struct
 #define SWAP_TAG_SET false         // the address bits mapping
 #define LATENCY 2                  // the request-response distance of the L2 cache
 
-typedef cache<node_data_t, RD_ENABLED, WR_ENABLED, MAIN_SIZE_NODE, N_SETS, N_WAYS, N_WORDS_PER_LINE, LRU, SWAP_TAG_SET, LATENCY> node_cache;
-typedef cache<region_data_t, RD_ENABLED, WR_ENABLED, MAIN_SIZE_REGION, N_SETS, N_WAYS, N_WORDS_PER_LINE.LRU, SWAP_TAG_SET, LATENCY> region_cache;
-typedef cache<altTreeNode_data_t, RD_ENABLED, WR_ENABLED, MAIN_SIZE_ALT_TREE, N_SETS, N_WAYS, N_WORDS_PER_LINE, LRU, SWAP_TAG_SET, LATENCY> alt_tree_cache;
+typedef cache<node_data_t, RD_ENABLED, WR_ENABLED, 1, MAIN_SIZE_NODE, N_SETS, N_WAYS, N_WORDS_PER_LINE, LRU, 1, 1, SWAP_TAG_SET, LATENCY> node_cache;
+typedef cache<region_data_t, RD_ENABLED, WR_ENABLED, 1, MAIN_SIZE_REGION, N_SETS, N_WAYS, N_WORDS_PER_LINE.LRU, 1, 1, SWAP_TAG_SET, LATENCY> region_cache;
+typedef cache<altTreeNode_data_t, RD_ENABLED, WR_ENABLED, 1, MAIN_SIZE_ALT_TREE, N_SETS, N_WAYS, N_WORDS_PER_LINE, LRU, 1, 1, SWAP_TAG_SET, LATENCY> alt_tree_cache;
 
 typedef ap_uint<MAX_N_NODES> syndr_t;
 typedef ap_uint<MAX_N_OBS> corrections_t;
@@ -176,10 +171,9 @@ enum choice_t
 {
     LOAD_GRAPH = 0,
     DECODE = 1
-}
+};
 
-extern "C" void
-sparse_top(choice_t choice, , FpgaGraph* graph, syndrome[], corrections_t corrections[])
+extern "C" void sparse_top(choice_t choice, , FpgaGraph* graph, syndrome[], corrections_t corrections[])
 {
 #pragma HLS INTERFACE m_axi port = a_arr offset = slave bundle = gmem0 latency = 0 depth = 1024
 #pragma HLS INTERFACE m_axi port = b_arr offset = slave bundle = gmem1 latency = 0 depth = 1024
@@ -248,41 +242,3 @@ void decode(T1 nodes, T2 regions, T3 alt_tree, syndr_t syndrome[MAX_N_NODES], er
 }
 
 
-int main(int argc, char * argv[]) //change with real data_types
-{
-    FpgaGraph graph = load_graph_from_file();
-
-    node_cache node_lut;
-    region_cache region_lut;
-    alt_tree_cache alt_tree_lut;
-
-
-    /*
-    data_type a_arr[N * M];
-    data_type b_arr[M * P];
-    data_type c_arr[N * P] = {0};
-    data_type c_arr_ref[N * P] = {0};
-
-    for (auto i = 0; i < N * M; i++)
-        a_arr[i] = i;
-    for (auto i = 0; i < M * P; i++)
-        b_arr[i] = i;
-
-    // matrix multiplication with caches
-    matmult_top(a_arr, b_arr, c_arr);
-    // standard matrix multiplication
-    multiply(a_arr, b_arr, c_arr_ref);
-
-    int err = 0;
-    for (auto i = 0; i < N * P; i++)
-    {
-        if (c_arr[i] != c_arr_ref[i])
-        {
-            err++;
-            printf("Mismatch: %d %d\n", c_arr[i], c_arr_ref[i]);
-        }
-    }
-
-    return err;
-    */
-}
