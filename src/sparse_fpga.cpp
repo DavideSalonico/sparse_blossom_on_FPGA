@@ -1,4 +1,4 @@
-#iniclude "cache.h"
+#include "cache.h"
 #include <math.h>
 #include <ap_int.h>
 #include <cstdlib>
@@ -176,7 +176,6 @@ enum choice_t
     DECODE = 1
 };
 
-extern void sparse_top(choice_t choice, , FpgaGraph* graph, syndrome[], corrections_t corrections[])
 extern "C" void sparse_top(choice_t choice, , FpgaGraph* graph, syndrome[], corrections_t corrections[])
 {
 #pragma HLS INTERFACE m_axi port = a_arr offset = slave bundle = gmem0 latency = 0 depth = 1024
