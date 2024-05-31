@@ -6,15 +6,31 @@
 #include <iostream>
 #include <iomanip>
 
-#define N_DEC_NODES 1000
-#define NODE_IDX_BIT log(2, N_DEC_NODES)
+#define MAX_N_NODES 1000    //??? Comprehend also boundary nodes
+#define MAX_N_OBS 1400      //???
 #define N_NEIGH 4
-#define N_REGIONS N_DEC_NODES
-#define REGION_IDX_BIT log(2, N_REGIONS)
-#define N_OBS 1400
+
+#define ALTTREEEDGE_MAX 10
+
+#define N_REGIONS MAX_N_NODES // Exagerated assumption
+
+#define NODE_BIT ceil(log2(MAX_N_NODES+1))
+#define REGION_BIT ceil(log2(N_REGIONS+1))
+#define OBS_BIT ceil(log2(MAX_N_OBS))
+
+
+typedef ap_uint<NODE_BIT> node_idx_t;
+typedef ap_uint<REGION_BIT> region_idx_t;
+typedef ap_uint<OBS_BIT> obs_mask_t;
+
+typedef uint32_t weight_t;           //TODO: define more efficient
+
+#define N_NEIGH 4
 #define SHELL_AREA_MAX 4
 #define BLOSSOM_CHILDREN_MAX 4
-#define ALTTREEEDGE_MAX 2
+
+#define NULL_NODE 0
+#define NULL_REGION 0
 
 //typedefs
 typedef int flood_type_t;
