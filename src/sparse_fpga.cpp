@@ -9,25 +9,19 @@
 #define MAX_N_NODES 1000    //??? Comprehend also boundary nodes
 #define MAX_N_OBS 1400      //???
 #define N_NEIGH 4
-
 #define ALTTREEEDGE_MAX 10
-
+#define SHELL_AREA_MAX 4
+#define BLOSSOM_CHILDREN_MAX 4
 #define N_REGIONS MAX_N_NODES // Exagerated assumption
-
-#define NODE_BIT ceil(log2(MAX_N_NODES+1))
-#define REGION_BIT ceil(log2(N_REGIONS+1))
-#define OBS_BIT ceil(log2(MAX_N_OBS))
-
+#define NODE_BIT (int) ceil(log2(MAX_N_NODES+1))
+#define REGION_BIT (int) ceil(log2(N_REGIONS+1))
+#define OBS_BIT (int) ceil(log2(MAX_N_OBS))
 
 typedef ap_uint<NODE_BIT> node_idx_t;
 typedef ap_uint<REGION_BIT> region_idx_t;
 typedef ap_uint<OBS_BIT> obs_mask_t;
 
 typedef uint32_t weight_t;           //TODO: define more efficient
-
-#define N_NEIGH 4
-#define SHELL_AREA_MAX 4
-#define BLOSSOM_CHILDREN_MAX 4
 
 #define NULL_NODE 0
 #define NULL_REGION 0
@@ -37,9 +31,10 @@ typedef int flood_type_t;
 typedef int node_t;         //index of detector node
 typedef int pm_time_t;
 typedef int region_t;
-typedef int obs_mask_t[N_OBS];
 typedef int obs_int_t;
 typedef int altTreeNode_t;
+
+
 
 
 typedef struct {
@@ -54,6 +49,11 @@ typedef struct{
     //obs_mask_t obs_mask;
     obs_int_t obs_mask;
 } compressed_edge_t;
+
+typedef struct{
+	region_idx_t region;
+	compressed_edge_t ce;
+} region_edge_t;
 
 enum mwpm_type{
     RegionHitRegionEventData,
@@ -180,7 +180,7 @@ typedef struct
 
 // typedef cache<data_type, true, false, RD_PORTS, N * M, A_L2_SETS, A_L2_WAYS, A_WORDS, false, A_L1_SETS, A_L1_WAYS, false, A_L2_LATENCY> cache_a
 typedef cache<node_data_t, RD_ENABLED, WR_ENABLED, 1, MAIN_SIZE_NODE, N_SETS, N_WAYS, N_WORDS_PER_LINE, LRU, 1, 1, SWAP_TAG_SET, LATENCY> node_cache;
-typedef cache<region_data_t, RD_ENABLED, WR_ENABLED, 1, MAIN_SIZE_REGION, N_SETS, N_WAYS, N_WORDS_PER_LINE.LRU, 1, 1, SWAP_TAG_SET, LATENCY> region_cache;
+typedef cache<region_data_t, RD_ENABLED, WR_ENABLED, 1, MAIN_SIZE_REGION, N_SETS, N_WAYS, N_WORDS_PER_LINE, LRU, 1, 1, SWAP_TAG_SET, LATENCY> region_cache;
 typedef cache<altTreeNode_data_t, RD_ENABLED, WR_ENABLED, 1, MAIN_SIZE_ALT_TREE, N_SETS, N_WAYS, N_WORDS_PER_LINE, LRU, 1, 1, SWAP_TAG_SET, LATENCY> alt_tree_cache;
 
 typedef ap_uint<MAX_N_NODES> syndr_t;
