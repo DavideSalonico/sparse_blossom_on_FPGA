@@ -192,7 +192,7 @@ enum choice_t
     DECODE = 1
 };
 
-extern "C" void sparse_top(choice_t choice, , FpgaGraph* graph, syndrome[], corrections_t corrections[])
+extern "C" void sparse_top(choice_t choice, FpgaGraph* graph, syndrome[], corrections_t corrections[])
 {
 #pragma HLS INTERFACE m_axi port = a_arr offset = slave bundle = gmem0 latency = 0 depth = 1024
 #pragma HLS INTERFACE m_axi port = b_arr offset = slave bundle = gmem1 latency = 0 depth = 1024
