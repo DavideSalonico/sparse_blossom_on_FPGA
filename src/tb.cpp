@@ -61,13 +61,13 @@ int main(int argc, char * argv[]){
 
 	FpgaGraph graph;
     populateGraph(&graph);
-    printGraph(graph);
+    //printGraph(graph);
 
     sparse_top(LOAD_GRAPH, &graph, 0, 0);
 
-    syndrome_t syndrome = 500;
+    syndr_t syndrome = 500;
     corrections_t corrections = 0;
-    sparse_top(DECODE, NULL, syndrome, corrections); 
+    sparse_top(DECODE, NULL, syndrome, &corrections); 
 }
 
 /*
