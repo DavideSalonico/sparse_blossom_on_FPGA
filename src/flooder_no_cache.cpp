@@ -11,118 +11,137 @@ void no_mwpm_event(mwpm_event_t *mwpm_event){
 }
 
 
-void f_find_next_event(node_t node, node_data_t *next_neigh_node, int *next_best_time, FpgaGraph* graph){
-   // ACCESS TO NODE_LUT (READ ONLY) ACCESS TO REGION_LUT
-   
-    node_data_t node_data = graph->nodes[node];
-   //node_data_t node_data = node_lut[node];
-   //NODE_LUT ACCESS: node_data = node -> LUT
-   
-    region_data_t region_arrived_top = graph->regions[node_data.top_region_idx];
-   //region_data_t region_arrived_top = region_lut[node_data.top_region_idx];
-   //region_arrived_top = node_data.top_region_idx -> LUT
-   
-   radius_t rad1;
-   rad1.value = (node_data.wrapped_radius_cached + region_arrived_top.radius.value);
-   
-   if (/*rad1 & (1 << (sizeof(int) * 8 - 1))*/ rad1.status == GROWING) {
-       //return find_next_event_at_node_occupied_by_growing_top_region(detector_node, rad1);
-       
-       int best_time = LLONG_MAX;
-       int best_neighbor = N_NEIGH;
-       int start = 0;
-       int weight;
-       //node_data_t neighbor;
-       radius_t rad2;
-       int collision_time;
-       
-       if(node_data.neigh[0] == 0 && (node_data.neigh[1] != 0 || node_data.neigh[2] != 0 || node_data.neigh[3] != 0)) {
-           weight = node_data.neigh_weights[0];
-           collision_time = weight - rad1.value;
-           if (collision_time < best_time) {
-               best_time = collision_time;
-               best_neighbor = 0;
-           }
-           start++;
-       }
-       
-       for (int i = start; i < N_NEIGH; i++) {
-           weight = node_data.neigh_weights[i];
-           node_data_t neighbor;
-           //neighbor = LUT with inx node_data.neigh[i];
-           if (node_data.top_region_idx == neighbor.top_region_idx) {
-               continue;
-           }
-           
-           region_data_t region_arrived_top_neigh;
-           //region_arrived_top = neighbor.top_region_idx -> LUT
-           rad2.value = (neighbor.wrapped_radius_cached + region_arrived_top_neigh.radius.value);
-           
-           if (rad2.status == SHRINKING) {
-               continue;
-           }
+void f_find_next_event(node_t detector_node, node_data_t *next_neigh_node, int *next_best_time, FpgaGraph* graph){
+    printf("entrato in f_find_next_event\n");
+    int best_neighbor_int = 0;
+    
+    node_data_t detector_node_data = graph->nodes[detector_node];
+    region_data_t region_that_arrived_top_detector_node = graph->regions[detector_node_data.top_region_idx];
+    
+    radius_t rad1;
+    
+    if(detector_node_data.top_region_idx == 0){
+        rad1.value = 0;
+    }else{
+        rad1.value = detector_node_data.wrapped_radius_cached + region_that_arrived_top_detector_node.radius.value;
+        rad1.status = region_that_arrived_top_detector_node.radius.status;
+    }
+    
+    if(rad1.status == GROWING){
+        printf("entrato in f_find_next_event GROWING\n");
+        *next_best_time = LLONG_MAX;
+        best_neighbor_int = 3; //(4-1)
+        int start = 0;
+        if ((detector_node_data.neigh[0] != 0 ||
+             detector_node_data.neigh[1] != 0 ||
+             detector_node_data.neigh[2] != 0 ||
+             detector_node_data.neigh[3] != 0)
+            && detector_node_data.neigh[0] == 0) {
+            
+            int weight = detector_node_data.neigh_weights[0];
+            int collision_time = weight - rad1.value;
+            if (collision_time < *next_best_time) {
+                *next_best_time = collision_time;
+                best_neighbor_int = 0;
+            }
+            start++;
+        }
+        
+        int k = 0;
+        for(int i = 0; i < 4; i++){
+            if(detector_node_data.neigh[i] != 0){
+                k++;
+            }
+        }
+        for (int i = start; i < k; i++) {
+            int weight = detector_node_data.neigh_weights[i];
 
-           collision_time = weight - rad1.value - rad2.value;
-       
-           if (rad2.status == GROWING) {
-               //collision_time >>= 1;
-               collision_time = collision_time/2;
-           }
-           if (collision_time < best_time) {
-               best_time = collision_time;
-               best_neighbor = i;
-           }
-       }
-       *next_best_time = best_time;
-       *next_neigh_node = graph->nodes[node_data.neigh[best_neighbor]];
-       //*next_neigh_node = node_lut[node_data.neigh[best_neighbor]];
-   } else {
-       //return find_next_event_at_node_not_occupied_by_growing_top_region(detector_node, rad1);
-       int best_time = LLONG_MAX;
-       int best_neighbor = N_NEIGH;
-       int weight;
-       radius_t rad2;
-       int collision_time;
+            node_t neighbor = detector_node_data.neigh[i];
+            node_data_t neighbor_data = graph->nodes[neighbor];
+            
+            if (detector_node_data.top_region_idx == neighbor_data.top_region_idx) {
+                continue;
+            }
+            
+            radius_t rad2;
+            
+            region_data_t neigh_region_that_arrived_top_detector_node = graph->regions[neighbor_data.top_region_idx];
+            
+            if(neighbor_data.top_region_idx == 0){
+                rad2.value = 0;
+            }else{
+                rad2.value = neighbor_data.wrapped_radius_cached + neigh_region_that_arrived_top_detector_node.radius.value;
+                rad2.status = neigh_region_that_arrived_top_detector_node.radius.status;
+            }
+            
+            if (rad2.status == SHRINKING) {
+                continue;
+            }
 
-       int start = 0;
-       if (node_data.neigh[0] == 0 && (node_data.neigh[1] != 0 || node_data.neigh[2] != 0 || node_data.neigh[3] != 0))
-       start++;
+            int collision_time = weight - rad1.value - rad2.value;
+            if (rad2.status == GROWING) {
+                collision_time >>= 1;
+            }
+            if (collision_time < *next_best_time) {
+                *next_best_time = collision_time;
+                best_neighbor_int = i;
+            }
+        }
+        
+    }else{
+        *next_best_time = LLONG_MAX;
+        best_neighbor_int = 3; //(4-1)
+        int start = 0;
+        if ((detector_node_data.neigh[0] != 0 ||
+             detector_node_data.neigh[1] != 0 ||
+             detector_node_data.neigh[2] != 0 ||
+             detector_node_data.neigh[3] != 0)
+            && detector_node_data.neigh[0] == 0) {
+            start++;
+        }
+        int k = 0;
+        for(int i = 0; i < 4; i++){
+            if(detector_node_data.neigh[i] != 0){
+                k++;
+            }
+        }
+        for (int i = start; i < k; i++) {
+            int weight = detector_node_data.neigh_weights[i];
 
-       // Gestisce i vicini non di confine.
-       for (int i = start; i < N_NEIGH; i++) {
-           weight = node_data.neigh_weights[i];
+            node_t neighbor = detector_node_data.neigh[i];
+            node_data_t neighbor_data = graph->nodes[neighbor];
+            
+            radius_t rad2;
+            
+            region_data_t neigh_region_that_arrived_top_detector_node = graph->regions[neighbor_data.top_region_idx];
+            
+            if(neighbor_data.top_region_idx == 0){
+                rad2.value = 0;
+            }else{
+                rad2.value = neighbor_data.wrapped_radius_cached + neigh_region_that_arrived_top_detector_node.radius.value;
+                rad2.status = neigh_region_that_arrived_top_detector_node.radius.status;
+            }
 
-           node_data_t neighbor = graph->nodes[node_data.neigh[i]];
-           //node_data_t neighbor = node_lut[node_data.neigh[i]];
-           //neighbor = LUT with inx node_data.neigh[i];
-           region_data_t region_arrived_top_neigh = graph->regions[neighbor.top_region_idx];
-           //region_data_t region_arrived_top_neigh = node_lut[neighbor.top_region_idx];
-           //region_arrived_top = neighbor.top_region_idx -> LUT
-           rad2.value = (neighbor.wrapped_radius_cached + region_arrived_top_neigh.radius.value);
-
-           if (rad2.status == GROWING) {
-               collision_time = weight - rad1.value - rad2.value;
-               if (collision_time < best_time) {
-                   best_time = collision_time;
-                   best_neighbor = i;
-               }
-           }
-       }
-       *next_best_time = best_time;
-       *next_neigh_node = graph->nodes[node_data.neigh[best_neighbor]];
-       //*next_neigh_node = node_lut[node_data.neigh[best_neighbor]];
-   }
+            
+            if (rad2.status == GROWING) {
+                int collision_time = weight - rad1.value - rad2.value;
+                if (collision_time < *next_best_time) {
+                    *next_best_time = collision_time;
+                    best_neighbor_int = i;
+                }
+            }
+        }
+        
+    }
+    *next_neigh_node = graph->nodes[detector_node_data.neigh[best_neighbor_int]];
+    printf("entrato in f_find_next_event\nbest time=%d\nbest neigh idx= %d\n", *next_best_time, detector_node_data.neigh[best_neighbor_int]);
 }
 
 void f_do_RhB_interaction(node_data_t node_data, mwpm_event_t *mwpm_event, FpgaGraph* graph){
+    printf("entrato in f_do_RhB_interaction\n");
    no_mwpm_event(mwpm_event);
-   //nel caso in cui manteniamo la convenzione di dire che se idx = 0 punta a null
-   //mwpm_event.ce.dest = 0;
-   /*
-   mwpm_event.ce.src = node_data.reached_from_source;
-   mwpm_event.ce.obs_mask = node_data.obs_inter ^ node_data.neigh_obs[0];
-   mwpm_event.region = node_data.top_region_idx;
-   mwpm_event.type = RegionHitBoundaryEventData;*/
+    
+   mwpm_event->ce.dest = 0;
    
    mwpm_event->ce.src = node_data.reached_from_source;
    mwpm_event->ce.obs_mask = node_data.obs_inter ^ node_data.neigh_obs[0];
@@ -131,6 +150,7 @@ void f_do_RhB_interaction(node_data_t node_data, mwpm_event_t *mwpm_event, FpgaG
 };
 
 void f_reschedule_events_at_detector_node(node_data_t node_data, FpgaGraph* graph){
+    printf("entrato in f_reschedule_events_at_detector_node\n");
    node_data_t next_neigh_node;
    int next_best_time;
    f_find_next_event(node_data.index, &next_neigh_node, &next_best_time, graph);
@@ -154,6 +174,7 @@ void f_reschedule_events_at_detector_node(node_data_t node_data, FpgaGraph* grap
 }
 
 void f_do_region_arriving_at_empty_detector_node(region_t region, node_data_t *empty_node, const node_data_t from_node, int from_to_empty_index, FpgaGraph* graph){
+    printf("entrato in f_do_region_arriving_at_empty_detector_node\n");
    empty_node->obs_inter =
            (from_node.obs_inter ^ from_node.neigh_obs[from_to_empty_index]);
    empty_node->reached_from_source = from_node.reached_from_source;
@@ -200,11 +221,14 @@ void f_do_region_arriving_at_empty_detector_node(region_t region, node_data_t *e
 }
 
 void f_do_N_interaction(node_data_t src,int src_to_dst_idx, node_data_t dst, mwpm_event_t *mwpm_event, FpgaGraph* graph){
+    printf("entrato in f_do_N_interaction\n");
    if (src.region_idx && !dst.region_idx) {
+       printf("entrato in f_do_N_interaction PRIMO\n");
        f_do_region_arriving_at_empty_detector_node(src.region_idx, &dst, src, src_to_dst_idx, graph);
        //return MwpmEvent::no_event();
        no_mwpm_event(mwpm_event);
    } else if (dst.region_idx && !src.region_idx) {
+       printf("entrato in f_do_N_interaction SECONDO\n");
        int i = 0;
        while(dst.neigh[i] == src.index){
            i = i + 1;
@@ -213,6 +237,7 @@ void f_do_N_interaction(node_data_t src,int src_to_dst_idx, node_data_t dst, mwp
        //return MwpmEvent::no_event();
        no_mwpm_event(mwpm_event);
    } else {
+       printf("entrato in f_do_N_interaction TERZO\n");
        no_mwpm_event(mwpm_event);
        mwpm_event->region_src = src.top_region_idx;
        mwpm_event->region_dst = dst.top_region_idx;
@@ -225,12 +250,15 @@ void f_do_N_interaction(node_data_t src,int src_to_dst_idx, node_data_t dst, mwp
 
 
 void f_do_look_at_node(flood_event_t event, mwpm_event_t *mwpm_event, FpgaGraph* graph) {
+    printf("entrato in f_do_look_at_node\n");
    // auto next = find_next_event_at_node_returning_neighbor_index_and_time(event.node);
    node_data_t next_neigh_node;
    int next_best_time = 0;
     f_find_next_event(event.node, &next_neigh_node, &next_best_time, graph);
+    printf("uscito da f_find_next_event\nbest time=%d\nbest neigh idx= %d\n", next_best_time, next_neigh_node.index);
    
-   if (next_best_time == queue.cur_time) {
+   if (next_best_time == /*queue.cur_time*/ -4 /*1 valore casuale*/) {
+       printf("entrato in f_do_look_at_node IF CUR TIME\n");
        node_data_t node_data = graph->nodes[event.node];
        //node_data_t node_data = node_lut[event.node];
        //TODO: tracker call
@@ -250,22 +278,19 @@ void f_do_look_at_node(flood_event_t event, mwpm_event_t *mwpm_event, FpgaGraph*
 }
 
 void f_heir_region_on_shatter(node_data_t node_data, region_data_t r, FpgaGraph* graph){
-   //ciclo da riscrivere
-   //TODO: heir_region_on_shatter
-   
-   /*
-   r = region_lut[node_data.region_idx];
-       while (true) {
-           region_node_t p = r.blossom_parent_region_idx;
-           if (p == node_data.top_region_idx) {
-               r
-               return r;
-           }
-           r = p;
-       }*/
+    printf("entrato in f_heir_region_on_shatter\n");
+    region_data_t rr = r;
+    while(1){
+        region_data_t p = graph->regions[rr.blossom_parent_region_idx];
+        if(p.index == node_data.top_region_idx){
+            break;
+        }
+        rr = p;
+    }
 }
 
 void f_do_blossom_shattering(region_data_t region_data, mwpm_event_t *mwpm_event, FpgaGraph* graph){
+    printf("entrato in f_do_blossom_shattering\n");
    no_mwpm_event(mwpm_event);
    mwpm_event->type = BlossomShatterEventData;
    mwpm_event->blossom_region = region_data.index;
@@ -284,6 +309,7 @@ void f_do_blossom_shattering(region_data_t region_data, mwpm_event_t *mwpm_event
 }
 
 void f_do_degenerate_implosion(region_data_t region_data, mwpm_event_t *mwpm_event, FpgaGraph* graph){
+    printf("entrato in f_do_degenerate_implosion\n");
    no_mwpm_event(mwpm_event);
     altTreeNode_data_t altTreeNode_data = graph->alttree[region_data.alt_tree_node];
    //altTreeNode_data_t altTreeNode_data = altTreeNode_lut[region_data.alt_tree_node];
@@ -298,6 +324,7 @@ void f_do_degenerate_implosion(region_data_t region_data, mwpm_event_t *mwpm_eve
 }
 
 void f_schedule_tentative_shrink_event(region_data_t region_data, FpgaGraph* graph){
+    printf("entrato in f_schedule_tentative_shrink_event\n");
    /*potrei anche far passare meno info: region_shrink_data, ovvero
     region_data.index
     region_data.shell_area[SHELL_AREA_MAX]
@@ -335,6 +362,7 @@ void f_schedule_tentative_shrink_event(region_data_t region_data, FpgaGraph* gra
 }
 
 void f_do_leave_node(region_data_t region_data, /*region_data_shrink_t region_shrink_data,*/ mwpm_event_t *mwpm_event, FpgaGraph* graph){
+    printf("entrato in f_do_leave_node\n");
     node_data_t leaving_node_data = graph->nodes[region_data.shell_area[SHELL_AREA_MAX - 1]];
    //node_data_t leaving_node_data = node_lut[region_data.shell_area[SHELL_AREA_MAX - 1]]; //leaving_node = region.shell_area.back();
     
@@ -352,6 +380,7 @@ void f_do_leave_node(region_data_t region_data, /*region_data_shrink_t region_sh
 }
 
 void f_do_region_shrinking(flood_event_t event, mwpm_event_t *mwpm_event, FpgaGraph* graph){
+    printf("entrato in f_do_region_shrinking\n");
    region_t region = event.node;
     region_data_t region_data = graph->regions[region];
    //region_data_t region_data = region_lut[region];
@@ -384,6 +413,7 @@ void f_do_region_shrinking(flood_event_t event, mwpm_event_t *mwpm_event, FpgaGr
 
 
 void f_dispatcher(flood_event_t tentative_event, flood_event_t out_event, FpgaGraph *graph) {
+    printf("entrato in f_dispatcher\n");
    mwpm_event_t mwpm_event;
    switch (tentative_event.type) {
        case NODE: {
