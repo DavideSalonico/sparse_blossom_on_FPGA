@@ -17,7 +17,7 @@ void populateGraph(FpgaGraph *graph) {
     // Populate regions:
     for (int i = 0; i < N_REGIONS; ++i) {
         graph->regions[i].index = i;
-        graph->regions[i].radius = i * 2; // Example values
+        //graph->regions[i].radius = i * 2; // Example values
     }
 
     // Populate altTree
@@ -27,6 +27,7 @@ void populateGraph(FpgaGraph *graph) {
     }
 }
 
+/*
 void printGraph(FpgaGraph graph){
 	std::cout << "Number of Nodes: " << graph.num_nodes << std::endl;
 	std::cout << "Number of Observations: " << graph.num_obs << std::endl;
@@ -44,7 +45,8 @@ void printGraph(FpgaGraph graph){
 	std::cout << "Regions:" << std::endl;
 	for (int i = 0; i < N_REGIONS; ++i) {
 		std::cout << "Region " << i << ": ID = " << graph.regions[i].index
-				  << ", Area = " << graph.regions[i].radius << std::endl;
+				  // << ", Area = " << graph.regions[i].radius 
+                  << std::endl;
 	}
 
 	std::cout << "AltTree:" << std::endl;
@@ -53,6 +55,7 @@ void printGraph(FpgaGraph graph){
 				  << ", Inner_region_idx = " << graph.alttree[i].inner_region_idx << std::endl;
 	}
 }
+*/
 
 int main(int argc, char * argv[]){
 
@@ -64,7 +67,7 @@ int main(int argc, char * argv[]){
 
     syndrome_t syndrome = 500;
     corrections_t corrections = 0;
-    sparse_top(DECODE, null, syndrome, corrections); 
+    sparse_top(DECODE, NULL, syndrome, corrections); 
 }
 
 /*

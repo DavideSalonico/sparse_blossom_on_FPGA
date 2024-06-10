@@ -163,12 +163,12 @@ typedef struct
 #define RD_ENABLED true
 #define WR_ENABLED true
 #define PORTS 1                    // number of ports (1 if WR_ENABLED is true).
-#define MAIN_SIZE_NODE MAX_N_NODES // size of the original array.
-#define MAIN_SIZE_REGION N_REGIONS // size of the original array.
-#define MAIN_SIZE_ALT_TREE 10000   // size of the original array.
+#define MAIN_SIZE_NODE pow(2,ceil(log2(MAX_N_NODES))) // size of the original array.
+#define MAIN_SIZE_REGION pow(2,ceil(log2(N_REGIONS))) // size of the original array.
+#define MAIN_SIZE_ALT_TREE pow(2,ceil(log2(ALTTREEEDGE_MAX)))   // size of the original array.
 #define N_SETS 16                  // the number of L2 sets (1 for fully-associative cache).
 #define N_WAYS 16                  // the number of L2 ways (1 for direct-mapped cache).
-#define N_WORDS_PER_LINE 16        // the size of the cache line, in words.
+#define N_WORDS_PER_LINE 4        // the size of the cache line, in words.
 #define LRU true                   // the replacement policy least-recently used if true, last-in first-out otherwise.
 #define N_L1_SETS 0                // the number of L1 sets.
 #define N_L1_WAYS 0                // the number of L1 ways.
