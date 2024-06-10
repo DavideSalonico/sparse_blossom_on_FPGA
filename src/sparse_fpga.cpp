@@ -189,10 +189,6 @@ enum choice_t
     DECODE = 1
 };
 
-node_cache node_lut;
-region_cache region_lut;
-alt_tree_cache alt_tree_lut;
-
 extern "C" void sparse_top(choice_t choice, FpgaGraph* graph, syndr_t syndrome, corrections_t corrections)
 {
 #pragma HLS INTERFACE m_axi port = a_arr offset = slave bundle = gmem0 latency = 0 depth = 1024
@@ -204,9 +200,9 @@ extern "C" void sparse_top(choice_t choice, FpgaGraph* graph, syndr_t syndrome, 
     {
         FpgaGraph graph = graph;
 #pragma HLS dataflow disable_start_propagation
-        node_lut = node_cache(graph.nodes);
-        region_lut = (graph.regions);
-        alt_tree_lut = alt_tree_cache(graph.alt_tree);
+        static node_cache node_lut(graph.nodes);
+        static region_cache region_lut(graph.regions);
+        static alt_tree_cache alt_tree_lut(graph.alt_tree);
         //cache_wrapper(load_graph<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
     }
     else
@@ -227,16 +223,13 @@ extern "C" void sparse_top(choice_t choice, FpgaGraph* graph, syndr_t syndrome, 
     }
     printf("B hit ratio = L1=%d/%d; L2=%d/%d\n",
            b_cache.get_n_l1_hits(0), b_cache.get_n_l1_reqs(0),
-           b_cache.get_n_hits(0), b_cache.get_n_reqs(0));
     printf("C hit ratio = L1=%d/%d; L2=%d/%d\n",
            c_cache.get_n_l1_hits(0), c_cache.get_n_l1_reqs(0),
            c_cache.get_n_hits(0), c_cache.get_n_reqs(0));
 #endif /* PROFILE */
 #endif /* __SYNTHESIS__ */
 }
-/* 
- * This is just a 
- */
+/*
 void trackerDequeue(flood_event_t * fe){
     fe->node = 100;
     fe->time = 100;
@@ -260,5 +253,7 @@ void decode(T1 nodes, T2 regions, T3 alt_tree, syndr_t syndrome[MAX_N_NODES], er
    //Compute errors from alt_tree
    //errors = ...
 }
+*/
+
 
 
