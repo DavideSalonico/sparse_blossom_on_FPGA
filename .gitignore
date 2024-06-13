@@ -1,1 +1,6 @@
 .vscode
+.idea
+build
+Vitis_Accel_Examples
+venv
+PyMatching
