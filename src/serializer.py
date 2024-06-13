@@ -16,8 +16,6 @@ edges = matching.edges()
 n_dets = matching.num_detectors
 n_nodes = matching.num_nodes
 
-import json
-
 # Function to exclude specific attributes from the dictionary
 def serialize_item(item, exclude_key='fault_ids'):
     if isinstance(item, tuple) and len(item) == 3 and isinstance(item[2], dict):
