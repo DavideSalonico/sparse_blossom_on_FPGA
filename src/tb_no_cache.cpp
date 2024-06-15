@@ -222,5 +222,6 @@ int main(int argc, char * argv[]){
     syndr_t syndrome = 111;
     corrections_t corrections = 1456;
 
-    sparse_top(0, graph, syndrome, corrections);
+    //printf("ecco il primo nodo del grafo: %d\n", graph.nodes[1].index);
+    sparse_top(DECODE, &graph, syndrome, corrections);
 }
