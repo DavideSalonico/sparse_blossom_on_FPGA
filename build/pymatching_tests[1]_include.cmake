@@ -1,5 +1,0 @@
-if(EXISTS "/home/users/davide.salonico/sparse_blossom_prj/build/pymatching_tests[1]_tests.cmake")
-  include("/home/users/davide.salonico/sparse_blossom_prj/build/pymatching_tests[1]_tests.cmake")
-else()
-  add_test(pymatching_tests_NOT_BUILT pymatching_tests_NOT_BUILT)
-endif()

@@ -1,4 +1,4 @@
-#include "sparse_kernel.hpp"
+#include "/home/users/davide.salonico/sparse_blossom_prj/include/sparse_kernel.hpp"
 #include "/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h"
 
 #define RD_ENABLED true
@@ -25,14 +25,6 @@ template<typename T1, typename T2, typename T3>
 void decode(T1& nodes, T2& regions, T3& alt_tree, syndr_t syndrome, corrections_t * corrections){
     return;
 }
-
-/*
-int n_nodes;
-int n_obs;
-node_cache node_lut(init_graph.nodes);
-region_cache region_lut(init_graph.regions);
-alt_tree_cache alt_tree_lut(init_graph.alttree);
-*/
 
 extern "C" void sparse_top(FpgaGraph* graph, syndr_t syndrome, corrections_t * corrections)
 {

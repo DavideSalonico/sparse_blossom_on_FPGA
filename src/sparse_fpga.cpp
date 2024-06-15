@@ -1,4 +1,5 @@
 #include "sparse_kernel.hpp"
+#include "cache.h"
 
 #define RD_ENABLED true
 #define WR_ENABLED true

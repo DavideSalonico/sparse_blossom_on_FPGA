@@ -1,4 +1,4 @@
-#include "sparse_kernel.hpp"
+#include "/home/users/davide.salonico/sparse_blossom_prj/include/sparse_kernel.hpp"
 
 void populateGraph(FpgaGraph *graph) {
     // Initialize number of nodes and observations
