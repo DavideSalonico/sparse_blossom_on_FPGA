@@ -7,11 +7,12 @@
 #include <fstream>
 #include <iostream>
 #include <iomanip>
+//#include "hls_print.h"
 
-#define MAX_N_NODES 1000    //??? Comprehend also boundary nodes
-#define MAX_N_OBS 1400      //???
+#define MAX_N_NODES 500    //??? Comprehend also boundary nodes
+#define MAX_N_OBS 500      //???
 #define N_NEIGH 4
-#define ALTTREEEDGE_MAX 1000
+#define ALTTREEEDGE_MAX 10
 #define SHELL_AREA_MAX 4
 #define BLOSSOM_CHILDREN_MAX 4
 #define N_REGIONS MAX_N_NODES // Exagerated assumption
@@ -39,7 +40,7 @@ typedef int altTreeNode_t;
 typedef struct {
     flood_type_t type;
     pm_time_t time;
-    node_t node; //node index
+    node_idx_t node; //node index
 } flood_event_t;
 
 typedef struct{
@@ -128,7 +129,7 @@ typedef struct{
     radius_t radius;
     //QueuedEventTracker shrink_event_traker
     match_t match;
-    node_data_t shell_area[4]; //4 random
+    node_t shell_area[4]; //4 random
     region_edge_t blossom_children[4]; //4 random
 } region_data_t;
 

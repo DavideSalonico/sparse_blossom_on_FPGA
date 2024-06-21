@@ -33,6 +33,8 @@ with open('graph.json', 'w') as json_file:
     json.dump(serialized_list, json_file)
 
 # Read the serialized list from the JSON file
+"""
 with open('graph.json', 'r') as json_file:
     loaded_list = json.load(json_file)
     print(loaded_list)
+"""
