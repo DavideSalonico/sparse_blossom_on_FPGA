@@ -1,4 +1,4 @@
-#include "sparse_fpga_no_cache.cpp"
+#include "sparse_fpga_no_cache.h"
 
 void m_handle_blossom_shattering(mwpm_event_t *event) {
     /*
