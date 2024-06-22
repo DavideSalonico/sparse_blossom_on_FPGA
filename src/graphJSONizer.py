@@ -34,7 +34,7 @@ for edge in edges:
     for node, neighbor in [(node1, node2), (node2, node1)]:
         if node not in nodes:
             # Assign the current index to the node and increment the index counter
-            nodes[node] = {"index": node_index, "neighbors": [], "neigh_weights": [], "neigh_obs": []}
+            nodes[node] = {"index": node_index, "region_idx": None, "neighbors": [], "neigh_weights": [], "neigh_obs": []}
             node_index += 1
         if len(nodes[node]["neighbors"]) < 4:  # Ensure a maximum of 4 neighbors
             nodes[node]["neighbors"].append(neighbor)

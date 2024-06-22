@@ -107,7 +107,7 @@ typedef struct{
     int radius_of_arrival;
     node_idx_t neigh[4]; //if node.neigh[2] == 0 -> node hasn't the neigh[2]
     int neigh_weights[4];
-    //obs_mask_t neigh_obs[4];
+    obs_mask_t neigh_obs[4];
     obs_int_t neigh_obs[4];
 } node_data_t;
 
