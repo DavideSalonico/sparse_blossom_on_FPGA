@@ -23,23 +23,31 @@ def serialize_item(item, exclude_key='fault_ids'):
         return (item[0], item[1], item_dict)
     return item
 
-# Serialize the list with the exclusion of the specified attribute
-serialized_list = [serialize_item(item) for item in edges]
+# Initialize an empty dictionary for nodes
+nodes = {}
+node_index = 0
 
-# Write the serialized list to a JSON file
-final_json = {
-    "n_dets": n_dets,
-    "n_nodes": n_nodes,
-    "edges": serialized_list
-}
+# Iterate over each edge to populate the nodes dictionary
+for edge in edges:
+    serialized_edge = serialize_item(edge)
+    node1, node2, attributes = serialized_edge
+    for node, neighbor in [(node1, node2), (node2, node1)]:
+        if node not in nodes:
+            # Assign the current index to the node and increment the index counter
+            nodes[node] = {"index": node_index, "neighbors": [], "neigh_weights": [], "neigh_obs": []}
+            node_index += 1
+        if len(nodes[node]["neighbors"]) < 4:  # Ensure a maximum of 4 neighbors
+            nodes[node]["neighbors"].append(neighbor)
+            nodes[node]["neigh_weights"].append(attributes.get("weight", 1))  # Default weight to 1 if not present
+            nodes[node]["neigh_obs"].append(attributes.get("fault_ids", []))  # Default fault_ids to empty list if not present
 
-# Write the final JSON object to a file
-with open('graph.json', 'w') as json_file:
-    json.dump(final_json, json_file, indent=4)
+# Assuming nodes is your dictionary that you want to serialize
+# Convert all sets to lists in the nodes dictionary
+for node, data in nodes.items():
+    for key in ['neighbors', 'neigh_weights', 'neigh_obs']:
+        if isinstance(data[key], set):
+            data[key] = list(data[key])
 
-# Read the serialized list from the JSON file
-"""
-with open('graph.json', 'r') as json_file:
-    loaded_list = json.load(json_file)
-    print(loaded_list)
-"""
+# Now, serialize the nodes dictionary to JSON
+with open('nodes.json', 'w') as json_file:
+    json.dump({"n_dets": n_dets, "n_nodes": n_nodes, "nodes": list(nodes.values())}, json_file, indent=4)
