@@ -1,5 +1,5 @@
-#ifndef SPARSE_KERNEL_HPP
-#define SPARSE_KERNEL_HPP
+#ifndef SBA_KERNEL_HPP
+#define SBA_KERNEL_HPP
 
 #include <math.h>
 #include <ap_int.h>
@@ -31,9 +31,7 @@ typedef uint32_t weight_t;           //TODO: define more efficient
 
 //typedefs
 typedef int flood_type_t;
-typedef int node_t;         //index of detector node
 typedef int pm_time_t;
-typedef int region_t;
 typedef int obs_int_t;
 typedef int altTreeNode_t;
 
@@ -44,8 +42,8 @@ typedef struct {
 } flood_event_t;
 
 typedef struct{
-    node_t src;
-    node_t dest;
+    node_idx_t src;
+    node_idx_t dest;
     //obs_mask_t obs_mask;
     obs_int_t obs_mask;
 } compressed_edge_t;
@@ -62,13 +60,13 @@ enum mwpm_type{
 };
 
 typedef struct{
-    region_t region_src;
-    region_t region_dst;
-    region_t region;
+    region_idx_t region_src;
+    region_idx_t region_dst;
+    region_idx_t region;
     compressed_edge_t ce;
-    region_t blossom_region;
-    region_t in_parent_region;
-    region_t in_child_region;
+    region_idx_t blossom_region;
+    region_idx_t in_parent_region;
+    region_idx_t in_child_region;
     enum mwpm_type type;
     /*
      RegionHitRegionEventData
@@ -99,15 +97,15 @@ typedef struct{
 } radius_t;
 
 typedef struct{ 
-    node_t index;
-    region_t region_idx;
-    region_t top_region_idx;
+    node_idx_t index;
+    region_idx_t region_idx;
+    region_idx_t top_region_idx;
     int wrapped_radius_cached;
-    node_t reached_from_source;
+    node_idx_t reached_from_source;
     //obs_mask_t obs_inter;
     obs_int_t obs_inter;
     int radius_of_arrival;
-    node_t neigh[4]; //if node.neigh[2] == 0 -> node hasn't the neigh[2]
+    node_idx_t neigh[4]; //if node.neigh[2] == 0 -> node hasn't the neigh[2]
     int neigh_weights[4];
     //obs_mask_t neigh_obs[4];
     obs_int_t neigh_obs[4];
@@ -116,20 +114,20 @@ typedef struct{
 
 //NEW
 typedef struct{
-    region_t region;
+    region_idx_t region;
     compressed_edge_t edge;
 }
 match_t;
 
 typedef struct{
-    region_t index;
-    region_t blossom_parent_region_idx;
-    region_t blossom_parent_top_region_idx;
+    region_idx_t index;
+    region_idx_t blossom_parent_region_idx;
+    region_idx_t blossom_parent_top_region_idx;
     altTreeNode_t alt_tree_node;
     radius_t radius;
     //QueuedEventTracker shrink_event_traker
     match_t match;
-    node_t shell_area[4]; //4 random
+    node_idx_t shell_area[4]; //4 random
     region_edge_t blossom_children[4]; //4 random
 } region_data_t;
 
@@ -140,8 +138,8 @@ typedef struct{
 
 typedef struct{ //ho aggiunto int state
     altTreeNode_t index;
-    region_t inner_region_idx;
-    region_t outer_region_idx;
+    region_idx_t inner_region_idx;
+    region_idx_t outer_region_idx;
     compressed_edge_t inner_to_outer_edge;
     altTreeEdge_t parent;
     altTreeEdge_t children[ALTTREEEDGE_MAX];
@@ -172,7 +170,6 @@ enum choice_t
 typedef ap_uint<MAX_N_NODES> syndr_t;
 typedef ap_uint<MAX_N_OBS> corrections_t;
 
-//extern "C" void sparse_top(FpgaGraph*, syndr_t, corrections_t *);
 extern "C" void sparse_top(choice_t, FpgaGraph*, syndr_t, corrections_t *);
 
-#endif
+#endif //SBA_KERNEL_HPP

@@ -27,10 +27,15 @@ def serialize_item(item, exclude_key='fault_ids'):
 serialized_list = [serialize_item(item) for item in edges]
 
 # Write the serialized list to a JSON file
+final_json = {
+    "n_dets": n_dets,
+    "n_nodes": n_nodes,
+    "edges": serialized_list
+}
+
+# Write the final JSON object to a file
 with open('graph.json', 'w') as json_file:
-    json.dump({"n_dets": n_dets}, json_file)
-    json.dump({"n_nodes": n_nodes}, json_file)
-    json.dump(serialized_list, json_file)
+    json.dump(final_json, json_file, indent=4)
 
 # Read the serialized list from the JSON file
 """
