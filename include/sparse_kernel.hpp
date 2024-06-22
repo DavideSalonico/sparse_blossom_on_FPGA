@@ -172,6 +172,7 @@ enum choice_t
 typedef ap_uint<MAX_N_NODES> syndr_t;
 typedef ap_uint<MAX_N_OBS> corrections_t;
 
-extern "C" void sparse_top(FpgaGraph*, syndr_t, corrections_t *);
+//extern "C" void sparse_top(FpgaGraph*, syndr_t, corrections_t *);
+extern "C" void sparse_top(choice_t, FpgaGraph*, syndr_t, corrections_t *);
 
 #endif

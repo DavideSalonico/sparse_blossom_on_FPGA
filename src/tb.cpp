@@ -1,4 +1,10 @@
-#include "sparse_fpga.cpp"
+#ifndef TB
+#define TB
+
+#include "/home/users/davide.salonico/sparse_blossom_prj/include/sparse_kernel.hpp"
+#include "hls_print.h"
+
+FpgaGraph graph;
 
 void populateGraph(FpgaGraph *graph) {
     // Initialize number of nodes and observations
@@ -27,74 +33,34 @@ void populateGraph(FpgaGraph *graph) {
     }
 }
 
-/*
 void printGraph(FpgaGraph graph){
-	std::cout << "Number of Nodes: " << graph.num_nodes << std::endl;
-	std::cout << "Number of Observations: " << graph.num_obs << std::endl;
+    hls::print("Number of Nodes: %d\n", graph.num_nodes);
+    hls::print("Number of Observations: %d\n", graph.num_obs);
 
-	std::cout << "Nodes:" << std::endl;
+	hls::print("Nodes:\n");
 	for (int i = 0; i < graph.num_nodes; ++i) {
-		std::cout << "Node " << i << ": ID = " << graph.nodes[i].index
-				  << ", Region_idx = " << graph.nodes[i].region_idx << ", Neighbors = ";
+        hls::print("Node %d: Neighbors = ", i);
+        hls::print("ID = %d, ", graph.nodes[i].index);
+        hls::print("Region_idx = %d, ",  graph.nodes[i].region_idx);
+        hls::print("Neighbors: ");
 		for (int j = 0; j < N_NEIGH; ++j) {
-			std::cout << graph.nodes[i].neigh[j] << " ";
+            hls::print("%d ", graph.nodes[i].neigh[j]);
 		}
-		std::cout << std::endl;
-	}
-
-	std::cout << "Regions:" << std::endl;
-	for (int i = 0; i < N_REGIONS; ++i) {
-		std::cout << "Region " << i << ": ID = " << graph.regions[i].index
-				  // << ", Area = " << graph.regions[i].radius 
-                  << std::endl;
-	}
-
-	std::cout << "AltTree:" << std::endl;
-	for (int i = 0; i < ALTTREEEDGE_MAX; ++i) {
-		std::cout << "AltTreeNode " << i << ": ID = " << graph.alttree[i].index
-				  << ", Inner_region_idx = " << graph.alttree[i].inner_region_idx << std::endl;
+		hls::print("\n");
 	}
 }
-*/
 
-int main(int argc, char * argv[]){
-
-	FpgaGraph graph;
+int main(){
     populateGraph(&graph);
-    //printGraph(graph);
+    printGraph(graph);
 
     sparse_top(LOAD_GRAPH, &graph, 0, 0);
 
     syndr_t syndrome = 500;
     corrections_t corrections = 0;
-    sparse_top(DECODE, NULL, syndrome, &corrections); 
+    sparse_top(DECODE, NULL, syndrome, &corrections);
+
+    hls::print("Corrections: %d\n", corrections);
 }
 
-/*
-    data_type a_arr[N * M];
-    data_type b_arr[M * P];
-    data_type c_arr[N * P] = {0};
-    data_type c_arr_ref[N * P] = {0};
-
-    for (auto i = 0; i < N * M; i++)
-        a_arr[i] = i;
-    for (auto i = 0; i < M * P; i++)
-        b_arr[i] = i;
-
-    // matrix multiplication with caches
-    matmult_top(a_arr, b_arr, c_arr);
-    // standard matrix multiplication
-    multiply(a_arr, b_arr, c_arr_ref);
-
-    int err = 0;
-    for (auto i = 0; i < N * P; i++)
-    {
-        if (c_arr[i] != c_arr_ref[i])
-        {
-            err++;
-            printf("Mismatch: %d %d\n", c_arr[i], c_arr_ref[i]);
-        }
-    }
-
-    return err;
-    */
+#endif //TB
