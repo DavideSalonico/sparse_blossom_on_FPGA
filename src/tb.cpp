@@ -3,37 +3,43 @@
 
 #include "/home/users/davide.salonico/sparse_blossom_prj/include/SBA_kernel.hpp"
 #include "hls_print.h"
-#include "/home/dado/sparse_blossom/sparse_blossom_on_FPGA/include/json.hpp"
+#include "/home/users/davide.salonico/sparse_blossom_prj/include/json.hpp"
+
+using json = nlohmann::json;
 
 FpgaGraph graph;
-void from_json(const json& j, FpgaGraph& graph) {
+void from_json(const json& j) {
     graph.num_obs = j.at("n_dets").get<int>();
     graph.num_nodes = j.at("n_nodes").get<int>();
     
     int node_count = 0;
     for (const auto& node : j.at("nodes")) {
         node_data_t n;
-        n.index = node.at("index").get<node_idx_t>();
+        n.index = (node_idx_t) node.at("index").get<int>();
+        /*
         n.region_idx = node.at("region_idx").get<region_idx_t>();
         n.top_region_idx = -1; // Assuming default value
         n.wrapped_radius_cached = -1; // Assuming default value
         n.reached_from_source = -1; // Assuming default value
         n.obs_inter = 0; // Assuming default value
         n.radius_of_arrival = -1; // Assuming default value
+        */
         
         std::fill(std::begin(n.neigh), std::end(n.neigh), 0);
         std::fill(std::begin(n.neigh_weights), std::end(n.neigh_weights), 0);
         std::fill(std::begin(n.neigh_obs), std::end(n.neigh_obs), 0);
         
         for (size_t i = 0; i < node.at("neighbors").size() && i < 4; ++i) {
-            n.neigh[i] = node.at("neighbors")[i].get<node_idx_t>();
+            n.neigh[i] = (node_idx_t) node.at("neighbors")[i].get<int>();
         }
         for (size_t i = 0; i < node.at("neigh_weights").size() && i < 4; ++i) {
             n.neigh_weights[i] = node.at("neigh_weights")[i].get<int>();
         }
+        /*
         for (size_t i = 0; i < node.at("neigh_obs").size() && i < 4; ++i) {
-            n.neigh_obs[i] = node.at("neigh_obs")[i].get<obs_int_t>();
+            n.neigh_obs[i] = (obs_mask_t) node.at("neigh_obs")[i].get<int>();
         }
+        */
         
         graph.nodes[node_count++] = n;
         if (node_count >= MAX_N_NODES) break;
@@ -42,10 +48,10 @@ void from_json(const json& j, FpgaGraph& graph) {
 
 void read_graph_from_file(){
     // Open the JSON file
-    std::ifstream json_file("nodes.json");
+    std::ifstream json_file("/home/users/davide.salonico/nodes.json");
     if (!json_file.is_open()) {
         std::cerr << "Could not open the file!" << std::endl;
-        return 1;
+        return;
     }
 
     // Parse the JSON file
