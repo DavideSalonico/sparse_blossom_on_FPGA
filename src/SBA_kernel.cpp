@@ -63,12 +63,18 @@ void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, i
     if(rad1.status == GROWING){
         //printf("entrato in f_find_next_event GROWING\n");
         *next_best_time = (int)LLONG_MAX;
-        best_neighbor_int = 3; //(4-1)
+        best_neighbor_int = N_NEIGH - 1; //(4-1)
         int start = 0;
-        if ((detector_node_data.neigh[0] != 0 ||
+        int z = 0;
+        for(int i = 0; i < N_NEIGH; i++){
+            if(detector_node_data.neigh[i] != 0){
+                z = 1;
+            }
+        }
+        if (/*(detector_node_data.neigh[0] != 0 ||
              detector_node_data.neigh[1] != 0 ||
              detector_node_data.neigh[2] != 0 ||
-             detector_node_data.neigh[3] != 0)
+             detector_node_data.neigh[3] != 0)*/ z
             && detector_node_data.neigh[0] == 0) {
             
             int weight = detector_node_data.neigh_weights[0];
@@ -81,7 +87,7 @@ void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, i
         }
         
         int k = 0;
-        for(int i = 0; i < 4; i++){
+        for(int i = 0; i < N_NEIGH; i++){
             if(detector_node_data.neigh[i] != 0){
                 k++;
             }
@@ -123,17 +129,23 @@ void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, i
         
     }else{
         *next_best_time = (int)LLONG_MAX;
-        best_neighbor_int = 3; //(4-1)
+        best_neighbor_int = N_NEIGH - 1; //(4-1)
         int start = 0;
-        if ((detector_node_data.neigh[0] != 0 ||
+        int z = 0;
+        for(int i = 0; i < N_NEIGH; i++){
+            if(detector_node_data.neigh[i] != 0){
+                z = 1;
+            }
+        }
+        if (/*(detector_node_data.neigh[0] != 0 ||
              detector_node_data.neigh[1] != 0 ||
              detector_node_data.neigh[2] != 0 ||
-             detector_node_data.neigh[3] != 0)
+             detector_node_data.neigh[3] != 0)*/ z
             && detector_node_data.neigh[0] == 0) {
             start++;
         }
                 int k = 0;
-                for(int i = 0; i < 4; i++){
+                for(int i = 0; i < N_NEIGH; i++){
                     if(detector_node_data.neigh[i] != 0){
                         k++;
                     }
@@ -496,10 +508,10 @@ void decode(T1& nodes, T2& regions, T3& alt_tree, syndr_t syndrome, corrections_
     */
 
     flood_event_t fe;
-	fe.node = 2;
-	fe.time = 10;
-	fe.type = NODE;
-	f_dispatcher(fe);
+    fe.node = 2;
+    fe.time = 10;
+    fe.type = NODE;
+    f_dispatcher(fe);
 
     return;
 }
