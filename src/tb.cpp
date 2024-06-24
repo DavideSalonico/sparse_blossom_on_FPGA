@@ -1,9 +1,9 @@
 #ifndef TB_CPP
 #define TB_CPP
 
-#include "/home/users/davide.salonico/sparse_blossom_prj/include/SBA_kernel.hpp"
+#include "SBA_kernel.hpp"
 #include "hls_print.h"
-#include "/home/users/davide.salonico/sparse_blossom_prj/include/json.hpp"
+#include "json.hpp"
 
 using json = nlohmann::json;
 
@@ -16,14 +16,6 @@ void from_json(const json& j) {
     for (const auto& node : j.at("nodes")) {
         node_data_t n;
         n.index = (node_idx_t) node.at("index").get<int>();
-        /*
-        n.region_idx = node.at("region_idx").get<region_idx_t>();
-        n.top_region_idx = -1; // Assuming default value
-        n.wrapped_radius_cached = -1; // Assuming default value
-        n.reached_from_source = -1; // Assuming default value
-        n.obs_inter = 0; // Assuming default value
-        n.radius_of_arrival = -1; // Assuming default value
-        */
         
         std::fill(std::begin(n.neigh), std::end(n.neigh), 0);
         std::fill(std::begin(n.neigh_weights), std::end(n.neigh_weights), 0);
@@ -60,8 +52,11 @@ void read_graph_from_file(){
 
     // Create an FpgaGraph instance and populate it using the parsed JSON
     from_json(j);
+}
 
-    // Output the parsed data
+void printGraph(FpgaGraph graph){
+    #ifndef __SYNTHESYS__
+   // Output the parsed data
     std::cout << "Number of detectors: " << graph.num_obs << std::endl;
     std::cout << "Number of nodes: " << graph.num_nodes << std::endl;
     std::cout << "Nodes:" << std::endl;
@@ -86,27 +81,10 @@ void read_graph_from_file(){
         }
         std::cout << std::endl;
     }
-}
-
-void printGraph(FpgaGraph graph){
-    hls::print("Number of Nodes: %d\n", graph.num_nodes);
-    hls::print("Number of Observations: %d\n", graph.num_obs);
-
-	hls::print("Nodes:\n");
-	for (int i = 0; i < graph.num_nodes; ++i) {
-        hls::print("Node %d: Neighbors = ", i);
-        hls::print("ID = %d, ", graph.nodes[i].index);
-        hls::print("Region_idx = %d, ",  graph.nodes[i].region_idx);
-        hls::print("Neighbors: ");
-		for (int j = 0; j < N_NEIGH; ++j) {
-            hls::print("%d ", graph.nodes[i].neigh[j]);
-		}
-		hls::print("\n");
-	}
+    #endif //__SYTHENSYS__
 }
 
 int main(){
-    //populateGraph_byHand(&graph);
     
     read_graph_from_file();
     //printGraph(graph);
@@ -117,36 +95,7 @@ int main(){
     corrections_t corrections = 0;
     sparse_top(DECODE, NULL, syndrome, &corrections);
 
-    hls::print("Corrections: %d\n", corrections);
+    //hls::print("Corrections: %d\n", corrections);
 }
 
 #endif //TB_CPP
-
-/*
-void populateGraph_byHand(FpgaGraph *graph) {
-    // Initialize number of nodes and observations
-    graph->num_nodes = 5; // Example value
-    graph->num_obs = 3;   // Example value
-
-    // Populate nodes
-    for (int i = 1; i <= graph->num_nodes; ++i) {
-        graph->nodes[i].index = i;
-        graph->nodes[i].region_idx = i * 10; // Example values
-        for (int j = 0; j < N_NEIGH; ++j) {
-            graph->nodes[i].neigh[j] = (i + j + 1) % graph->num_nodes; // Example neighbor connections
-        }
-    }
-
-    // Populate regions:
-    for (int i = 0; i < N_REGIONS; ++i) {
-        graph->regions[i].index = i;
-        //graph->regions[i].radius = i * 2; // Example values
-    }
-
-    // Populate altTree
-    for (int i = 0; i < ALTTREEEDGE_MAX; ++i) {
-        graph->alttree[i].index = i;
-        graph->alttree[i].inner_region_idx = 30; // Example values
-    }
-}
-*/

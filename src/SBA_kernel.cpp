@@ -1,18 +1,16 @@
 #ifndef SBA_KERNEL_CPP
 #define SBA_KERNEL_CPP
 
-#include "/home/users/davide.salonico/sparse_blossom_prj/include/SBA_kernel.hpp"
-//#include "/home/users/davide.salonico/sparse_blossom_prj/include/SBA_cache.hpp"
-//#include "/home/users/davide.salonico/sparse_blossom_prj/include/flooder_no_cache.hpp"
-#include "/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h"
+#include "SBA_kernel.hpp"
+#include "cache.h"
 
 
 #define RD_ENABLED true
 #define WR_ENABLED true
 #define PORTS 1                    // number of ports (1 if WR_ENABLED is true).
-#define MAIN_SIZE_NODE ((unsigned int)(1 << (unsigned int)ceil(log2(MAX_N_NODES)))) // size of the original array.
-#define MAIN_SIZE_REGION ((unsigned int)(1 << (unsigned int)ceil(log2(N_REGIONS)))) // size of the original array.
-#define MAIN_SIZE_ALT_TREE ((unsigned int)(1 << (unsigned int)ceil(log2(ALTTREEEDGE_MAX))))// size of the original array.
+#define MAIN_SIZE_NODE (unsigned int)(1 << ceillog2(MAX_N_NODES)) // size of the original array.
+#define MAIN_SIZE_REGION (unsigned int)(1 << ceillog2(N_REGIONS)) // size of the original array.
+#define MAIN_SIZE_ALT_TREE (unsigned int)(1 << ceillog2(ALTTREEEDGE_MAX))// size of the original array.
 #define N_SETS 8                  // the number of L2 sets (1 for fully-associative cache).
 #define N_WAYS 8                  // the number of L2 ways (1 for direct-mapped cache).
 #define N_WORDS_PER_LINE 4        // the size of the cache line, in words.
@@ -47,7 +45,7 @@ void no_mwpm_event(mwpm_event_t *mwpm_event){
 
 
 void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, int *next_best_time){
-    printf("entrato in f_find_next_event\n");
+    //printf("entrato in f_find_next_event\n");
     int best_neighbor_int = 0;
     
     node_data_t detector_node_data = node_lut[detector_node];
@@ -63,7 +61,7 @@ void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, i
     }
     
     if(rad1.status == GROWING){
-        printf("entrato in f_find_next_event GROWING\n");
+        //printf("entrato in f_find_next_event GROWING\n");
         *next_best_time = (int)LLONG_MAX;
         best_neighbor_int = 3; //(4-1)
         int start = 0;
@@ -185,7 +183,7 @@ void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, i
         };
 
         void f_reschedule_events_at_detector_node(node_data_t node_data){
-            printf("entrato in f_reschedule_events_at_detector_node\n");
+            //printf("entrato in f_reschedule_events_at_detector_node\n");
            node_data_t next_neigh_node;
            int next_best_time;
            f_find_next_event(node_data.index, &next_neigh_node, &next_best_time);
@@ -209,7 +207,7 @@ void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, i
         }
 
         void f_do_region_arriving_at_empty_detector_node(region_idx_t region, node_data_t *empty_node, const node_data_t from_node, int from_to_empty_index){
-            printf("entrato in f_do_region_arriving_at_empty_detector_node\n");
+            //printf("entrato in f_do_region_arriving_at_empty_detector_node\n");
            empty_node->obs_inter =
                    (from_node.obs_inter ^ from_node.neigh_obs[from_to_empty_index]);
            empty_node->reached_from_source = from_node.reached_from_source;
@@ -255,14 +253,14 @@ void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, i
         }
 
         void f_do_N_interaction(node_data_t src,int src_to_dst_idx, node_data_t dst, mwpm_event_t *mwpm_event){
-            printf("entrato in f_do_N_interaction\n");
+            //printf("entrato in f_do_N_interaction\n");
            if (src.region_idx && !dst.region_idx) {
-               printf("entrato in f_do_N_interaction PRIMO\n");
+               //printf("entrato in f_do_N_interaction PRIMO\n");
                f_do_region_arriving_at_empty_detector_node(src.region_idx, &dst, src, src_to_dst_idx);
                //return MwpmEvent::no_event();
                no_mwpm_event(mwpm_event);
            } else if (dst.region_idx && !src.region_idx) {
-               printf("entrato in f_do_N_interaction SECONDO\n");
+               //printf("entrato in f_do_N_interaction SECONDO\n");
                int i = 0;
                while(dst.neigh[i] == src.index){
                    i = i + 1;
@@ -284,15 +282,15 @@ void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, i
 
 
         void f_do_look_at_node(flood_event_t event, mwpm_event_t *mwpm_event) {
-            printf("entrato in f_do_look_at_node\n");
+            //printf("entrato in f_do_look_at_node\n");
            // auto next = find_next_event_at_node_returning_neighbor_index_and_time(event.node);
            node_data_t next_neigh_node;
            int next_best_time = 0;
             f_find_next_event(event.node, &next_neigh_node, &next_best_time);
-            printf("uscito da f_find_next_event\nbest time=%d\nbest neigh idx= %d\n", next_best_time, next_neigh_node.index);
+            //printf("uscito da f_find_next_event\nbest time=%d\nbest neigh idx= %d\n", next_best_time, next_neigh_node.index);
 
            if (next_best_time == /*queue.cur_time*/ -4 /*1 valore casuale*/) {
-               printf("entrato in f_do_look_at_node IF CUR TIME\n");
+               //printf("entrato in f_do_look_at_node IF CUR TIME\n");
                node_data_t node_data = node_lut[event.node];
                //node_data_t node_data = node_lut[event.node];
                //TODO: tracker call
@@ -312,7 +310,7 @@ void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, i
         }
 
         void f_heir_region_on_shatter(node_data_t node_data, region_data_t r){
-            printf("entrato in f_heir_region_on_shatter\n");
+            //printf("entrato in f_heir_region_on_shatter\n");
             region_data_t rr = r;
             while(1){
                 region_data_t p = region_lut[rr.blossom_parent_region_idx];
@@ -324,7 +322,7 @@ void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, i
         }
 
         void f_do_blossom_shattering(region_data_t region_data, mwpm_event_t *mwpm_event){
-            printf("entrato in f_do_blossom_shattering\n");
+            //printf("entrato in f_do_blossom_shattering\n");
            no_mwpm_event(mwpm_event);
            mwpm_event->type = BlossomShatterEventData;
            mwpm_event->blossom_region = region_data.index;
@@ -343,7 +341,7 @@ void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, i
          }
 
          void f_do_degenerate_implosion(region_data_t region_data, mwpm_event_t *mwpm_event){
-             printf("entrato in f_do_degenerate_implosion\n");
+             //printf("entrato in f_do_degenerate_implosion\n");
             no_mwpm_event(mwpm_event);
              altTreeNode_data_t altTreeNode_data = alt_tree_lut[region_data.alt_tree_node];
             //altTreeNode_data_t altTreeNode_data = altTreeNode_lut[region_data.alt_tree_node];
@@ -358,7 +356,7 @@ void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, i
          }
 
          void f_schedule_tentative_shrink_event(region_data_t region_data){
-             printf("entrato in f_schedule_tentative_shrink_event\n");
+             //printf("entrato in f_schedule_tentative_shrink_event\n");
             /*potrei anche far passare meno info: region_shrink_data, ovvero
              region_data.index
              region_data.shell_area[SHELL_AREA_MAX]
@@ -396,7 +394,7 @@ void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, i
          }
 
          void f_do_leave_node(region_data_t region_data, /*region_data_shrink_t region_shrink_data,*/ mwpm_event_t *mwpm_event){
-             printf("entrato in f_do_leave_node\n");
+             //printf("entrato in f_do_leave_node\n");
              node_data_t leaving_node_data = node_lut[region_data.shell_area[SHELL_AREA_MAX - 1]];
             //node_data_t leaving_node_data = node_lut[region_data.shell_area[SHELL_AREA_MAX - 1]]; //leaving_node = region.shell_area.back();
 
@@ -414,7 +412,7 @@ void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, i
          }
 
          void f_do_region_shrinking(flood_event_t event, mwpm_event_t *mwpm_event){
-             printf("entrato in f_do_region_shrinking\n");
+             //printf("entrato in f_do_region_shrinking\n");
             region_idx_t region = event.node;
              region_data_t region_data = region_lut[region];
             //region_data_t region_data = region_lut[region];
@@ -445,7 +443,7 @@ void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, i
          }
 
          void f_dispatcher(flood_event_t tentative_event) {
-             printf("entrato in f_dispatcher\n");
+             //printf("entrato in f_dispatcher\n");
             mwpm_event_t mwpm_event;
             switch (tentative_event.type) {
                 case NODE: {
@@ -517,7 +515,6 @@ extern "C" void sparse_top(choice_t choice, FpgaGraph* graph, syndr_t syndrome, 
 
     if (choice == LOAD_GRAPH)
     {
-#pragma HLS dataflow disable_start_propagation
         n_nodes = graph->num_nodes;
         n_obs = graph->num_obs;
 
@@ -525,6 +522,7 @@ extern "C" void sparse_top(choice_t choice, FpgaGraph* graph, syndr_t syndrome, 
             node_lut[i] = graph->nodes[i];
         }
 
+        /*
         //DEBUG
         #ifndef __SYNTHESYS__
 
@@ -536,10 +534,10 @@ extern "C" void sparse_top(choice_t choice, FpgaGraph* graph, syndr_t syndrome, 
         }
 
         #endif //_SYNTHESYS__
+        */
     }
     else
     {
-#pragma HLS dataflow disable_start_propagation
         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut, syndrome, corrections);
     }
 }
@@ -550,7 +548,6 @@ extern "C" void sparse_top(choice_t choice, FpgaGraph* graph, syndr_t syndrome, 
 chache_if:
 #ifndef __SYNTHESIS__
 #ifdef PROFILE
-    // TODO: change with out caches
     printf("A hit ratio = \n");
     for (auto port = 0; port < RD_PORTS; port++)
     {

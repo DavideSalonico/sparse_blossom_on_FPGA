@@ -7,18 +7,38 @@
 #include <fstream>
 #include <iostream>
 #include <iomanip>
-//#include "hls_print.h"
+
+/*
+constexpr int32_t constexpr_ceil(float num)
+{
+    return (static_cast<float>(static_cast<int32_t>(num)) == num)
+        ? static_cast<int32_t>(num)
+        : static_cast<int32_t>(num) + ((num > 0) ? 1 : 0);
+}
+*/
+
+constexpr unsigned floorlog2(unsigned x)
+{
+    return x == 1 ? 0 : 1+floorlog2(x >> 1);
+}
+
+constexpr unsigned ceillog2(unsigned x)
+{
+    return x == 1 ? 0 : floorlog2(x - 1) + 1;
+}
 
 #define MAX_N_NODES 500    //??? Comprehend also boundary nodes
 #define MAX_N_OBS 500      //???
-#define N_NEIGH 4
+#define N_NEIGH 20
 #define ALTTREEEDGE_MAX 10
 #define SHELL_AREA_MAX 4
 #define BLOSSOM_CHILDREN_MAX 4
 #define N_REGIONS MAX_N_NODES // Exagerated assumption
-#define NODE_BIT (int) ceil(log2(MAX_N_NODES+1))
-#define REGION_BIT (int) ceil(log2(N_REGIONS+1))
-#define OBS_BIT (int) ceil(log2(MAX_N_OBS))
+#define NODE_BIT ceillog2(MAX_N_NODES+1)
+#define REGION_BIT ceillog2(N_REGIONS+1)
+#define OBS_BIT ceillog2(MAX_N_OBS)
+
+#define LLONG_MAX 9223372036854775807 
 
 typedef ap_uint<NODE_BIT> node_idx_t;
 typedef ap_uint<REGION_BIT> region_idx_t;
