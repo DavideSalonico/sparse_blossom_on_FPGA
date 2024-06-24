@@ -87,21 +87,6 @@ typedef struct{
     region_idx_t in_parent_region;
     region_idx_t in_child_region;
     enum mwpm_type type;
-    /*
-     RegionHitRegionEventData
-         GraphFillRegion *region1; //region_src
-         GraphFillRegion *region2; //region_dst
-         CompressedEdge edge;
-
-     RegionHitBoundaryEventData
-         GraphFillRegion *region; //region
-         CompressedEdge edge;
-
-     BlossomShatterEventData
-         GraphFillRegion *blossom_region;
-         GraphFillRegion *in_parent_region;
-         GraphFillRegion *in_child_region;
-     */
 } mwpm_event_t;
 
 enum radius_status_t{
