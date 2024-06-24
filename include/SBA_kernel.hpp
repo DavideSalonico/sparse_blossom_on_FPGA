@@ -7,6 +7,7 @@
 #include <fstream>
 #include <iostream>
 #include <iomanip>
+#include <climits>
 
 /*
 constexpr int32_t constexpr_ceil(float num)
@@ -37,8 +38,6 @@ constexpr unsigned ceillog2(unsigned x)
 #define NODE_BIT ceillog2(MAX_N_NODES+1)
 #define REGION_BIT ceillog2(N_REGIONS+1)
 #define OBS_BIT ceillog2(MAX_N_OBS)
-
-#define LLONG_MAX 9223372036854775807 
 
 typedef ap_uint<NODE_BIT> node_idx_t;
 typedef ap_uint<REGION_BIT> region_idx_t;
@@ -125,10 +124,10 @@ typedef struct{
     //obs_mask_t obs_inter;
     obs_int_t obs_inter;
     int radius_of_arrival;
-    node_idx_t neigh[4]; //if node.neigh[2] == 0 -> node hasn't the neigh[2]
-    int neigh_weights[4];
-    obs_mask_t neigh_obs[4];
-    //obs_int_t neigh_obs[4];
+    node_idx_t neigh[N_NEIGH]; //if node.neigh[2] == 0 -> node hasn't the neigh[2]
+    int neigh_weights[N_NEIGH];
+    obs_mask_t neigh_obs[N_NEIGH];
+    //obs_int_t neigh_obs[N_NEIGH];
 } node_data_t;
 
 
@@ -147,8 +146,8 @@ typedef struct{
     radius_t radius;
     //QueuedEventTracker shrink_event_traker
     match_t match;
-    node_idx_t shell_area[4]; //4 random
-    region_edge_t blossom_children[4]; //4 random
+    node_idx_t shell_area[SHELL_AREA_MAX]; //4 random
+    region_edge_t blossom_children[BLOSSOM_CHILDREN_MAX]; //4 random
 } region_data_t;
 
 typedef struct{

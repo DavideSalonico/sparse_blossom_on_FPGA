@@ -33,6 +33,7 @@ node_cache node_lut{static_cast<node_data_t * const>(init_graph.nodes)};
 region_cache region_lut{static_cast<region_data_t * const>(init_graph.regions)};
 alt_tree_cache alt_tree_lut{static_cast<altTreeNode_data_t * const>(init_graph.alttree)};
 
+
 void no_mwpm_event(mwpm_event_t *mwpm_event){
    mwpm_event->region = 0;
    mwpm_event->region_dst = 0;
@@ -180,18 +181,28 @@ void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, i
             }
             *next_neigh_node = node_lut[detector_node_data.neigh[best_neighbor_int]];
             //printf("entrato in f_find_next_event\nbest time=%d\nbest neigh idx= %d\n", *next_best_time, detector_node_data.neigh[best_neighbor_int]);
+            /*
+            #ifndef __SYTHESYS__
+            printf("SET_DESIRED_EVENT NODE\n");
+            #endif //__SYTHESYS__
+            */
         }
 
         void f_do_RhB_interaction(node_data_t node_data, mwpm_event_t *mwpm_event){
             //printf("entrato in f_do_RhB_interaction\n");
-           no_mwpm_event(mwpm_event);
+            /*
+            #ifndef __SYTHESYS__
+            printf("MATCHER DO_RHB_INTERACTION\n");
+            #endif //__SYTHESYS__
+            */
+            no_mwpm_event(mwpm_event);
 
-           mwpm_event->ce.dest = 0;
+            mwpm_event->ce.dest = 0;
 
-           mwpm_event->ce.src = node_data.reached_from_source;
-           mwpm_event->ce.obs_mask = node_data.obs_inter ^ node_data.neigh_obs[0];
-           mwpm_event->region = node_data.top_region_idx;
-           mwpm_event->type = RegionHitBoundaryEventData;
+            mwpm_event->ce.src = node_data.reached_from_source;
+            mwpm_event->ce.obs_mask = node_data.obs_inter ^ node_data.neigh_obs[0];
+            mwpm_event->region = node_data.top_region_idx;
+            mwpm_event->type = RegionHitBoundaryEventData;
         };
 
         void f_reschedule_events_at_detector_node(node_data_t node_data){
@@ -207,6 +218,11 @@ void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, i
            if (i == SIZE_MAX) {
                //detector_node.node_event_tracker.set_no_desired_event();
            } else {
+            /*
+            #ifndef __SYTHESYS__
+            printf("SET_DESIRED_EVENT NODE\n");
+            #endif //__SYTHESYS__
+            */
                /*
                detector_node.node_event_tracker.set_desired_event(
                    {
@@ -281,7 +297,12 @@ void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, i
                //return MwpmEvent::no_event();
                no_mwpm_event(mwpm_event);
            } else {
-               printf("entrato in f_do_N_interaction TERZO\n");
+               //printf("entrato in f_do_N_interaction TERZO\n");
+               /*
+               #ifndef __SYTHESYS__
+                printf("MATCHER DO_NEIGH_INTERACTION\n");
+                #endif //__SYTHESYS__
+                */
                no_mwpm_event(mwpm_event);
                mwpm_event->region_src = src.top_region_idx;
                mwpm_event->region_dst = dst.top_region_idx;
@@ -317,6 +338,11 @@ void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, i
            } else if (next_neigh_node.index != 4) {
                //TODO: tracker call
                //node.node_event_tracker.set_desired_event(&node, (cyclic_time_int){queue.cur_time}, queue);
+                /*
+                #ifndef __SYTHESYS__
+                printf("SET_DESIRED_EVENT NODE\n");
+                #endif //__SYTHESYS__
+                */
            }
 
         }
@@ -334,6 +360,11 @@ void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, i
         }
 
         void f_do_blossom_shattering(region_data_t region_data, mwpm_event_t *mwpm_event){
+            /*
+            #ifndef __SYTHESYS__
+            printf("MATCHER DO_BLOSSOM_SHATTERING\n");
+            #endif //__SYTHESYS__
+            */
             //printf("entrato in f_do_blossom_shattering\n");
            no_mwpm_event(mwpm_event);
            mwpm_event->type = BlossomShatterEventData;
@@ -353,6 +384,11 @@ void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, i
          }
 
          void f_do_degenerate_implosion(region_data_t region_data, mwpm_event_t *mwpm_event){
+            /*
+            #ifndef __SYTHESYS__
+            printf("MATCHER DO_DEGENERATE_IMPLOSION\n");
+            #endif //__SYTHESYS__
+            */
              //printf("entrato in f_do_degenerate_implosion\n");
             no_mwpm_event(mwpm_event);
              altTreeNode_data_t altTreeNode_data = alt_tree_lut[region_data.alt_tree_node];
@@ -403,6 +439,11 @@ void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, i
                 },
                 queue);
              */
+            /*
+            #ifndef __SYTHESYS__
+            printf("SET_DESIRED_EVENT REGION\n");
+            #endif //__SYTHESYS__
+            */
          }
 
          void f_do_leave_node(region_data_t region_data, /*region_data_shrink_t region_shrink_data,*/ mwpm_event_t *mwpm_event){
@@ -421,6 +462,12 @@ void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, i
             f_reschedule_events_at_detector_node(leaving_node_data);
             f_schedule_tentative_shrink_event(region_data);
             no_mwpm_event(mwpm_event);
+
+            /*
+            #ifndef __SYTHESYS__
+            printf("MATCHER DO_LEAVE_NODE\n");
+            #endif //__SYTHESYS__
+            */
          }
 
          void f_do_region_shrinking(flood_event_t event, mwpm_event_t *mwpm_event){
@@ -494,9 +541,9 @@ void f_find_next_event(node_idx_t detector_node, node_data_t *next_neigh_node, i
 
 
 
-
 template<typename T1, typename T2, typename T3>
 void decode(T1& nodes, T2& regions, T3& alt_tree, syndr_t syndrome, corrections_t * corrections){
+    
     /*
     #ifndef __SYNTHENSYS__
     for (int i = 1; i <= 5; ++i) {
@@ -506,6 +553,7 @@ void decode(T1& nodes, T2& regions, T3& alt_tree, syndr_t syndrome, corrections_
 
     #endif //__SYNTHESYS__
     */
+    
 
     flood_event_t fe;
     fe.node = 2;

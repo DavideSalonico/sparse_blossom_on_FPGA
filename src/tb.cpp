@@ -21,15 +21,15 @@ void from_json(const json& j) {
         std::fill(std::begin(n.neigh_weights), std::end(n.neigh_weights), 0);
         std::fill(std::begin(n.neigh_obs), std::end(n.neigh_obs), 0);
         
-        for (size_t i = 0; i < node.at("neighbors").size() && i < 4; ++i) {
-            n.neigh[i] = (node_idx_t) node.at("neighbors")[i].get<int>();
+        for (size_t i = 0; i < N_NEIGH; ++i) {
+            n.neigh[i] = i < node.at("neighbors").size() ? (node_idx_t) node.at("neighbors")[i].get<int>() : (node_idx_t)0;
         }
-        for (size_t i = 0; i < node.at("neigh_weights").size() && i < 4; ++i) {
-            n.neigh_weights[i] = node.at("neigh_weights")[i].get<int>();
+        for (size_t i = 0; i < N_NEIGH; ++i) {
+            n.neigh_weights[i] = i < node.at("neigh_weights").size() ? node.at("neigh_weights")[i].get<int>() : 0;
         }
         /*
-        for (size_t i = 0; i < node.at("neigh_obs").size() && i < 4; ++i) {
-            n.neigh_obs[i] = (obs_mask_t) node.at("neigh_obs")[i].get<int>();
+        for (size_t i = 0; i < N_NEIGH; ++i) {
+            n.neigh_obs[i] = i < node.at("neigh_obs").size() ? (obs_mask_t) node.at("neigh_obs")[i].get<int>() : 0;
         }
         */
         
@@ -64,20 +64,24 @@ void printGraph(FpgaGraph graph){
         const auto& node = graph.nodes[i];
         std::cout << "  Node index: " << node.index << ", Region index: " << node.region_idx << std::endl;
         std::cout << "  Neighbors: ";
-        for (int j = 0; j < 4; ++j) {
+        for (int j = 0; j < N_NEIGH; ++j) {
             if (node.neigh[j] != 0) {
                 std::cout << node.neigh[j] << " ";
             }
         }
         std::cout << std::endl;
         std::cout << "  Weights: ";
-        for (int j = 0; j < 4; ++j) {
-            std::cout << node.neigh_weights[j] << " ";
+        for (int j = 0; j < N_NEIGH; ++j) {
+            if(node.neigh[j] != 0){
+                std::cout << node.neigh_weights[j] << " ";
+            }
         }
         std::cout << std::endl;
         std::cout << "  Observables: ";
-        for (int j = 0; j < 4; ++j) {
-            std::cout << node.neigh_obs[j] << " ";
+        for (int j = 0; j < N_NEIGH; ++j) {
+            if(node.neigh[j] != 0){
+                std::cout << node.neigh_obs[j] << " ";
+            }
         }
         std::cout << std::endl;
     }
@@ -87,7 +91,7 @@ void printGraph(FpgaGraph graph){
 int main(){
     
     read_graph_from_file();
-    //printGraph(graph);
+    printGraph(graph);
 
     sparse_top(LOAD_GRAPH, &graph, 0, 0);
 
@@ -95,7 +99,7 @@ int main(){
     corrections_t corrections = 0;
     sparse_top(DECODE, NULL, syndrome, &corrections);
 
-    //hls::print("Corrections: %d\n", corrections);
+    //hls::print("Corrections: %b\n", corrections);
 }
 
 #endif //TB_CPP

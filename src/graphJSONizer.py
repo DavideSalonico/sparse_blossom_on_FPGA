@@ -4,7 +4,7 @@ import pymatching
 import json
 
 circuit = stim.Circuit.generated("surface_code:rotated_memory_x", 
-                                 distance=5, 
+                                 distance=3, 
                                  rounds=5, 
                                  after_clifford_depolarization=0.005)
 
@@ -25,11 +25,11 @@ def serialize_item(item):
         item_dict = {k: (list(v) if isinstance(v, set) else v) for k, v in item[2].items()}
         return (item[0], item[1], item_dict)
     return item
-"""
+
 serialized_edges = [serialize_item(edge) for edge in edges]
 with open('edges.json', 'w') as json_file:
     json.dump({"edges": list(serialized_edges)}, json_file, indent=4)
-"""
+
 
 nodes = {}
 
