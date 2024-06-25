@@ -38,8 +38,7 @@ void decode(T1& nodes, T2& regions, T3& alt_tree, syndr_t syndrome, corrections_
 extern "C" void sparse_top(FpgaGraph* graph, syndr_t syndrome, corrections_t * corrections)
 {
 #pragma HLS INTERFACE m_axi port = graph offset = slave bundle = gmem0 latency = 0 depth = 1024
-//#pragma HLS INTERFACE m_axi port = b_arr offset = slave bundle = gmem1 latency = 0 depth = 1024
-//#pragma HLS INTERFACE m_axi port = c_arr offset = slave bundle = gmem2 latency = 0 depth = 1024
+#pragma HLS INTERFACE s_axilite port=graph bundle=control
 #pragma HLS INTERFACE ap_ctrl_hs port = return
 
 
@@ -47,8 +46,8 @@ extern "C" void sparse_top(FpgaGraph* graph, syndr_t syndrome, corrections_t * c
     int n_obs = graph->num_obs;
 #pragma HLS dataflow disable_start_propagation
     node_cache node_lut(graph->nodes);
-    //region_cache region_lut(graph->regions);
-    //alt_tree_cache alt_tree_lut(graph->alttree);
+    region_cache region_lut(graph->regions);
+    alt_tree_cache alt_tree_lut(graph->alttree);
     cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut, syndrome, corrections);
 }
  
