@@ -54,13 +54,17 @@ for edge in serialized_edges:
 
 for edge in bound_edges:
     node1, node2, attrs = edge
+    obs_list = attrs["fault_ids"]
+    obs_mask = 0
+    for obs in obs_list:
+        obs_mask |= 1 << obs
     nodes[node1]["neighbors"].append(node2)
     nodes[node1]["neigh_weights"].append(attrs["weight"])
-    nodes[node1]["neigh_obs"].append(attrs["fault_ids"])
+    nodes[node1]["neigh_obs"].append(obs_mask)
     
     nodes[node2]["neighbors"].append(node1)
     nodes[node2]["neigh_weights"].append(attrs["weight"])
-    nodes[node2]["neigh_obs"].append(attrs["fault_ids"])
+    nodes[node2]["neigh_obs"].append(obs_mask)
 
 #print(nodes)
 
