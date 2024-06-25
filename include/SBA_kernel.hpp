@@ -7,18 +7,37 @@
 #include <fstream>
 #include <iostream>
 #include <iomanip>
-//#include "hls_print.h"
+#include <climits>
+
+/*
+constexpr int32_t constexpr_ceil(float num)
+{
+    return (static_cast<float>(static_cast<int32_t>(num)) == num)
+        ? static_cast<int32_t>(num)
+        : static_cast<int32_t>(num) + ((num > 0) ? 1 : 0);
+}
+*/
+
+constexpr unsigned floorlog2(unsigned x)
+{
+    return x == 1 ? 0 : 1+floorlog2(x >> 1);
+}
+
+constexpr unsigned ceillog2(unsigned x)
+{
+    return x == 1 ? 0 : floorlog2(x - 1) + 1;
+}
 
 #define MAX_N_NODES 500    //??? Comprehend also boundary nodes
 #define MAX_N_OBS 500      //???
-#define N_NEIGH 4
+#define N_NEIGH 20
 #define ALTTREEEDGE_MAX 10
 #define SHELL_AREA_MAX 4
 #define BLOSSOM_CHILDREN_MAX 4
 #define N_REGIONS MAX_N_NODES // Exagerated assumption
-#define NODE_BIT (int) ceil(log2(MAX_N_NODES+1))
-#define REGION_BIT (int) ceil(log2(N_REGIONS+1))
-#define OBS_BIT (int) ceil(log2(MAX_N_OBS))
+#define NODE_BIT ceillog2(MAX_N_NODES+1)
+#define REGION_BIT ceillog2(N_REGIONS+1)
+#define OBS_BIT ceillog2(MAX_N_OBS)
 
 typedef ap_uint<NODE_BIT> node_idx_t;
 typedef ap_uint<REGION_BIT> region_idx_t;
@@ -68,21 +87,6 @@ typedef struct{
     region_idx_t in_parent_region;
     region_idx_t in_child_region;
     enum mwpm_type type;
-    /*
-     RegionHitRegionEventData
-         GraphFillRegion *region1; //region_src
-         GraphFillRegion *region2; //region_dst
-         CompressedEdge edge;
-
-     RegionHitBoundaryEventData
-         GraphFillRegion *region; //region
-         CompressedEdge edge;
-
-     BlossomShatterEventData
-         GraphFillRegion *blossom_region;
-         GraphFillRegion *in_parent_region;
-         GraphFillRegion *in_child_region;
-     */
 } mwpm_event_t;
 
 enum radius_status_t{
@@ -105,10 +109,10 @@ typedef struct{
     //obs_mask_t obs_inter;
     obs_int_t obs_inter;
     int radius_of_arrival;
-    node_idx_t neigh[4]; //if node.neigh[2] == 0 -> node hasn't the neigh[2]
-    int neigh_weights[4];
-    obs_mask_t neigh_obs[4];
-    obs_int_t neigh_obs[4];
+    node_idx_t neigh[N_NEIGH]; //if node.neigh[2] == 0 -> node hasn't the neigh[2]
+    int neigh_weights[N_NEIGH];
+    obs_mask_t neigh_obs[N_NEIGH];
+    //obs_int_t neigh_obs[N_NEIGH];
 } node_data_t;
 
 
@@ -127,8 +131,8 @@ typedef struct{
     radius_t radius;
     //QueuedEventTracker shrink_event_traker
     match_t match;
-    node_idx_t shell_area[4]; //4 random
-    region_edge_t blossom_children[4]; //4 random
+    node_idx_t shell_area[SHELL_AREA_MAX]; //4 random
+    region_edge_t blossom_children[BLOSSOM_CHILDREN_MAX]; //4 random
 } region_data_t;
 
 typedef struct{

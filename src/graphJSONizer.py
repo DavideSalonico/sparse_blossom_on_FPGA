@@ -30,6 +30,7 @@ serialized_edges = [serialize_item(edge) for edge in edges]
 with open('edges.json', 'w') as json_file:
     json.dump({"edges": list(serialized_edges)}, json_file, indent=4)
 
+
 nodes = {}
 bound_edges = []
 curr_boundary = 0
