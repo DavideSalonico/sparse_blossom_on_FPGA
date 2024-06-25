@@ -34,12 +34,11 @@ void decode(FpgaGraph* graph, syndr_t syndrome, corrections_t *corrections){
 
 extern "C" void sparse_top(FpgaGraph* graph, syndr_t syndrome, corrections_t *corrections)
 {
-/*
-#pragma HLS INTERFACE m_axi port = a_arr offset = slave bundle = gmem0 latency = 0 depth = 1024
-#pragma HLS INTERFACE m_axi port = b_arr offset = slave bundle = gmem1 latency = 0 depth = 1024
-#pragma HLS INTERFACE m_axi port = c_arr offset = slave bundle = gmem2 latency = 0 depth = 1024
+#pragma HLS INTERFACE m_axi port = graph offset = slave bundle = gmem0 latency = 0 depth = 1024
+//#pragma HLS INTERFACE m_axi port = b_arr offset = slave bundle = gmem1 latency = 0 depth = 1024
+//#pragma HLS INTERFACE m_axi port = c_arr offset = slave bundle = gmem2 latency = 0 depth = 1024
 #pragma HLS INTERFACE ap_ctrl_hs port = return
-*/
+
 
     decode(graph, syndrome, corrections);
 }

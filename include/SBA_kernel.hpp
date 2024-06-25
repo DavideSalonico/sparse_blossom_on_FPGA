@@ -110,7 +110,7 @@ typedef struct{
     obs_int_t obs_inter;
     int radius_of_arrival;
     node_idx_t neigh[N_NEIGH]; //if node.neigh[2] == 0 -> node hasn't the neigh[2]
-    int neigh_weights[N_NEIGH];
+    float neigh_weights[N_NEIGH];
     obs_mask_t neigh_obs[N_NEIGH];
     //obs_int_t neigh_obs[N_NEIGH];
 } node_data_t;
@@ -174,6 +174,6 @@ enum choice_t
 typedef ap_uint<MAX_N_NODES> syndr_t;
 typedef ap_uint<MAX_N_OBS> corrections_t;
 
-extern "C" void sparse_top(choice_t, FpgaGraph*, syndr_t, corrections_t *);
+extern "C" void sparse_top(FpgaGraph*, syndr_t, corrections_t *);
 
 #endif //SBA_KERNEL_HPP

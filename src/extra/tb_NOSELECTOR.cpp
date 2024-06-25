@@ -1,8 +1,7 @@
-#ifndef TB_CPP
-#define TB_CPP
+#ifndef TB_NOSELECTOR_CPP
+#define TB_NOSELECTOR_CPP
 
 #include "SBA_kernel.hpp"
-#include "hls_print.h"
 #include "json.hpp"
 
 using json = nlohmann::json;
@@ -27,9 +26,11 @@ void from_json(const json& j) {
         for (size_t i = 0; i < N_NEIGH; ++i) {
             n.neigh_weights[i] = i < node.at("neigh_weights").size() ? node.at("neigh_weights")[i].get<float>() : (float) 0;
         }
+        /*
         for (size_t i = 0; i < N_NEIGH; ++i) {
             n.neigh_obs[i] = i < node.at("neigh_obs").size() ? (obs_mask_t) node.at("neigh_obs")[i].get<int>() : (obs_mask_t) 0;
         }
+         */
         
         graph.nodes[node_count++] = n;
         if (node_count >= MAX_N_NODES) break;
@@ -91,13 +92,11 @@ int main(){
     read_graph_from_file();
     printGraph(graph);
 
-    sparse_top(LOAD_GRAPH, &graph, 0, 0);
-
     syndr_t syndrome = 500;
     corrections_t corrections = 0;
-    sparse_top(DECODE, NULL, syndrome, &corrections);
+    sparse_top(&graph, syndrome, &corrections);
 
-    //hls::print("Corrections: %b\n", corrections);
+    std::cout << "Corrections: " << corrections << std::endl;
 }
 
-#endif //TB_CPP
+#endif //TB_NOSELECTOR_CPP
