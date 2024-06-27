@@ -45,8 +45,9 @@ void f_find_next_event(node_idx_t node, node_data_t *next_neigh_node, int *next_
            }
            start++;
        }
-       
+neigh_next_event:
        for (int i = start; i < N_NEIGH; i++) {
+//#pragma HLS UNROLL factor=8
            weight = node_data.neigh_weights[i];
            node_data_t neighbor;
            //neighbor = LUT with inx node_data.neigh[i];
@@ -89,7 +90,9 @@ void f_find_next_event(node_idx_t node, node_data_t *next_neigh_node, int *next_
        start++;
 
        // Gestisce i vicini non di confine.
+bound_next_event:
        for (int i = start; i < N_NEIGH; i++) {
+//#pragma HLS UNROLL factor=8
            weight = node_data.neigh_weights[i];
 
            node_data_t neighbor = graph->nodes[node_data.neigh[i]];
@@ -182,7 +185,9 @@ void f_do_region_arriving_at_empty_detector_node(region_idx_t region, node_data_
    region_idx_t r = empty_node->region_idx;
     region_data_t r_t = graph->regions[r];
    //region_data_t r_t = region_lut[r];
+region_arriving_empty:
    while (r != empty_node->top_region_idx) {
+//#pragma HLS UNROLL factor=8
        //r_t = region_lut[r];
        total = total + (r_t.radius.value);
        //total += r->radius.y_intercept();
@@ -309,7 +314,9 @@ void f_schedule_tentative_shrink_event(region_data_t region_data, FpgaGraph* gra
    int t;
    int k = 0;
    //TODO: empty()
+schedule_shrink:
    for(int i = 0; i < SHELL_AREA_MAX; i++){
+#pragma HLS pipeline II=1
        if(region_data.shell_area[i] != 0){
            k = 1;
        }
@@ -359,13 +366,17 @@ void f_do_region_shrinking(flood_event_t event, mwpm_event_t *mwpm_event, FpgaGr
    //TODO: empty()
    //TODO: size()
    int s = 0; //s = 0 if region_data.shell_area.empty() and s = 1 if region.shell_area.size() == 1
+region_shrink_shell:
    for(int i; i < SHELL_AREA_MAX; i++){
+//#pragma HLS pipeline II=1
        if(region_data.shell_area[i] != 0){
            s = s + 1;
        }
    }
    int b = 0; //b = 0 if region_data.blossom_children.empty()
+region_shrink_children:
    for (int i = 0; i < BLOSSOM_CHILDREN_MAX; i++){
+//#pragma HLS pipeline II=1
        if(region_data.blossom_children[i].region != 0){
            b = 1;
        }

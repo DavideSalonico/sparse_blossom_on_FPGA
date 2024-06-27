@@ -25,7 +25,7 @@ void from_json(const json& j) {
             n.neigh[i] = i < node.at("neighbors").size() ? (node_idx_t) node.at("neighbors")[i].get<int>() : (node_idx_t)0;
         }
         for (size_t i = 0; i < N_NEIGH; ++i) {
-            n.neigh_weights[i] = i < node.at("neigh_weights").size() ? node.at("neigh_weights")[i].get<int>() : 0;
+            n.neigh_weights[i] = i < node.at("neigh_weights").size() ? node.at("neigh_weights")[i].get<float>() : 0;
         }
         /*
         for (size_t i = 0; i < N_NEIGH; ++i) {

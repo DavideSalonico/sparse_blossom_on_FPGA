@@ -71,5 +71,3 @@ for edge in bound_edges:
 # Now, serialize the nodes dictionary to JSON
 with open('nodes.json', 'w') as json_file:
     json.dump({"n_dets": n_dets, "n_nodes": n_nodes, "nodes": list(nodes.values())}, json_file, indent=4)    
-    
-#TODO: fix observables

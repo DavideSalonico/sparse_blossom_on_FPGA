@@ -566,12 +566,15 @@ void decode(T1& nodes, T2& regions, T3& alt_tree, syndr_t syndrome, corrections_
 
 extern "C" void sparse_top(choice_t choice, FpgaGraph* graph, syndr_t syndrome, corrections_t * corrections)
 {
-/*
-#pragma HLS INTERFACE m_axi port = a_arr offset = slave bundle = gmem0 latency = 0 depth = 1024
-#pragma HLS INTERFACE m_axi port = b_arr offset = slave bundle = gmem1 latency = 0 depth = 1024
-#pragma HLS INTERFACE m_axi port = c_arr offset = slave bundle = gmem2 latency = 0 depth = 1024
-#pragma HLS INTERFACE ap_ctrl_hs port = return
-*/
+#pragma HLS INTERFACE m_axi port = graph offset = slave bundle = gmem0 latency = 0 depth = 1024
+#pragma HLS INTERFACE m_axi port = corrections offset = slave bundle = gmem1 latency = 0 depth = 1024
+
+#pragma HLS INTERFACE s_axilite port=choice bundle=control
+#pragma HLS INTERFACE s_axilite port=graph bundle=control
+#pragma HLS INTERFACE s_axilite port=syndrome bundle=control
+#pragma HLS INTERFACE s_axilite port=corrections bundle=control
+
+#pragma HLS INTERFACE s_axilite port = return bundle = control
 
     if (choice == LOAD_GRAPH)
     {

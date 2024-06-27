@@ -43,7 +43,7 @@ extern "C" void sparse_top(FpgaGraph* graph, syndr_t syndrome, corrections_t * c
 #pragma HLS INTERFACE s_axilite port=graph bundle=control
 #pragma HLS INTERFACE s_axilite port=syndrome bundle=control
 #pragma HLS INTERFACE s_axilite port=corrections bundle=control
-//#pragma HLS INTERFACE ap_ctrl_hs port = return
+#pragma HLS INTERFACE ap_ctrl_hs port = return
 
     int n_nodes = graph->num_nodes;
     int n_obs = graph->num_obs;
