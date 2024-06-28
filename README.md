@@ -24,3 +24,7 @@ For a detailed documentation of stim circuits we indicate [Stim API Reference](h
 
 ## Full Report
 The full report is available [here](./path_to_report).
+
+## Team
+- [Filippo Corna](https://github.com/FilippoCorna)
+- [Davide Salonico](https://github.com/DavideSalonico)
