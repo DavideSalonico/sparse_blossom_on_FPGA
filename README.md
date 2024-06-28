@@ -10,5 +10,16 @@ The repository is structured as follows:
 - delieveries contains the documentation incuding a report and slides that will be used in the oral presentation
 - utils contains a script for generating a nodes.json file (there is also one provided as an example)
 
+## A note about the util folder
+The util folder contains a python script that generates a JSON file that contains the data of the graph provided as input.
+In order to create a new graph it's sufficient to change the following parameters in the script:
+- family of error correction codes
+- distance
+- rounds
+- after_clifford_depolarization (that represents the error probability)
+
+To run the script it's necessary to have installed all the depencencies (numpy, stim, pymatching, json).
+For a detailed documentation of stim circuits we indicate [Stim API Reference](https://github.com/quantumlib/Stim/blob/main/doc/python_api_reference_vDev.md).
+
 ## Full Report
 The full report is available [here](./path_to_report).
