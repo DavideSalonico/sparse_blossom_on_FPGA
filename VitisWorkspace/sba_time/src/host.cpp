@@ -31,6 +31,8 @@
 
 using json = nlohmann::json;
 
+std::string path = "";
+
 int num_obs;
 int num_nodes;
 node_data_t nodes[MAX_N_NODES];
@@ -70,7 +72,6 @@ void from_json(const json &j)
 
 void read_graph_from_file()
 {
-    auto path = "/home/users/davide.salonico/nodes.json";
 
         // Open the JSON file
         std::ifstream json_file(path);
@@ -97,13 +98,16 @@ int main(int argc, char **argv)
     //**************//"<Full Arg>",  "<Short Arg>", "<Description>", "<Default>"
     parser.addSwitch("--xclbin_file", "-x", "input binary file string", "");
     parser.addSwitch("--device_id", "-d", "device index", "0");
+    parser.addSwitch("--nodes_path", "-p", "path of nodes.json", "/home/users/davide.salonico/nodes.json");
     parser.parse(argc, argv);
 
     // Read settings
     std::string binaryFile = parser.value("xclbin_file");
     int device_index = stoi(parser.value("device_id"));
+    path = parser.value("nodes_path");
 
-    std::cout << "Open the device" << device_index << std::endl;
+    // Be sure to pass the right index
+    std::cout << "Open the device " << device_index << std::endl;
     auto device = xrt::device(device_index);
     std::cout << "Load the xclbin " << binaryFile << std::endl;
     auto uuid = device.load_xclbin(binaryFile);

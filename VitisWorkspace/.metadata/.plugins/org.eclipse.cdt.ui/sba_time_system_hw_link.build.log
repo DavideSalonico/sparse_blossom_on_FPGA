@@ -1,6 +1,333 @@
-13:20:37 **** Incremental Build of configuration Emulation-SW for project sba_time_system_hw_link ****
+15:35:43 **** Incremental Build of configuration Hardware for project sba_time_system_hw_link ****
 make all 
-make: Nothing to be done for 'all'.
+/home/xilinx/software/Vitis/2022.2/bin/v++ --target hw --link --config binary_container_1-link.cfg -o"binary_container_1.xclbin" ../../sba_time_kernels/Hardware/build/sparse_top.xo
+Option Map File Used: '/home/xilinx/software/Vitis/2022.2/data/vitis/vpp/optMap.xml'
 
-13:20:38 Build Finished (took 461ms)
+****** v++ v2022.2.2 (64-bit)
+  **** SW Build 3716524 on 2023-02-17-15:43:22
+    ** Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
+
+INFO: [v++ 60-1306] Additional information associated with this v++ link can be found at:
+	Reports: /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/reports/link
+	Log files: /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/logs/link
+Running Dispatch Server on port: 37249
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.xclbin.link_summary, at Sun Jun 30 15:35:56 2024
+INFO: [v++ 60-1315] Creating rulecheck session with output '/home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/reports/link/link_guidance.html', at Sun Jun 30 15:35:56 2024
+INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm
+INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/hw/hw.xsa'
+INFO: [v++ 74-78] Compiler Version string: 2022.2
+INFO: [v++ 60-629] Linking for hardware target
+INFO: [v++ 60-423]   Target device: xilinx_u55c_gen3x16_xdma_3_202210_1
+INFO: [v++ 60-1332] Run 'run_link' status: Not started
+INFO: [v++ 60-1443] [15:36:00] Run run_link: Step system_link: Started
+INFO: [v++ 60-1453] Command Line: system_link --xo /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_kernels/Hardware/build/sparse_top.xo -keep --config /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/syslinkConfig.ini --xpfm /opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm --target hw --output_dir /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int --temp_dir /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/sys_link
+INFO: [v++ 60-1454] Run Directory: /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/run_link
+INFO: [SYSTEM_LINK 82-70] Extracting xo v3 file /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_kernels/Hardware/build/sparse_top.xo
+INFO: [SYSTEM_LINK 82-53] Creating IP database /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/sys_link/_sysl/.cdb/xd_ip_db.xml
+INFO: [SYSTEM_LINK 82-38] [15:36:02] build_xd_ip_db started: /home/xilinx/software/Vitis/2022.2/bin/build_xd_ip_db -ip_search 0  -sds-pf /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/sys_link/hw.hpfm -clkid 0 -ip /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/sys_link/iprepo/xilinx_com_hls_sparse_top_1_0,sparse_top -o /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/sys_link/_sysl/.cdb/xd_ip_db.xml
+INFO: [SYSTEM_LINK 82-37] [15:36:08] build_xd_ip_db finished successfully
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 432.238 ; gain = 0.000 ; free physical = 92048 ; free virtual = 358187
+INFO: [SYSTEM_LINK 82-51] Create system connectivity graph
+INFO: [SYSTEM_LINK 82-102] Applying explicit connections to the system connectivity graph: /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/sys_link/cfgraph/cfgen_cfgraph.xml
+INFO: [SYSTEM_LINK 82-38] [15:36:08] cfgen started: /home/xilinx/software/Vitis/2022.2/bin/cfgen  -nk sparse_top:1:sparse_top_1 -dpa_mem_offload false -dmclkid 0 -r /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/sys_link/_sysl/.cdb/xd_ip_db.xml -o /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/sys_link/cfgraph/cfgen_cfgraph.xml
+INFO: [CFGEN 83-0] Kernel Specs: 
+INFO: [CFGEN 83-0]   kernel: sparse_top, num: 1  {sparse_top_1}
+INFO: [CFGEN 83-2226] Inferring mapping for argument sparse_top_1.nodes to HBM[0]
+INFO: [CFGEN 83-2226] Inferring mapping for argument sparse_top_1.corrections to HBM[0]
+INFO: [SYSTEM_LINK 82-37] [15:36:19] cfgen finished successfully
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 432.238 ; gain = 0.000 ; free physical = 91796 ; free virtual = 358009
+INFO: [SYSTEM_LINK 82-52] Create top-level block diagram
+INFO: [SYSTEM_LINK 82-38] [15:36:19] cf2bd started: /home/xilinx/software/Vitis/2022.2/bin/cf2bd  --linux --trace_buffer 1024 --input_file /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/sys_link/cfgraph/cfgen_cfgraph.xml --ip_db /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/sys_link/_sysl/.cdb/xd_ip_db.xml --cf_name dr --working_dir /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/sys_link/_sysl/.xsd --temp_dir /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/sys_link --output_dir /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int --target_bd ulp.bd
+INFO: [CF2BD 82-31] Launching cf2xd: cf2xd -linux -trace-buffer 1024 -i /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/sys_link/cfgraph/cfgen_cfgraph.xml -r /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/sys_link/_sysl/.cdb/xd_ip_db.xml -o dr.xml
+INFO: [CF2BD 82-28] cf2xd finished successfully
+INFO: [CF2BD 82-31] Launching cf_xsd: cf_xsd -disable-address-gen -bd ulp.bd -dn dr -dp /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/sys_link/_sysl/.xsd
+INFO: [CF2BD 82-28] cf_xsd finished successfully
+INFO: [SYSTEM_LINK 82-37] [15:36:24] cf2bd finished successfully
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 432.238 ; gain = 0.000 ; free physical = 91973 ; free virtual = 358115
+INFO: [v++ 60-1441] [15:36:24] Run run_link: Step system_link: Completed
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 459.574 ; gain = 0.000 ; free physical = 92025 ; free virtual = 358167
+INFO: [v++ 60-1443] [15:36:24] Run run_link: Step cf2sw: Started
+INFO: [v++ 60-1453] Command Line: cf2sw -sdsl /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/sdsl.dat -rtd /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/cf2sw.rtd -nofilter /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/cf2sw_full.rtd -xclbin /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/xclbin_orig.xml -o /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/xclbin_orig.1.xml
+INFO: [v++ 60-1454] Run Directory: /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/run_link
+INFO: [v++ 60-1441] [15:36:30] Run run_link: Step cf2sw: Completed
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 459.574 ; gain = 0.000 ; free physical = 91879 ; free virtual = 358022
+INFO: [v++ 60-1443] [15:36:30] Run run_link: Step rtd2_system_diagram: Started
+INFO: [v++ 60-1453] Command Line: rtd2SystemDiagram
+INFO: [v++ 60-1454] Run Directory: /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/run_link
+INFO: [v++ 60-1441] [15:36:30] Run run_link: Step rtd2_system_diagram: Completed
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.32 . Memory (MB): peak = 459.574 ; gain = 0.000 ; free physical = 91859 ; free virtual = 358002
+INFO: [v++ 60-1443] [15:36:30] Run run_link: Step vpl: Started
+INFO: [v++ 60-1453] Command Line: vpl -t hw -f xilinx_u55c_gen3x16_xdma_3_202210_1 -s --remote_ip_cache /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/.ipcache --output_dir /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int --log_dir /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/logs/link --report_dir /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/reports/link --config /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/vplConfig.ini -k /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link --no-info --iprepo /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/xo/ip_repo/xilinx_com_hls_sparse_top_1_0 --messageDb /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/run_link/vpl.pb /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/dr.bd.tcl
+INFO: [v++ 60-1454] Run Directory: /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/run_link
+
+****** vpl v2022.2.2 (64-bit)
+  **** SW Build 3716524 on 2023-02-17-15:43:22
+    ** Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
+
+INFO: [VPL 60-839] Read in kernel information from file '/home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/kernel_info.dat'.
+INFO: [VPL 74-78] Compiler Version string: 2022.2
+INFO: [VPL 60-423]   Target device: xilinx_u55c_gen3x16_xdma_3_202210_1
+INFO: [VPL 60-1032] Extracting hardware platform to /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/vivado/vpl/.local/hw_platform
+[15:36:47] Run vpl: Step create_project: Started
+Creating Vivado project.
+[15:36:54] Run vpl: Step create_project: Completed
+[15:36:54] Run vpl: Step create_bd: Started
+[15:37:32] Run vpl: Step create_bd: Completed
+[15:37:32] Run vpl: Step update_bd: Started
+[15:37:33] Run vpl: Step update_bd: Completed
+[15:37:33] Run vpl: Step generate_target: Started
+[15:38:35] Run vpl: Step generate_target: Completed
+[15:38:35] Run vpl: Step config_hw_runs: Started
+[15:39:51] Run vpl: Step config_hw_runs: RUNNING...
+[15:41:06] Run vpl: Step config_hw_runs: RUNNING...
+[15:42:21] Run vpl: Step config_hw_runs: RUNNING...
+[15:43:36] Run vpl: Step config_hw_runs: RUNNING...
+[15:43:51] Run vpl: Step config_hw_runs: Completed
+[15:43:51] Run vpl: Step synth: Started
+[15:44:21] Block-level synthesis in progress, 0 of 137 jobs complete, 8 jobs running.
+[15:44:52] Block-level synthesis in progress, 0 of 137 jobs complete, 8 jobs running.
+[15:45:22] Block-level synthesis in progress, 0 of 137 jobs complete, 8 jobs running.
+[15:45:52] Block-level synthesis in progress, 5 of 137 jobs complete, 4 jobs running.
+[15:46:22] Block-level synthesis in progress, 6 of 137 jobs complete, 7 jobs running.
+[15:46:53] Block-level synthesis in progress, 7 of 137 jobs complete, 7 jobs running.
+[15:47:23] Block-level synthesis in progress, 11 of 137 jobs complete, 4 jobs running.
+[15:47:53] Block-level synthesis in progress, 16 of 137 jobs complete, 4 jobs running.
+[15:48:23] Block-level synthesis in progress, 20 of 137 jobs complete, 5 jobs running.
+[15:48:53] Block-level synthesis in progress, 22 of 137 jobs complete, 8 jobs running.
+[15:49:23] Block-level synthesis in progress, 26 of 137 jobs complete, 6 jobs running.
+[15:49:54] Block-level synthesis in progress, 27 of 137 jobs complete, 7 jobs running.
+[15:50:24] Block-level synthesis in progress, 30 of 137 jobs complete, 7 jobs running.
+[15:50:54] Block-level synthesis in progress, 31 of 137 jobs complete, 8 jobs running.
+[15:51:24] Block-level synthesis in progress, 33 of 137 jobs complete, 7 jobs running.
+[15:51:55] Block-level synthesis in progress, 36 of 137 jobs complete, 6 jobs running.
+[15:52:25] Block-level synthesis in progress, 39 of 137 jobs complete, 7 jobs running.
+[15:52:55] Block-level synthesis in progress, 43 of 137 jobs complete, 5 jobs running.
+[15:53:25] Block-level synthesis in progress, 46 of 137 jobs complete, 6 jobs running.
+[15:53:56] Block-level synthesis in progress, 47 of 137 jobs complete, 7 jobs running.
+[15:54:26] Block-level synthesis in progress, 50 of 137 jobs complete, 5 jobs running.
+[15:54:56] Block-level synthesis in progress, 56 of 137 jobs complete, 4 jobs running.
+[15:55:26] Block-level synthesis in progress, 64 of 137 jobs complete, 3 jobs running.
+[15:55:57] Block-level synthesis in progress, 72 of 137 jobs complete, 3 jobs running.
+[15:56:27] Block-level synthesis in progress, 80 of 137 jobs complete, 2 jobs running.
+[15:56:57] Block-level synthesis in progress, 83 of 137 jobs complete, 6 jobs running.
+[15:57:28] Block-level synthesis in progress, 84 of 137 jobs complete, 8 jobs running.
+[15:57:58] Block-level synthesis in progress, 84 of 137 jobs complete, 8 jobs running.
+[15:58:28] Block-level synthesis in progress, 87 of 137 jobs complete, 7 jobs running.
+[15:58:59] Block-level synthesis in progress, 93 of 137 jobs complete, 5 jobs running.
+[15:59:29] Block-level synthesis in progress, 97 of 137 jobs complete, 6 jobs running.
+[16:00:00] Block-level synthesis in progress, 98 of 137 jobs complete, 8 jobs running.
+[16:00:30] Block-level synthesis in progress, 102 of 137 jobs complete, 5 jobs running.
+[16:01:00] Block-level synthesis in progress, 109 of 137 jobs complete, 3 jobs running.
+[16:01:31] Block-level synthesis in progress, 114 of 137 jobs complete, 6 jobs running.
+[16:02:01] Block-level synthesis in progress, 114 of 137 jobs complete, 8 jobs running.
+[16:02:32] Block-level synthesis in progress, 117 of 137 jobs complete, 5 jobs running.
+[16:03:02] Block-level synthesis in progress, 122 of 137 jobs complete, 3 jobs running.
+[16:03:33] Block-level synthesis in progress, 123 of 137 jobs complete, 8 jobs running.
+[16:04:03] Block-level synthesis in progress, 123 of 137 jobs complete, 8 jobs running.
+[16:04:33] Block-level synthesis in progress, 129 of 137 jobs complete, 4 jobs running.
+[16:05:04] Block-level synthesis in progress, 133 of 137 jobs complete, 4 jobs running.
+[16:05:34] Block-level synthesis in progress, 133 of 137 jobs complete, 4 jobs running.
+[16:06:05] Block-level synthesis in progress, 133 of 137 jobs complete, 4 jobs running.
+[16:06:35] Block-level synthesis in progress, 137 of 137 jobs complete, 0 jobs running.
+[16:07:06] Top-level synthesis in progress.
+[16:07:36] Top-level synthesis in progress.
+[16:08:07] Top-level synthesis in progress.
+[16:08:40] Run vpl: Step synth: Completed
+[16:08:40] Run vpl: Step impl: Started
+[16:19:22] Finished 2nd of 6 tasks (FPGA linking synthesized kernels to platform). Elapsed time: 00h 42m 49s 
+
+[16:19:22] Starting logic optimization..
+[16:20:23] Phase 1 Retarget
+[16:20:53] Phase 2 Constant propagation
+[16:21:24] Phase 3 Sweep
+[16:21:54] Phase 4 BUFG optimization
+[16:21:54] Phase 5 Shift Register Optimization
+[16:22:25] Phase 6 Post Processing Netlist
+[16:23:26] Finished 3rd of 6 tasks (FPGA logic optimization). Elapsed time: 00h 04m 04s 
+
+[16:23:26] Starting logic placement..
+[16:23:56] Phase 1 Placer Initialization
+[16:23:56] Phase 1.1 Placer Initialization Netlist Sorting
+[16:27:30] Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+[16:28:00] Phase 1.3 Build Placer Netlist Model
+[16:30:33] Phase 1.4 Constrain Clocks/Macros
+[16:30:33] Phase 2 Global Placement
+[16:30:33] Phase 2.1 Floorplanning
+[16:31:34] Phase 2.1.1 Partition Driven Placement
+[16:31:34] Phase 2.1.1.1 PBP: Partition Driven Placement
+[16:31:34] Phase 2.1.1.2 PBP: Clock Region Placement
+[16:32:35] Phase 2.1.1.3 PBP: Compute Congestion
+[16:33:06] Phase 2.1.1.4 PBP: UpdateTiming
+[16:33:06] Phase 2.1.1.5 PBP: Add part constraints
+[16:33:36] Phase 2.2 Physical Synthesis After Floorplan
+[16:34:07] Phase 2.3 Update Timing before SLR Path Opt
+[16:34:07] Phase 2.4 Post-Processing in Floorplanning
+[16:34:07] Phase 2.5 Global Placement Core
+[16:45:50] Phase 2.5.1 UpdateTiming Before Physical Synthesis
+[16:46:21] Phase 2.5.2 Physical Synthesis In Placer
+[16:48:23] Phase 3 Detail Placement
+[16:48:54] Phase 3.1 Commit Multi Column Macros
+[16:48:54] Phase 3.2 Commit Most Macros & LUTRAMs
+[16:49:55] Phase 3.3 Small Shape DP
+[16:49:55] Phase 3.3.1 Small Shape Clustering
+[16:50:26] Phase 3.3.2 Flow Legalize Slice Clusters
+[16:50:26] Phase 3.3.3 Slice Area Swap
+[16:50:26] Phase 3.3.3.1 Slice Area Swap Initial
+[16:50:56] Phase 3.4 Place Remaining
+[16:51:27] Phase 3.5 Re-assign LUT pins
+[16:51:27] Phase 3.6 Pipeline Register Optimization
+[16:51:27] Phase 3.7 Fast Optimization
+[16:52:28] Phase 4 Post Placement Optimization and Clean-Up
+[16:52:28] Phase 4.1 Post Commit Optimization
+[16:54:00] Phase 4.1.1 Post Placement Optimization
+[16:54:00] Phase 4.1.1.1 BUFG Insertion
+[16:54:00] Phase 1 Physical Synthesis Initialization
+[16:54:30] Phase 4.1.1.2 BUFG Replication
+[16:54:30] Phase 4.1.1.3 Post Placement Timing Optimization
+[16:59:36] Phase 4.1.1.4 Replication
+[17:00:38] Phase 4.2 Post Placement Cleanup
+[17:00:38] Phase 4.3 Placer Reporting
+[17:00:38] Phase 4.3.1 Print Estimated Congestion
+[17:01:08] Phase 4.4 Final Placement Cleanup
+[17:03:41] Finished 4th of 6 tasks (FPGA logic placement). Elapsed time: 00h 40m 15s 
+
+[17:03:41] Starting logic routing..
+[17:04:42] Phase 1 Build RT Design
+[17:06:14] Phase 2 Router Initialization
+[17:06:14] Phase 2.1 Fix Topology Constraints
+[17:06:14] Phase 2.2 Pre Route Cleanup
+[17:06:45] Phase 2.3 Global Clock Net Routing
+[17:07:15] Phase 2.4 Update Timing
+[17:09:18] Phase 2.5 Update Timing for Bus Skew
+[17:09:18] Phase 2.5.1 Update Timing
+[17:09:48] Phase 3 Initial Routing
+[17:09:48] Phase 3.1 Global Routing
+[17:10:19] Phase 4 Rip-up And Reroute
+[17:10:19] Phase 4.1 Global Iteration 0
+[17:15:25] Phase 4.2 Global Iteration 1
+[17:16:57] Phase 4.3 Global Iteration 2
+[17:17:58] Phase 5 Delay and Skew Optimization
+[17:17:58] Phase 5.1 Delay CleanUp
+[17:17:58] Phase 5.1.1 Update Timing
+[17:18:59] Phase 5.1.2 Update Timing
+[17:19:30] Phase 5.2 Clock Skew Optimization
+[17:19:30] Phase 6 Post Hold Fix
+[17:19:30] Phase 6.1 Hold Fix Iter
+[17:20:00] Phase 6.1.1 Update Timing
+[17:20:31] Phase 7 Leaf Clock Prog Delay Opt
+[17:22:03] Phase 7.1 Delay CleanUp
+[17:22:03] Phase 7.1.1 Update Timing
+[17:22:33] Phase 7.1.2 Update Timing
+[17:23:34] Phase 7.2 Hold Fix Iter
+[17:23:34] Phase 7.2.1 Update Timing
+[17:25:06] Phase 8 Route finalize
+[17:25:37] Phase 9 Verifying routed nets
+[17:25:37] Phase 10 Depositing Routes
+[17:26:07] Phase 11 Resolve XTalk
+[17:26:07] Phase 12 Post Router Timing
+[17:27:09] Finished 5th of 6 tasks (FPGA routing). Elapsed time: 00h 23m 27s 
+
+[17:27:09] Starting bitstream generation..
+[17:36:19] Creating bitmap...
+[17:54:45] Writing bitstream ./level0_i_ulp_my_rm_partial.bit...
+[17:54:45] Finished 6th of 6 tasks (FPGA bitstream generation). Elapsed time: 00h 27m 36s 
+Check VPL, containing 1 checks, has run: 0 errors
+[17:55:49] Run vpl: Step impl: Completed
+[17:55:50] Run vpl: FINISHED. Run Status: impl Complete!
+INFO: [v++ 60-1441] [17:55:51] Run run_link: Step vpl: Completed
+Time (s): cpu = 00:02:14 ; elapsed = 02:19:20 . Memory (MB): peak = 459.574 ; gain = 0.000 ; free physical = 72751 ; free virtual = 353096
+INFO: [v++ 60-1443] [17:55:51] Run run_link: Step rtdgen: Started
+INFO: [v++ 60-1453] Command Line: rtdgen
+INFO: [v++ 60-1454] Run Directory: /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/run_link
+INFO: [v++ 60-991] clock name 'ulp_ucs/aclk_kernel_01' (clock ID '1') is being mapped to clock name 'KERNEL_CLK' in the xclbin
+INFO: [v++ 60-991] clock name 'ulp_ucs/aclk_kernel_00' (clock ID '0') is being mapped to clock name 'DATA_CLK' in the xclbin
+INFO: [v++ 60-991] clock name 'hbm_aclk' (clock ID '') is being mapped to clock name 'hbm_aclk' in the xclbin
+INFO: [v++ 60-1230] The compiler selected the following frequencies for the runtime controllable kernel clock(s) and scalable system clock(s): System (SYSTEM) clock: hbm_aclk = 450, Kernel (KERNEL) clock: ulp_ucs/aclk_kernel_01 = 500, Kernel (DATA) clock: ulp_ucs/aclk_kernel_00 = 300
+INFO: [v++ 60-1453] Command Line: cf2sw -a /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/address_map.xml -sdsl /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/sdsl.dat -xclbin /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/xclbin_orig.xml -rtd /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/binary_container_1.rtd -o /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/binary_container_1.xml
+INFO: [v++ 60-1652] Cf2sw returned exit code: 0
+INFO: [v++ 60-1441] [17:55:56] Run run_link: Step rtdgen: Completed
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 459.574 ; gain = 0.000 ; free physical = 72883 ; free virtual = 353241
+INFO: [v++ 60-1443] [17:55:56] Run run_link: Step xclbinutil: Started
+INFO: [v++ 60-1453] Command Line: xclbinutil --add-section BITSTREAM:RAW:/home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/partial.bit --force --target hw --key-value SYS:dfx_enable:true --add-section :JSON:/home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/binary_container_1.rtd --append-section :JSON:/home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/appendSection.rtd --add-section CLOCK_FREQ_TOPOLOGY:JSON:/home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/binary_container_1_xml.rtd --add-section BUILD_METADATA:JSON:/home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/binary_container_1_build.rtd --add-section EMBEDDED_METADATA:RAW:/home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/binary_container_1.xml --add-section SYSTEM_METADATA:RAW:/home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/systemDiagramModelSlrBaseAddress.json --key-value SYS:PlatformVBNV:xilinx_u55c_gen3x16_xdma_3_202210_1 --output /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.xclbin
+INFO: [v++ 60-1454] Run Directory: /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/run_link
+XRT Build Version: 2.14.384 (2022.2)
+       Build Date: 2022-12-09 00:55:08
+          Hash ID: 090bb050d570d2b668477c3bd0f979dc3a34b9db
+Creating a default 'in-memory' xclbin image.
+
+Section: 'BITSTREAM'(0) was successfully added.
+Size   : 48444628 bytes
+Format : RAW
+File   : '/home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/partial.bit'
+
+Section: 'MEM_TOPOLOGY'(6) was successfully added.
+Format : JSON
+File   : 'mem_topology'
+
+Section: 'IP_LAYOUT'(8) was successfully added.
+Format : JSON
+File   : 'ip_layout'
+
+Section: 'CONNECTIVITY'(7) was successfully added.
+Format : JSON
+File   : 'connectivity'
+
+Section: 'CLOCK_FREQ_TOPOLOGY'(11) was successfully added.
+Size   : 410 bytes
+Format : JSON
+File   : '/home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/binary_container_1_xml.rtd'
+
+Section: 'BUILD_METADATA'(14) was successfully added.
+Size   : 2353 bytes
+Format : JSON
+File   : '/home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/binary_container_1_build.rtd'
+
+Section: 'EMBEDDED_METADATA'(2) was successfully added.
+Size   : 5791 bytes
+Format : RAW
+File   : '/home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/binary_container_1.xml'
+
+Section: 'SYSTEM_METADATA'(22) was successfully added.
+Size   : 23931 bytes
+Format : RAW
+File   : '/home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/int/systemDiagramModelSlrBaseAddress.json'
+
+Section: 'PARTITION_METADATA'(20) was successfully appended to.
+Format : JSON
+File   : 'partition_metadata'
+
+Section: 'IP_LAYOUT'(8) was successfully appended to.
+Format : JSON
+File   : 'ip_layout'
+Successfully wrote (48503984 bytes) to the output file: /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.xclbin
+Leaving xclbinutil.
+INFO: [v++ 60-1441] [17:55:56] Run run_link: Step xclbinutil: Completed
+Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.23 . Memory (MB): peak = 459.574 ; gain = 0.000 ; free physical = 72812 ; free virtual = 353216
+INFO: [v++ 60-1443] [17:55:56] Run run_link: Step xclbinutilinfo: Started
+INFO: [v++ 60-1453] Command Line: xclbinutil --quiet --force --info /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.xclbin.info --input /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.xclbin
+INFO: [v++ 60-1454] Run Directory: /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/run_link
+INFO: [v++ 60-1441] [17:55:57] Run run_link: Step xclbinutilinfo: Completed
+Time (s): cpu = 00:00:00.58 ; elapsed = 00:00:00.68 . Memory (MB): peak = 459.574 ; gain = 0.000 ; free physical = 73055 ; free virtual = 353463
+INFO: [v++ 60-1443] [17:55:57] Run run_link: Step generate_sc_driver: Started
+INFO: [v++ 60-1453] Command Line: 
+INFO: [v++ 60-1454] Run Directory: /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/link/run_link
+INFO: [v++ 60-1441] [17:55:57] Run run_link: Step generate_sc_driver: Completed
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 459.574 ; gain = 0.000 ; free physical = 73053 ; free virtual = 353462
+Check POST-VPL, containing 1 checks, has run: 0 errors
+INFO: [v++ 60-244] Generating system estimate report...
+INFO: [v++ 60-1092] Generated system estimate report: /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/reports/link/system_estimate_binary_container_1.xtxt
+INFO: [v++ 60-586] Created /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.ltx
+INFO: [v++ 60-586] Created binary_container_1.xclbin
+INFO: [v++ 60-1307] Run completed. Additional information can be found in:
+	Guidance: /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/reports/link/link_guidance.html
+	Timing Report: /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/reports/link/imp/impl_1_hw_bb_locked_timing_summary_routed.rpt
+	Vivado Log: /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/logs/link/vivado.log
+	Steps Log File: /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.build/logs/link/link.steps.log
+
+INFO: [v++ 60-2343] Use the vitis_analyzer tool to visualize and navigate the relevant reports. Run the following command. 
+    vitis_analyzer /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system_hw_link/Hardware/binary_container_1.xclbin.link_summary 
+INFO: [v++ 60-791] Total elapsed time: 2h 20m 11s
+INFO: [v++ 60-1653] Closing dispatch client.
+
+17:56:07 Build Finished (took 2h:20m:23s.836ms)
 

@@ -1,164 +1,0 @@
-
-****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2.2 (64-bit)
-  **** SW Build 3779808 on Feb 17 2023
-  **** IP Build 3783773 on Tue Feb 21 23:41:56 MST 2023
-    ** Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
-
-source /home/xilinx/software/Vitis_HLS/2022.2/scripts/vitis_hls/hls.tcl -notrace
-INFO: [HLS 200-10] Running '/home/xilinx/software/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/vitis_hls'
-INFO: [HLS 200-10] For user 'davide.salonico' on host 'nags21.local.necst.it' (Linux_x86_64 version 5.15.0-102-generic) on Sun May 19 17:40:30 CEST 2024
-INFO: [HLS 200-10] On os Ubuntu 20.04.6 LTS
-INFO: [HLS 200-10] In directory '/home/users/davide.salonico/sparse_blossom_prj/sparse_blossom_vitis_prj'
-[2Kvitis_hls> [11C[2Kvitis_hls> h[12C[2Kvitis_hls> he[13C[2Kvitis_hls> hel[14C[2Kvitis_hls> help[15C
-ALL TCL COMMANDS:
-  add_files                          - The add_files command adds design source and testbench files to the current
-                                       project.
-  apply_ini                          - Apply HLS sections of a ini file to the current project/solution
-  cat_ini                            - Concatenate ini files and print on the standard output
-  close_project                      - The close_project command closes the current project, so this project is no
-                                       longer active.
-  close_solution                     - The close_solution command closes the current solution, so this solution is no
-                                       longer active.
-  config_array_partition             - This command allows the default behavior for array partitioning to be specified.
-  config_array_stencil               - This command allows the default behavior for array_stencil pragma to be
-                                       specified.
-  config_compile                     - Configure csynth_design source compilation options
-  config_cosim                       - Set configuration options that control the result of the cosim_design command.
-  config_csim                        - Set configuration options that control the result of the csim_design command.
-  config_dataflow                    - Configure dataflow options
-  config_debug                       - Control behavior of debug file generation
-  config_export                      - Set configuration options that control the result of the export_design command.
-  config_interface                   - The config_interface command specifies the default interface options used to
-                                       implement the RTL ports of each function.
-  config_op                          - Configure the default implementation style and latency for different operators
-  config_rtl                         - This command configures various attributes of the output RTL
-  config_schedule                    - This configures the default behavior of scheduling.
-  config_storage                     - Configure the default implementation style and latency for different types of
-                                       storage elements
-  config_unroll                      - Configure automatic loop unrolling
-  cosim_design                       - Executes post-synthesis co-simulation of the generated RTL with the original
-                                       C-based testbench.
-  cosim_stall                        - Utility command for co-simlation stall json file development
-  create_clock                       - The create_clock command creates a virtual clock for the current solution.
-  csim_design                        - Compiles and run pre-synthesis C simulation using the provided C test bench.
-  csynth_design                      - The csynth_design command synthesizes the source files and generates RTL.
-  delete_project                     - The delete_project command deletes the directory associated with the project.
-  delete_solution                    - The delete_solution command removes a solution from the active project and
-                                       deletes the solution sub-directory from the project directory.
-  enable_beta_device                 - Enable beta device
-  export_design                      - Exports the HLS generated RTL as a Vivado IP for downstream tools.  Can also run
-                                       Vivado RTL synthesis or implementation flows.
-  get_clock_period                   - Get clock period used in current solution
-  get_clock_uncertainty              - Get clock uncertainty used in current solution
-  get_files                          - Get files that were added to current project
-  get_part                           - Get part used in current solution
-  get_project                        - Get the current project name or directory
-  get_solution                       - Get the current solution name, directory or flow_target
-  get_top                            - Get top name set in current project
-  help                               - Print the manpage of a command
-  list_part                          - This command returns names of supported device families, parts or boards.
-  open_project                       - The open_project command opens an existing project or creates a new one.
-  open_solution                      - The open_solution command opens an existing solution or creates a new one in the
-                                       currently active project.
-  open_tcl_project                   - Open project by sourcing a TCL file, will skip all *_design commands (i.e.
-                                       csynth_design)
-  set_clock_uncertainty              - Specify a margin which is subtracted from the clock period to create an effective
-                                       clock period used for scheduling.
-  set_directive_aggregate            - Specify that a struct or class variable should be aggregated.
-  set_directive_alias                - Specify that two or more M_AXI pointer arguments all point into the same
-                                       underlying buffer in DRAM (DDR or HBM) and indicate any aliasing between the
-                                       pointers by setting the distance between them
-  set_directive_allocation           - Specify a limit for the number of operations, implementations, or functions used.
-                                       This can force the sharing or hardware resources and may increase latency.
-  set_directive_array_partition      - Partitions large arrays into multiple smaller arrays or into individual
-                                       registers, to improve access to data and remove block RAM bottlenecks.
-  set_directive_array_reshape        - Reshape an array from one with many elements to one with greater word-width.
-                                       Useful for improving block RAM accesses without using more block RAM.
-  set_directive_bind_op              - Define a specific implementation and latency for an operation in the RTL
-  set_directive_bind_storage         - Define a specific implementation and latency for a storage element, or memory, in
-                                       the RTL
-  set_directive_dataflow             - Enables task level pipelining, allowing functions and loops to execute
-                                       concurrently. Used to optimize throughput and/or latency.
-  set_directive_dependence           - Used to provide additional information that can overcome loop-carried
-                                       dependencies and allow loops to be pipelined (or pipelined with lower intervals)
-  set_directive_disaggregate         - Break a struct down into its individual elements.
-  set_directive_expression_balance   - Allows automatic expression balancing to be turned off
-  set_directive_function_instantiate - Directive FUNCTION_INSTANTIATE
-  set_directive_inline               - Inlines a function, removing function hierarchy at this level.
-  set_directive_interface            - Specifies how RTL ports are created from the function description.
-  set_directive_latency              - Allows a minimum and/or maximum latency constraint to be specified
-  set_directive_loop_flatten         - Allows nested loops to be collapsed into a single loop with improved latency
-  set_directive_loop_merge           - Merge consecutive loops to reduce overall latency, increase sharing and improve
-                                       logic optimization
-  set_directive_loop_tripcount       - Used for loops which have variables bounds to provide an estimate for the loop
-                                       iteration count. This has no impact on synthesis, only on reporting.
-  set_directive_occurrence           - Used when pipelining functions or loops, to specify that the code in a location
-                                       is executed at a lesser rate than the code in the enclosing function or loop
-  set_directive_performance          - Allows a single pragma to parallelize a loop nests based on a performance target,
-                                       and can be accomplished by internally applying pipeline, unroll, and array
-                                       partition pragmas to the associated loops/arrays.
-  set_directive_pipeline             - Reduces the initiation interval by allowing overlapped execution of operations
-                                       within a loop or function
-  set_directive_protocol             - Specify a region of code as a 'protocol' region where no clock operations will be
-                                       inserted by Vitis HLS unless explicitly specified in the code
-  set_directive_reset                - This command can be used to add or remove reset for specific state variables
-                                       (global or static)
-  set_directive_resource             - Directive RESOURCE
-  set_directive_shared               - Specifies that a global variable, or function argument array is shared among
-                                       multiple dataflow processes, without the need for synchronization.
-  set_directive_stable               - Indicates that a variable input or output of a dataflow region can be ignored
-                                       when generating the synchronizations at entry and exit of the dataflow region.
-  set_directive_stream               - Specifies that a specific array is to be implemented as a FIFO or RAM memory
-                                       channel during dataflow optimization.
-  set_directive_top                  - This directive attaches a name to a function, which can then be used with the
-                                       set_top command.
-  set_directive_unroll               - Transform loops to create multiple instances of the loop body and its
-                                       instructions that can then be scheduled independently
-  set_part                           - The set_part command sets a target device for the current solution. The command
-                                       can only be executed in the context of an active solution.
-  set_top                            - The set_top command defines the top-level function to be synthesized.
-  write_ini                          - Write out ini file for the current project and solution if open
-[2Kvitis_hls> [11C[2Kvitis_hls> o[12C[2Kvitis_hls> op[13C[2Kvitis_hls> ope[14C[2Kvitis_hls> open[15C[2K
-[1;32mopen 
-open_project 
-open_solution 
-open_tcl_project 
-[0m[32mopenssl 
-openvpn 
-openvt 
-[0m
-[2Kvitis_hls> open[15C[2Kvitis_hls> open_[16C[2Kvitis_hls> open_p[17C[2Kvitis_hls> open_pr[18C[2Kvitis_hls> open_pro[19C[2Kvitis_hls> open_project[23C[2Kvitis_hls> open_project [24C[2Kvitis_hls> open_project s[25C[2Kvitis_hls> open_project sp[26C[2Kvitis_hls> open_project split[29C[2Kvitis_hls> open_project spli[28C[2Kvitis_hls> open_project spl[27C[2Kvitis_hls> open_project sp[26C[2Kvitis_hls> open_project spa[27C
-No match found.
-[2Kvitis_hls> open_project spa[27C[2Kvitis_hls> open_project sp[26C[2Kvitis_hls> open_project s[25C[2Kvitis_hls> open_project [24C
-INFO: [HLS 200-1510] Running: open_project 
-ERROR: [HLS 200-101] 'open_project': Not enough required positional arguments.
-SYNTAX 
-  open_project <name> [OPTIONS]
-    name :  <string>  (required)
-    -reset[=true|*false*]
-    -upgrade[=true|*false*]
-
-SEE ALSO
-  www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=vitis+doc;d=rpg1583259720879.html
-
-command 'open_project' returned error code
-[2Kvitis_hls> [11C[2Kvitis_hls> o[12C[2Kvitis_hls> op[13C[2Kvitis_hls> ope[14C[2Kvitis_hls> open[15C[2K
-[1;32mopen 
-open_project 
-open_solution 
-open_tcl_project 
-[0m[32mopenssl 
-openvpn 
-openvt 
-[0m
-[2Kvitis_hls> open[15C[2Kvitis_hls> open_[16C[2Kvitis_hls> open_p[17C[2Kvitis_hls> open_project[23C[2Kvitis_hls> open_projectr[24C
-No match found.
-[2Kvitis_hls> open_projectr[24C[2Kvitis_hls> open_project[23C[2Kvitis_hls> open_projec[22C[2Kvitis_hls> open_project[23C[2Kvitis_hls> open_project [24C[2Kvitis_hls> open_project[23C[2Kvitis_hls> open_projec[22C[2Kvitis_hls> open_proje[21C[2Kvitis_hls> open_proj[20C[2Kvitis_hls> open_pro[19C[2Kvitis_hls> open_pr[18C[2Kvitis_hls> open_p[17C[2Kvitis_hls> open_[16C[2Kvitis_hls> open[15C[2Kvitis_hls> ope[14C[2Kvitis_hls> op[13C[2Kvitis_hls> o[12C[2Kvitis_hls> [11C[2Kvitis_hls> [11C[2Kvitis_hls> [11C[2Kvitis_hls> [11C[2Kvitis_hls> [11C[2Kvitis_hls> [11C[2Kvitis_hls> [11C[2Kvitis_hls> l[12C[2Kvitis_hls> ls[13C
-hls.app
-sol1
-vitis_hls.log
-[2Kvitis_hls> [11C[2Kvitis_hls> o[12C[2Kvitis_hls> op[13C[2Kvitis_hls> ope[14C[2Kvitis_hls> open[15C[2Kvitis_hls> open [16C[2Kvitis_hls> open s[17C[2Kvitis_hls> open so[18C[2Kvitis_hls> open sol[19C[2Kvitis_hls> open sol1/[21C
-file3
-[2Kvitis_hls> [11C[2Kvitis_hls> q[12C[2Kvitis_hls> qu[13C[2Kvitis_hls> qui[14C[2Kvitis_hls> quit[15C
-INFO: [HLS 200-112] Total CPU user time: 1.18 seconds. Total CPU system time: 0.3 seconds. Total elapsed time: 73.95 seconds; peak allocated memory: 98.742 MB.
-INFO: [Common 17-206] Exiting vitis_hls at Sun May 19 17:41:43 2024...

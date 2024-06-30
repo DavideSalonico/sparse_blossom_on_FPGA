@@ -1,0 +1,114 @@
+{
+    "n_dets": 4,
+    "n_nodes": 4,
+    "nodes": [
+        {
+            "index": 0,
+            "neighbors": [
+                4,
+                2
+            ],
+            "neigh_weights": [
+                5.231115766018265,
+                5.007307578325384
+            ],
+            "neigh_obs": [
+                0,
+                0
+            ]
+        },
+        {
+            "index": 4,
+            "neighbors": [
+                0
+            ],
+            "neigh_weights": [
+                5.231115766018265
+            ],
+            "neigh_obs": [
+                0
+            ]
+        },
+        {
+            "index": 2,
+            "neighbors": [
+                0,
+                6
+            ],
+            "neigh_weights": [
+                5.007307578325384,
+                4.31487507628675
+            ],
+            "neigh_obs": [
+                0,
+                1
+            ]
+        },
+        {
+            "index": 1,
+            "neighbors": [
+                5,
+                3
+            ],
+            "neigh_weights": [
+                4.31487507628675,
+                5.007307578325384
+            ],
+            "neigh_obs": [
+                0,
+                0
+            ]
+        },
+        {
+            "index": 5,
+            "neighbors": [
+                1
+            ],
+            "neigh_weights": [
+                4.31487507628675
+            ],
+            "neigh_obs": [
+                0
+            ]
+        },
+        {
+            "index": 3,
+            "neighbors": [
+                1,
+                7
+            ],
+            "neigh_weights": [
+                5.007307578325384,
+                5.231115766018265
+            ],
+            "neigh_obs": [
+                0,
+                0
+            ]
+        },
+        {
+            "index": 6,
+            "neighbors": [
+                2
+            ],
+            "neigh_weights": [
+                4.31487507628675
+            ],
+            "neigh_obs": [
+                1
+            ]
+        },
+        {
+            "index": 7,
+            "neighbors": [
+                3
+            ],
+            "neigh_weights": [
+                5.231115766018265
+            ],
+            "neigh_obs": [
+                0
+            ]
+        }
+    ]
+}

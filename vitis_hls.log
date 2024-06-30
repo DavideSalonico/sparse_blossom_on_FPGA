@@ -1,892 +1,0 @@
-
-****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2.2 (64-bit)
-  **** SW Build 3779808 on Feb 17 2023
-  **** IP Build 3783773 on Tue Feb 21 23:41:56 MST 2023
-    ** Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
-
-source /home/xilinx/software/Vitis_HLS/2022.2/scripts/vitis_hls/hls.tcl -notrace
-INFO: [HLS 200-10] Running '/home/xilinx/software/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/vitis_hls'
-INFO: [HLS 200-10] For user 'davide.salonico' on host 'nags21.local.necst.it' (Linux_x86_64 version 5.15.0-102-generic) on Mon Jun 03 12:42:26 CEST 2024
-INFO: [HLS 200-10] On os Ubuntu 20.04.6 LTS
-INFO: [HLS 200-10] In directory '/home/users/davide.salonico/sparse_blossom_prj'
-[2Kvitis_hls> [11C[2Kvitis_hls> o[12C[2Kvitis_hls> op[13C[2Kvitis_hls> ope[14C[2Kvitis_hls> open[15C[2Kvitis_hls> open [16C[2Kvitis_hls> open [16C[2Kvitis_hls> open[15C[2K
-[1;32mopen 
-open_project 
-open_solution 
-open_tcl_project 
-[0m[32mopenssl 
-openvpn 
-openvt 
-[0m
-[2Kvitis_hls> open[15C[2Kvitis_hls> open_[16C[2Kvitis_hls> open_p[17C[2Kvitis_hls> open_pr[18C[2Kvitis_hls> open_pro[19C[2Kvitis_hls> open_project[23C
-INFO: [HLS 200-1510] Running: open_project 
-ERROR: [HLS 200-101] 'open_project': Not enough required positional arguments.
-SYNTAX 
-  open_project <name> [OPTIONS]
-    name :  <string>  (required)
-    -reset[=true|*false*]
-    -upgrade[=true|*false*]
-
-SEE ALSO
-  www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=vitis+doc;d=rpg1583259720879.html
-
-command 'open_project' returned error code
-[2Kvitis_hls> [11C[2Kvitis_hls> open_project[23C[2Kvitis_hls> open_project [24C[2Kvitis_hls> open_project s[25C[2K
-[35mscriptsRoot 
-skip_files 
-svuvm_tbgen_util 
-[0m[0msparse_blossom_vitis_prj 
-src 
-[0m
-[2Kvitis_hls> open_project s[25C[2Kvitis_hls> open_project sp[26C[2Kvitis_hls> open_project spa[27C[2Kvitis_hls> open_project spar[28C[2Kvitis_hls> open_project spars[29C[2Kvitis_hls> open_project sparse_blossom_vitis_prj/[49C
-INFO: [HLS 200-1510] Running: open_project sparse_blossom_vitis_prj/ 
-INFO: [HLS 200-10] Opening project '/home/users/davide.salonico/sparse_blossom_prj/sparse_blossom_vitis_prj'.
-[2Kvitis_hls> [11C[2Kvitis_hls> o[12C[2Kvitis_hls> op[13C[2Kvitis_hls> ope[14C[2Kvitis_hls> open[15C[2K
-[1;32mopen 
-open_project 
-open_solution 
-open_tcl_project 
-[0m[32mopenssl 
-openvpn 
-openvt 
-[0m
-[2Kvitis_hls> open[15C[2Kvitis_hls> ope[14C[2Kvitis_hls> op[13C[2Kvitis_hls> o[12C[2Kvitis_hls> [11C[2Kvitis_hls> c[12C[2Kvitis_hls> cl[13C[2Kvitis_hls> clo[14C[2Kvitis_hls> clos[15C[2Kvitis_hls> close[16C[2Kvitis_hls> close_[17C[2K
-[1;32mclose_project 
-close_solution 
-[0m
-[2Kvitis_hls> close_[17C[2Kvitis_hls> close_p[18C[2Kvitis_hls> close_project[24C
-INFO: [HLS 200-1510] Running: close_project 
-[2Kvitis_hls> [11C[2Kvitis_hls> o[12C[2Kvitis_hls> op[13C[2Kvitis_hls> ope[14C[2Kvitis_hls> open[15C[2Kvitis_hls> open_[16C[2Kvitis_hls> open_p[17C[2Kvitis_hls> open_project[23C[2Kvitis_hls> open_project[23C[2Kvitis_hls> open_project[23C[2Kvitis_hls> open_project [24C[2Kvitis_hls> open_project [24C[2Kvitis_hls> open_project [24C[2Kvitis_hls> open_project[23C[2Kvitis_hls> open_projec[22C[2Kvitis_hls> open_proje[21C[2Kvitis_hls> open_proj[20C[2Kvitis_hls> open_pro[19C[2Kvitis_hls> open_pr[18C[2Kvitis_hls> open_p[17C[2Kvitis_hls> open_[16C[2Kvitis_hls> open[15C[2Kvitis_hls> ope[14C[2Kvitis_hls> op[13C[2Kvitis_hls> o[12C[2Kvitis_hls> [11C[2Kvitis_hls> [11C[2Kvitis_hls> [11C[2Kvitis_hls> [11C[2Kvitis_hls> [11C[2Kvitis_hls> [11C[2Kvitis_hls> [11C[2Kvitis_hls> [11C[2Kvitis_hls> h[12C[2Kvitis_hls> he[13C[2Kvitis_hls> hep[14C
-invalid command name "hep"
-[2Kvitis_hls> [11C[2Kvitis_hls> h[12C[2Kvitis_hls> he[13C[2Kvitis_hls> hel[14C[2Kvitis_hls> help[15C
-ALL TCL COMMANDS:
-  add_files                          - The add_files command adds design source and testbench files to the current
-                                       project.
-  apply_ini                          - Apply HLS sections of a ini file to the current project/solution
-  cat_ini                            - Concatenate ini files and print on the standard output
-  close_project                      - The close_project command closes the current project, so this project is no
-                                       longer active.
-  close_solution                     - The close_solution command closes the current solution, so this solution is no
-                                       longer active.
-  config_array_partition             - This command allows the default behavior for array partitioning to be specified.
-  config_array_stencil               - This command allows the default behavior for array_stencil pragma to be
-                                       specified.
-  config_compile                     - Configure csynth_design source compilation options
-  config_cosim                       - Set configuration options that control the result of the cosim_design command.
-  config_csim                        - Set configuration options that control the result of the csim_design command.
-  config_dataflow                    - Configure dataflow options
-  config_debug                       - Control behavior of debug file generation
-  config_export                      - Set configuration options that control the result of the export_design command.
-  config_interface                   - The config_interface command specifies the default interface options used to
-                                       implement the RTL ports of each function.
-  config_op                          - Configure the default implementation style and latency for different operators
-  config_rtl                         - This command configures various attributes of the output RTL
-  config_schedule                    - This configures the default behavior of scheduling.
-  config_storage                     - Configure the default implementation style and latency for different types of
-                                       storage elements
-  config_unroll                      - Configure automatic loop unrolling
-  cosim_design                       - Executes post-synthesis co-simulation of the generated RTL with the original
-                                       C-based testbench.
-  cosim_stall                        - Utility command for co-simlation stall json file development
-  create_clock                       - The create_clock command creates a virtual clock for the current solution.
-  csim_design                        - Compiles and run pre-synthesis C simulation using the provided C test bench.
-  csynth_design                      - The csynth_design command synthesizes the source files and generates RTL.
-  delete_project                     - The delete_project command deletes the directory associated with the project.
-  delete_solution                    - The delete_solution command removes a solution from the active project and
-                                       deletes the solution sub-directory from the project directory.
-  enable_beta_device                 - Enable beta device
-  export_design                      - Exports the HLS generated RTL as a Vivado IP for downstream tools.  Can also run
-                                       Vivado RTL synthesis or implementation flows.
-  get_clock_period                   - Get clock period used in current solution
-  get_clock_uncertainty              - Get clock uncertainty used in current solution
-  get_files                          - Get files that were added to current project
-  get_part                           - Get part used in current solution
-  get_project                        - Get the current project name or directory
-  get_solution                       - Get the current solution name, directory or flow_target
-  get_top                            - Get top name set in current project
-  help                               - Print the manpage of a command
-  list_part                          - This command returns names of supported device families, parts or boards.
-  open_project                       - The open_project command opens an existing project or creates a new one.
-  open_solution                      - The open_solution command opens an existing solution or creates a new one in the
-                                       currently active project.
-  open_tcl_project                   - Open project by sourcing a TCL file, will skip all *_design commands (i.e.
-                                       csynth_design)
-  set_clock_uncertainty              - Specify a margin which is subtracted from the clock period to create an effective
-                                       clock period used for scheduling.
-  set_directive_aggregate            - Specify that a struct or class variable should be aggregated.
-  set_directive_alias                - Specify that two or more M_AXI pointer arguments all point into the same
-                                       underlying buffer in DRAM (DDR or HBM) and indicate any aliasing between the
-                                       pointers by setting the distance between them
-  set_directive_allocation           - Specify a limit for the number of operations, implementations, or functions used.
-                                       This can force the sharing or hardware resources and may increase latency.
-  set_directive_array_partition      - Partitions large arrays into multiple smaller arrays or into individual
-                                       registers, to improve access to data and remove block RAM bottlenecks.
-  set_directive_array_reshape        - Reshape an array from one with many elements to one with greater word-width.
-                                       Useful for improving block RAM accesses without using more block RAM.
-  set_directive_bind_op              - Define a specific implementation and latency for an operation in the RTL
-  set_directive_bind_storage         - Define a specific implementation and latency for a storage element, or memory, in
-                                       the RTL
-  set_directive_dataflow             - Enables task level pipelining, allowing functions and loops to execute
-                                       concurrently. Used to optimize throughput and/or latency.
-  set_directive_dependence           - Used to provide additional information that can overcome loop-carried
-                                       dependencies and allow loops to be pipelined (or pipelined with lower intervals)
-  set_directive_disaggregate         - Break a struct down into its individual elements.
-  set_directive_expression_balance   - Allows automatic expression balancing to be turned off
-  set_directive_function_instantiate - Directive FUNCTION_INSTANTIATE
-  set_directive_inline               - Inlines a function, removing function hierarchy at this level.
-  set_directive_interface            - Specifies how RTL ports are created from the function description.
-  set_directive_latency              - Allows a minimum and/or maximum latency constraint to be specified
-  set_directive_loop_flatten         - Allows nested loops to be collapsed into a single loop with improved latency
-  set_directive_loop_merge           - Merge consecutive loops to reduce overall latency, increase sharing and improve
-                                       logic optimization
-  set_directive_loop_tripcount       - Used for loops which have variables bounds to provide an estimate for the loop
-                                       iteration count. This has no impact on synthesis, only on reporting.
-  set_directive_occurrence           - Used when pipelining functions or loops, to specify that the code in a location
-                                       is executed at a lesser rate than the code in the enclosing function or loop
-  set_directive_performance          - Allows a single pragma to parallelize a loop nests based on a performance target,
-                                       and can be accomplished by internally applying pipeline, unroll, and array
-                                       partition pragmas to the associated loops/arrays.
-  set_directive_pipeline             - Reduces the initiation interval by allowing overlapped execution of operations
-                                       within a loop or function
-  set_directive_protocol             - Specify a region of code as a 'protocol' region where no clock operations will be
-                                       inserted by Vitis HLS unless explicitly specified in the code
-  set_directive_reset                - This command can be used to add or remove reset for specific state variables
-                                       (global or static)
-  set_directive_resource             - Directive RESOURCE
-  set_directive_shared               - Specifies that a global variable, or function argument array is shared among
-                                       multiple dataflow processes, without the need for synchronization.
-  set_directive_stable               - Indicates that a variable input or output of a dataflow region can be ignored
-                                       when generating the synchronizations at entry and exit of the dataflow region.
-  set_directive_stream               - Specifies that a specific array is to be implemented as a FIFO or RAM memory
-                                       channel during dataflow optimization.
-  set_directive_top                  - This directive attaches a name to a function, which can then be used with the
-                                       set_top command.
-  set_directive_unroll               - Transform loops to create multiple instances of the loop body and its
-                                       instructions that can then be scheduled independently
-  set_part                           - The set_part command sets a target device for the current solution. The command
-                                       can only be executed in the context of an active solution.
-  set_top                            - The set_top command defines the top-level function to be synthesized.
-  write_ini                          - Write out ini file for the current project and solution if open
-[2Kvitis_hls> [11C[2Kvitis_hls> l[12C[2Kvitis_hls> ls[13C
-build
-DaCH
-PyMatching
-README.md
-sparse_blossom_vitis_prj
-src
-venv
-Vitis_Accel_Examples
-vitis_hls.log
-[2Kvitis_hls> [11C[2Kvitis_hls> c[12C[2Kvitis_hls> cd[13C[2Kvitis_hls> cd [14C[2Kvitis_hls> cd .[15C[2Kvitis_hls> cd ..[16C
-[2Kvitis_hls> [11C[2Kvitis_hls> l[12C[2Kvitis_hls> ls[13C
-cache2_prj
-chache_prj
-Desktop
-Documents
-Downloads
-hs_err_pid1121845.log
-Music
-Pictures
-pm_vitis
-Public
-sparse_blossom_prj
-Templates
-thinclient_drives
-Videos
-vitis_hls.log
-workDCT
-xrc.log
-[2Kvitis_hls> [11C[2Kvitis_hls> l[12C[2Kvitis_hls> ls[13C
-cache2_prj
-chache_prj
-Desktop
-Documents
-Downloads
-hs_err_pid1121845.log
-Music
-Pictures
-pm_vitis
-Public
-sparse_blossom_prj
-Templates
-thinclient_drives
-Videos
-vitis_hls.log
-workDCT
-xrc.log
-[2Kvitis_hls> [11C[2Kvitis_hls> o[12C[2Kvitis_hls> op[13C[2Kvitis_hls> ope[14C[2Kvitis_hls> open[15C[2Kvitis_hls> open_[16C[2Kvitis_hls> open_p[17C[2Kvitis_hls> open_project[23C[2Kvitis_hls> open_project [24C[2Kvitis_hls> open_project p[25C[2Kvitis_hls> open_project pm[26C[2Kvitis_hls> open_project pm_vitis/[33C
-INFO: [HLS 200-1510] Running: open_project pm_vitis/ 
-INFO: [HLS 200-10] Opening project '/home/users/davide.salonico/pm_vitis'.
-[2Kvitis_hls> [11C[2Kvitis_hls> o[12C[2Kvitis_hls> op[13C[2K
-[1;32mopen 
-open_project 
-open_solution 
-open_tcl_project 
-[0m[32mopenssl 
-openvpn 
-openvt 
-opldecode 
-opt-10 
-[0m
-[2Kvitis_hls> op[13C[2Kvitis_hls> ope[14C[2Kvitis_hls> open[15C[2Kvitis_hls> open_[16C[2Kvitis_hls> open_s[17C[2Kvitis_hls> open_so[18C[2Kvitis_hls> open_sol[19C[2Kvitis_hls> open_solution[24C[2Kvitis_hls> open_solution [25C[2Kvitis_hls> open_solution s[26C[2Kvitis_hls> open_solution so[27C[2Kvitis_hls> open_solution sol[28C[2Kvitis_hls> open_solution solu[29C[2Kvitis_hls> open_solution solut[30C[2Kvitis_hls> open_solution soluti[31C[2Kvitis_hls> open_solution solutio[32C[2Kvitis_hls> open_solution solution[33C[2Kvitis_hls> open_solution solution1[34C
-INFO: [HLS 200-1510] Running: open_solution solution1 
-INFO: [HLS 200-10] Opening solution '/home/users/davide.salonico/pm_vitis/solution1'.
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
-INFO: [HLS 200-1611] Setting target device to 'xcvu11p-flga2577-1-e'
-INFO: [HLS 200-1505] Using flow_target 'vivado'
-Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-1505.html
-[2Kvitis_hls> [11C[2Kvitis_hls> c[12C[2Kvitis_hls> cs[13C[2Kvitis_hls> csi[14C[2Kvitis_hls> csim[15C[2Kvitis_hls> csim_[16C[2Kvitis_hls> csim_design[22C
-INFO: [HLS 200-1510] Running: csim_design 
-Running Dispatch Server on port: 36863
-INFO: [SIM 211-2] *************** CSIM start ***************
-INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
-   Compiling ../../../../sparse_blossom_prj/src/tb.cpp in debug mode
-In file included from /usr/include/strings.h:23,
-                 from /usr/include/string.h:432,
-                 from /home/xilinx/software/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/include/c++/8.3.0/cstring:42,
-                 from /home/xilinx/software/Vitis_HLS/2022.2/include/etc/ap_private.h:80,
-                 from /home/xilinx/software/Vitis_HLS/2022.2/include/ap_common.h:666,
-                 from /home/xilinx/software/Vitis_HLS/2022.2/include/ap_int.h:10,
-                 from /home/users/davide.salonico/sparse_blossom_prj/DaCH/src/address.h:4,
-                 from /home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:24,
-                 from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:162:40: error: array must be initialized with a brace-enclosed initializer
-     region_data_t regions[N_REGIONS] = NULL;
-                                        ^~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:163:51: error: array must be initialized with a brace-enclosed initializer
-     altTreeNode_data_t alttree[ALTTREEEDGE_MAX] = NULL;
-                                                   ^~~~
-In file included from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:195:63: error: ‘syndrome’ has not been declared
- extern "C" void sparse_top(choice_t choice, FpgaGraph* graph, syndrome[], corrections_t corrections[])
-                                                               ^~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp: In function ‘void sparse_top(choice_t, FpgaGraph*, int*, corrections_t*)’:
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:206:9: error: ‘node_lut’ was not declared in this scope
-         node_lut(graph.nodes);
-         ^~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:206:9: note: suggested alternative: ‘node_t’
-         node_lut(graph.nodes);
-         ^~~~~~~~
-         node_t
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:207:9: error: ‘region_lut’ was not declared in this scope
-         region_lut(graph.regions);
-         ^~~~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:207:9: note: suggested alternative: ‘region_t’
-         region_lut(graph.regions);
-         ^~~~~~~~~~
-         region_t
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:208:28: error: ‘struct FpgaGraph’ has no member named ‘alt_tree’; did you mean ‘alttree’?
-         alt_tree_lut(graph.alt_tree);
-                            ^~~~~~~~
-                            alttree
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:208:9: error: ‘alt_tree_lut’ was not declared in this scope
-         alt_tree_lut(graph.alt_tree);
-         ^~~~~~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:208:9: note: suggested alternative: ‘alt_tree_cache’
-         alt_tree_lut(graph.alt_tree);
-         ^~~~~~~~~~~~
-         alt_tree_cache
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:23: error: ‘decode’ was not declared in this scope
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                       ^~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:23: note: suggested alternative: ‘remove’
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                       ^~~~~~
-                       remove
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:40: error: expected primary-expression before ‘,’ token
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                        ^
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:54: error: expected primary-expression before ‘,’ token
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                      ^
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:70: error: expected primary-expression before ‘>’ token
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                      ^
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:71: error: expected primary-expression before ‘,’ token
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                       ^
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:73: error: ‘node_lut’ was not declared in this scope
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                         ^~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:73: note: suggested alternative: ‘node_t’
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                         ^~~~~~~~
-                                                                         node_t
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:83: error: ‘region_lut’ was not declared in this scope
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                                   ^~~~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:83: note: suggested alternative: ‘region_t’
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                                   ^~~~~~~~~~
-                                                                                   region_t
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:95: error: ‘alt_tree_lut’ was not declared in this scope
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                                               ^~~~~~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:95: note: suggested alternative: ‘alt_tree_cache’
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                                               ^~~~~~~~~~~~
-                                                                                               alt_tree_cache
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp: At global scope:
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:246:79: error: ‘err_t’ has not been declared
- void decode(T1 nodes, T2 regions, T3 alt_tree, syndr_t syndrome[MAX_N_NODES], err_t errors[MAX_N_OBS]){
-                                                                               ^~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp: In function ‘void decode(T1, T2, T3, syndr_t*, int*)’:
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:255:8: error: there are no arguments to ‘f_dispatcher’ that depend on a template parameter, so a declaration of ‘f_dispatcher’ must be available [-fpermissive]
-        f_dispatcher(&fe, done);
-        ^~~~~~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:255:8: note: (if you use ‘-fpermissive’, G++ will accept your code, but allowing the use of an undeclared name is deprecated)
-../../../../sparse_blossom_prj/src/tb.cpp: In function ‘int main(int, char**)’:
-../../../../sparse_blossom_prj/src/tb.cpp:4:23: error: ‘load_graph_from_file’ was not declared in this scope
-     FpgaGraph graph = load_graph_from_file();
-                       ^~~~~~~~~~~~~~~~~~~~
-In file included from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h: In instantiation of ‘class cache<node_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’:
-../../../../sparse_blossom_prj/src/tb.cpp:6:16:   required from here
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:72:34: error: static assertion failed: MAIN_SIZE must be a power of 2 greater than 0
-   static_assert(((MAIN_SIZE > 0) && ((1 << ADDR_SIZE) == MAIN_SIZE)),
-                 ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:81:28: error: static assertion failed: N_SETS and/or N_WAYS and/or N_WORDS_PER_LINE are too big for the specified MAIN_SIZE
-   static_assert((MAIN_SIZE >= (N_SETS * N_WAYS * N_WORDS_PER_LINE)),
-                 ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:26,
-                 from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/l1_cache.h: In instantiation of ‘class l1_cache<node_data_t, 1000, 1, 1, 16, false, (types::storage_impl_type)3>’:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:139:37:   required from ‘class cache<node_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’
-../../../../sparse_blossom_prj/src/tb.cpp:6:16:   required from here
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/l1_cache.h:29:34: error: static assertion failed: MAIN_SIZE must be a power of 2 greater than 0
-   static_assert(((MAIN_SIZE > 0) && ((1 << ADDR_SIZE) == MAIN_SIZE)),
-                 ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../../../../sparse_blossom_prj/src/tb.cpp:6:28: error: could not convert ‘<brace-enclosed initializer list>()’ from ‘<brace-enclosed initializer list>’ to ‘node_cache’ {aka ‘cache<node_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’}
-     node_cache node_lut = {};
-                            ^
-In file included from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h: In instantiation of ‘class cache<region_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’:
-../../../../sparse_blossom_prj/src/tb.cpp:7:18:   required from here
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:72:34: error: static assertion failed: MAIN_SIZE must be a power of 2 greater than 0
-   static_assert(((MAIN_SIZE > 0) && ((1 << ADDR_SIZE) == MAIN_SIZE)),
-                 ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:81:28: error: static assertion failed: N_SETS and/or N_WAYS and/or N_WORDS_PER_LINE are too big for the specified MAIN_SIZE
-   static_assert((MAIN_SIZE >= (N_SETS * N_WAYS * N_WORDS_PER_LINE)),
-                 ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:26,
-                 from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/l1_cache.h: In instantiation of ‘class l1_cache<region_data_t, 1000, 1, 1, 16, false, (types::storage_impl_type)3>’:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:139:37:   required from ‘class cache<region_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’
-../../../../sparse_blossom_prj/src/tb.cpp:7:18:   required from here
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/l1_cache.h:29:34: error: static assertion failed: MAIN_SIZE must be a power of 2 greater than 0
-   static_assert(((MAIN_SIZE > 0) && ((1 << ADDR_SIZE) == MAIN_SIZE)),
-                 ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../../../../sparse_blossom_prj/src/tb.cpp:7:32: error: could not convert ‘<brace-enclosed initializer list>()’ from ‘<brace-enclosed initializer list>’ to ‘region_cache’ {aka ‘cache<region_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’}
-     region_cache region_lut = {};
-                                ^
-In file included from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h: In instantiation of ‘class cache<altTreeNode_data_t, true, true, 1, 10000, 16, 16, 16, true, 1, 1, false, 2>’:
-../../../../sparse_blossom_prj/src/tb.cpp:8:20:   required from here
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:72:34: error: static assertion failed: MAIN_SIZE must be a power of 2 greater than 0
-   static_assert(((MAIN_SIZE > 0) && ((1 << ADDR_SIZE) == MAIN_SIZE)),
-                 ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:26,
-                 from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/l1_cache.h: In instantiation of ‘class l1_cache<altTreeNode_data_t, 10000, 1, 1, 16, false, (types::storage_impl_type)3>’:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:139:37:   required from ‘class cache<altTreeNode_data_t, true, true, 1, 10000, 16, 16, 16, true, 1, 1, false, 2>’
-../../../../sparse_blossom_prj/src/tb.cpp:8:20:   required from here
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/l1_cache.h:29:34: error: static assertion failed: MAIN_SIZE must be a power of 2 greater than 0
-   static_assert(((MAIN_SIZE > 0) && ((1 << ADDR_SIZE) == MAIN_SIZE)),
-                 ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../../../../sparse_blossom_prj/src/tb.cpp:8:36: error: could not convert ‘<brace-enclosed initializer list>()’ from ‘<brace-enclosed initializer list>’ to ‘alt_tree_cache’ {aka ‘cache<altTreeNode_data_t, true, true, 1, 10000, 16, 16, 16, true, 1, 1, false, 2>’}
-     alt_tree_cache alt_tree_lut = {};
-                                    ^
-../../../../sparse_blossom_prj/src/tb.cpp:10:53: error: invalid conversion from ‘int’ to ‘choice_t’ [-fpermissive]
-     sparse_top(0, node_lut, region_lut, alt_tree_lut);
-                                                     ^
-../../../../sparse_blossom_prj/src/tb.cpp:10:19: error: cannot convert ‘node_cache’ {aka ‘cache<node_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’} to ‘FpgaGraph*’
-     sparse_top(0, node_lut, region_lut, alt_tree_lut);
-                   ^~~~~~~~
-In file included from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:195:56: note:   initializing argument 2 of ‘void sparse_top(choice_t, FpgaGraph*, int*, corrections_t*)’
- extern "C" void sparse_top(choice_t choice, FpgaGraph* graph, syndrome[], corrections_t corrections[])
-                                             ~~~~~~~~~~~^~~~~
-make: *** [csim.mk:78: obj/tb.o] Error 1
-ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
-INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1.67 seconds. CPU system time: 0.47 seconds. Elapsed time: 2.14 seconds; current allocated memory: 0.457 MB.
-4
-[2Kvitis_hls> [11C[2Kvitis_hls> csim_design[22C[2Kvitis_hls> open_solution solution1[34C[2Kvitis_hls> csim_design[22C
-INFO: [HLS 200-1510] Running: csim_design 
-INFO: [SIM 211-2] *************** CSIM start ***************
-INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
-   Compiling ../../../../sparse_blossom_prj/src/tb.cpp in debug mode
-In file included from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:195:63: error: ‘syndrome’ has not been declared
- extern "C" void sparse_top(choice_t choice, FpgaGraph* graph, syndrome[], corrections_t corrections[])
-                                                               ^~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp: In function ‘void sparse_top(choice_t, FpgaGraph*, int*, corrections_t*)’:
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:206:9: error: ‘node_lut’ was not declared in this scope
-         node_lut(graph.nodes);
-         ^~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:206:9: note: suggested alternative: ‘node_t’
-         node_lut(graph.nodes);
-         ^~~~~~~~
-         node_t
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:207:9: error: ‘region_lut’ was not declared in this scope
-         region_lut(graph.regions);
-         ^~~~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:207:9: note: suggested alternative: ‘region_t’
-         region_lut(graph.regions);
-         ^~~~~~~~~~
-         region_t
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:208:28: error: ‘struct FpgaGraph’ has no member named ‘alt_tree’; did you mean ‘alttree’?
-         alt_tree_lut(graph.alt_tree);
-                            ^~~~~~~~
-                            alttree
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:208:9: error: ‘alt_tree_lut’ was not declared in this scope
-         alt_tree_lut(graph.alt_tree);
-         ^~~~~~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:208:9: note: suggested alternative: ‘alt_tree_cache’
-         alt_tree_lut(graph.alt_tree);
-         ^~~~~~~~~~~~
-         alt_tree_cache
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:23: error: ‘decode’ was not declared in this scope
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                       ^~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:23: note: suggested alternative: ‘remove’
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                       ^~~~~~
-                       remove
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:40: error: expected primary-expression before ‘,’ token
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                        ^
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:54: error: expected primary-expression before ‘,’ token
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                      ^
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:70: error: expected primary-expression before ‘>’ token
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                      ^
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:71: error: expected primary-expression before ‘,’ token
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                       ^
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:73: error: ‘node_lut’ was not declared in this scope
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                         ^~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:73: note: suggested alternative: ‘node_t’
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                         ^~~~~~~~
-                                                                         node_t
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:83: error: ‘region_lut’ was not declared in this scope
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                                   ^~~~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:83: note: suggested alternative: ‘region_t’
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                                   ^~~~~~~~~~
-                                                                                   region_t
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:95: error: ‘alt_tree_lut’ was not declared in this scope
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                                               ^~~~~~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:95: note: suggested alternative: ‘alt_tree_cache’
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                                               ^~~~~~~~~~~~
-                                                                                               alt_tree_cache
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp: At global scope:
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:246:79: error: ‘err_t’ has not been declared
- void decode(T1 nodes, T2 regions, T3 alt_tree, syndr_t syndrome[MAX_N_NODES], err_t errors[MAX_N_OBS]){
-                                                                               ^~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp: In function ‘void decode(T1, T2, T3, syndr_t*, int*)’:
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:255:8: error: there are no arguments to ‘f_dispatcher’ that depend on a template parameter, so a declaration of ‘f_dispatcher’ must be available [-fpermissive]
-        f_dispatcher(&fe, done);
-        ^~~~~~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:255:8: note: (if you use ‘-fpermissive’, G++ will accept your code, but allowing the use of an undeclared name is deprecated)
-../../../../sparse_blossom_prj/src/tb.cpp: In function ‘int main(int, char**)’:
-../../../../sparse_blossom_prj/src/tb.cpp:4:23: error: ‘load_graph_from_file’ was not declared in this scope
-     FpgaGraph graph = load_graph_from_file();
-                       ^~~~~~~~~~~~~~~~~~~~
-In file included from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h: In instantiation of ‘class cache<node_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’:
-../../../../sparse_blossom_prj/src/tb.cpp:6:16:   required from here
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:72:34: error: static assertion failed: MAIN_SIZE must be a power of 2 greater than 0
-   static_assert(((MAIN_SIZE > 0) && ((1 << ADDR_SIZE) == MAIN_SIZE)),
-                 ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:81:28: error: static assertion failed: N_SETS and/or N_WAYS and/or N_WORDS_PER_LINE are too big for the specified MAIN_SIZE
-   static_assert((MAIN_SIZE >= (N_SETS * N_WAYS * N_WORDS_PER_LINE)),
-                 ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:26,
-                 from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/l1_cache.h: In instantiation of ‘class l1_cache<node_data_t, 1000, 1, 1, 16, false, (types::storage_impl_type)3>’:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:139:37:   required from ‘class cache<node_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’
-../../../../sparse_blossom_prj/src/tb.cpp:6:16:   required from here
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/l1_cache.h:29:34: error: static assertion failed: MAIN_SIZE must be a power of 2 greater than 0
-   static_assert(((MAIN_SIZE > 0) && ((1 << ADDR_SIZE) == MAIN_SIZE)),
-                 ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../../../../sparse_blossom_prj/src/tb.cpp:6:28: error: could not convert ‘<brace-enclosed initializer list>()’ from ‘<brace-enclosed initializer list>’ to ‘node_cache’ {aka ‘cache<node_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’}
-     node_cache node_lut = {};
-                            ^
-In file included from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h: In instantiation of ‘class cache<region_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’:
-../../../../sparse_blossom_prj/src/tb.cpp:7:18:   required from here
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:72:34: error: static assertion failed: MAIN_SIZE must be a power of 2 greater than 0
-   static_assert(((MAIN_SIZE > 0) && ((1 << ADDR_SIZE) == MAIN_SIZE)),
-                 ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:81:28: error: static assertion failed: N_SETS and/or N_WAYS and/or N_WORDS_PER_LINE are too big for the specified MAIN_SIZE
-   static_assert((MAIN_SIZE >= (N_SETS * N_WAYS * N_WORDS_PER_LINE)),
-                 ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:26,
-                 from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/l1_cache.h: In instantiation of ‘class l1_cache<region_data_t, 1000, 1, 1, 16, false, (types::storage_impl_type)3>’:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:139:37:   required from ‘class cache<region_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’
-../../../../sparse_blossom_prj/src/tb.cpp:7:18:   required from here
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/l1_cache.h:29:34: error: static assertion failed: MAIN_SIZE must be a power of 2 greater than 0
-   static_assert(((MAIN_SIZE > 0) && ((1 << ADDR_SIZE) == MAIN_SIZE)),
-                 ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../../../../sparse_blossom_prj/src/tb.cpp:7:32: error: could not convert ‘<brace-enclosed initializer list>()’ from ‘<brace-enclosed initializer list>’ to ‘region_cache’ {aka ‘cache<region_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’}
-     region_cache region_lut = {};
-                                ^
-In file included from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h: In instantiation of ‘class cache<altTreeNode_data_t, true, true, 1, 10000, 16, 16, 16, true, 1, 1, false, 2>’:
-../../../../sparse_blossom_prj/src/tb.cpp:8:20:   required from here
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:72:34: error: static assertion failed: MAIN_SIZE must be a power of 2 greater than 0
-   static_assert(((MAIN_SIZE > 0) && ((1 << ADDR_SIZE) == MAIN_SIZE)),
-                 ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:26,
-                 from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/l1_cache.h: In instantiation of ‘class l1_cache<altTreeNode_data_t, 10000, 1, 1, 16, false, (types::storage_impl_type)3>’:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:139:37:   required from ‘class cache<altTreeNode_data_t, true, true, 1, 10000, 16, 16, 16, true, 1, 1, false, 2>’
-../../../../sparse_blossom_prj/src/tb.cpp:8:20:   required from here
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/l1_cache.h:29:34: error: static assertion failed: MAIN_SIZE must be a power of 2 greater than 0
-   static_assert(((MAIN_SIZE > 0) && ((1 << ADDR_SIZE) == MAIN_SIZE)),
-                 ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../../../../sparse_blossom_prj/src/tb.cpp:8:36: error: could not convert ‘<brace-enclosed initializer list>()’ from ‘<brace-enclosed initializer list>’ to ‘alt_tree_cache’ {aka ‘cache<altTreeNode_data_t, true, true, 1, 10000, 16, 16, 16, true, 1, 1, false, 2>’}
-     alt_tree_cache alt_tree_lut = {};
-                                    ^
-../../../../sparse_blossom_prj/src/tb.cpp:10:53: error: invalid conversion from ‘int’ to ‘choice_t’ [-fpermissive]
-     sparse_top(0, node_lut, region_lut, alt_tree_lut);
-                                                     ^
-../../../../sparse_blossom_prj/src/tb.cpp:10:19: error: cannot convert ‘node_cache’ {aka ‘cache<node_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’} to ‘FpgaGraph*’
-     sparse_top(0, node_lut, region_lut, alt_tree_lut);
-                   ^~~~~~~~
-In file included from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:195:56: note:   initializing argument 2 of ‘void sparse_top(choice_t, FpgaGraph*, int*, corrections_t*)’
- extern "C" void sparse_top(choice_t choice, FpgaGraph* graph, syndrome[], corrections_t corrections[])
-                                             ~~~~~~~~~~~^~~~~
-make: *** [csim.mk:78: obj/tb.o] Error 1
-ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
-INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1.62 seconds. CPU system time: 0.45 seconds. Elapsed time: 2.09 seconds; current allocated memory: 0.523 MB.
-4
-[2Kvitis_hls> [11C[2Kvitis_hls> csim_design[22C
-INFO: [HLS 200-1510] Running: csim_design 
-INFO: [SIM 211-2] *************** CSIM start ***************
-INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
-   Compiling ../../../../sparse_blossom_prj/src/tb.cpp in debug mode
-In file included from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp: In function ‘void sparse_top(choice_t, FpgaGraph*, syndr_t, corrections_t)’:
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:206:9: error: ‘node_lut’ was not declared in this scope
-         node_lut(graph.nodes);
-         ^~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:206:9: note: suggested alternative: ‘node_t’
-         node_lut(graph.nodes);
-         ^~~~~~~~
-         node_t
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:207:9: error: ‘region_lut’ was not declared in this scope
-         region_lut(graph.regions);
-         ^~~~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:207:9: note: suggested alternative: ‘region_t’
-         region_lut(graph.regions);
-         ^~~~~~~~~~
-         region_t
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:208:28: error: ‘struct FpgaGraph’ has no member named ‘alt_tree’; did you mean ‘alttree’?
-         alt_tree_lut(graph.alt_tree);
-                            ^~~~~~~~
-                            alttree
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:208:9: error: ‘alt_tree_lut’ was not declared in this scope
-         alt_tree_lut(graph.alt_tree);
-         ^~~~~~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:208:9: note: suggested alternative: ‘alt_tree_cache’
-         alt_tree_lut(graph.alt_tree);
-         ^~~~~~~~~~~~
-         alt_tree_cache
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:23: error: ‘decode’ was not declared in this scope
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                       ^~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:23: note: suggested alternative: ‘remove’
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                       ^~~~~~
-                       remove
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:40: error: expected primary-expression before ‘,’ token
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                        ^
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:54: error: expected primary-expression before ‘,’ token
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                      ^
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:70: error: expected primary-expression before ‘>’ token
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                      ^
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:71: error: expected primary-expression before ‘,’ token
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                       ^
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:73: error: ‘node_lut’ was not declared in this scope
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                         ^~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:73: note: suggested alternative: ‘node_t’
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                         ^~~~~~~~
-                                                                         node_t
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:83: error: ‘region_lut’ was not declared in this scope
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                                   ^~~~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:83: note: suggested alternative: ‘region_t’
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                                   ^~~~~~~~~~
-                                                                                   region_t
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:95: error: ‘alt_tree_lut’ was not declared in this scope
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                                               ^~~~~~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:95: note: suggested alternative: ‘alt_tree_cache’
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                                               ^~~~~~~~~~~~
-                                                                                               alt_tree_cache
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp: At global scope:
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:246:79: error: ‘err_t’ has not been declared
- void decode(T1 nodes, T2 regions, T3 alt_tree, syndr_t syndrome[MAX_N_NODES], err_t errors[MAX_N_OBS]){
-                                                                               ^~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp: In function ‘void decode(T1, T2, T3, syndr_t*, int*)’:
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:255:8: error: there are no arguments to ‘f_dispatcher’ that depend on a template parameter, so a declaration of ‘f_dispatcher’ must be available [-fpermissive]
-        f_dispatcher(&fe, done);
-        ^~~~~~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:255:8: note: (if you use ‘-fpermissive’, G++ will accept your code, but allowing the use of an undeclared name is deprecated)
-../../../../sparse_blossom_prj/src/tb.cpp: In function ‘int main(int, char**)’:
-../../../../sparse_blossom_prj/src/tb.cpp:4:23: error: ‘load_graph_from_file’ was not declared in this scope
-     FpgaGraph graph = load_graph_from_file();
-                       ^~~~~~~~~~~~~~~~~~~~
-In file included from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h: In instantiation of ‘class cache<node_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’:
-../../../../sparse_blossom_prj/src/tb.cpp:6:16:   required from here
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:72:34: error: static assertion failed: MAIN_SIZE must be a power of 2 greater than 0
-   static_assert(((MAIN_SIZE > 0) && ((1 << ADDR_SIZE) == MAIN_SIZE)),
-                 ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:81:28: error: static assertion failed: N_SETS and/or N_WAYS and/or N_WORDS_PER_LINE are too big for the specified MAIN_SIZE
-   static_assert((MAIN_SIZE >= (N_SETS * N_WAYS * N_WORDS_PER_LINE)),
-                 ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:26,
-                 from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/l1_cache.h: In instantiation of ‘class l1_cache<node_data_t, 1000, 1, 1, 16, false, (types::storage_impl_type)3>’:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:139:37:   required from ‘class cache<node_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’
-../../../../sparse_blossom_prj/src/tb.cpp:6:16:   required from here
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/l1_cache.h:29:34: error: static assertion failed: MAIN_SIZE must be a power of 2 greater than 0
-   static_assert(((MAIN_SIZE > 0) && ((1 << ADDR_SIZE) == MAIN_SIZE)),
-                 ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../../../../sparse_blossom_prj/src/tb.cpp:6:28: error: could not convert ‘<brace-enclosed initializer list>()’ from ‘<brace-enclosed initializer list>’ to ‘node_cache’ {aka ‘cache<node_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’}
-     node_cache node_lut = {};
-                            ^
-In file included from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h: In instantiation of ‘class cache<region_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’:
-../../../../sparse_blossom_prj/src/tb.cpp:7:18:   required from here
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:72:34: error: static assertion failed: MAIN_SIZE must be a power of 2 greater than 0
-   static_assert(((MAIN_SIZE > 0) && ((1 << ADDR_SIZE) == MAIN_SIZE)),
-                 ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:81:28: error: static assertion failed: N_SETS and/or N_WAYS and/or N_WORDS_PER_LINE are too big for the specified MAIN_SIZE
-   static_assert((MAIN_SIZE >= (N_SETS * N_WAYS * N_WORDS_PER_LINE)),
-                 ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:26,
-                 from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/l1_cache.h: In instantiation of ‘class l1_cache<region_data_t, 1000, 1, 1, 16, false, (types::storage_impl_type)3>’:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:139:37:   required from ‘class cache<region_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’
-../../../../sparse_blossom_prj/src/tb.cpp:7:18:   required from here
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/l1_cache.h:29:34: error: static assertion failed: MAIN_SIZE must be a power of 2 greater than 0
-   static_assert(((MAIN_SIZE > 0) && ((1 << ADDR_SIZE) == MAIN_SIZE)),
-                 ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../../../../sparse_blossom_prj/src/tb.cpp:7:32: error: could not convert ‘<brace-enclosed initializer list>()’ from ‘<brace-enclosed initializer list>’ to ‘region_cache’ {aka ‘cache<region_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’}
-     region_cache region_lut = {};
-                                ^
-In file included from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h: In instantiation of ‘class cache<altTreeNode_data_t, true, true, 1, 10000, 16, 16, 16, true, 1, 1, false, 2>’:
-../../../../sparse_blossom_prj/src/tb.cpp:8:20:   required from here
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:72:34: error: static assertion failed: MAIN_SIZE must be a power of 2 greater than 0
-   static_assert(((MAIN_SIZE > 0) && ((1 << ADDR_SIZE) == MAIN_SIZE)),
-                 ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:26,
-                 from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/l1_cache.h: In instantiation of ‘class l1_cache<altTreeNode_data_t, 10000, 1, 1, 16, false, (types::storage_impl_type)3>’:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:139:37:   required from ‘class cache<altTreeNode_data_t, true, true, 1, 10000, 16, 16, 16, true, 1, 1, false, 2>’
-../../../../sparse_blossom_prj/src/tb.cpp:8:20:   required from here
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/l1_cache.h:29:34: error: static assertion failed: MAIN_SIZE must be a power of 2 greater than 0
-   static_assert(((MAIN_SIZE > 0) && ((1 << ADDR_SIZE) == MAIN_SIZE)),
-                 ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-../../../../sparse_blossom_prj/src/tb.cpp:8:36: error: could not convert ‘<brace-enclosed initializer list>()’ from ‘<brace-enclosed initializer list>’ to ‘alt_tree_cache’ {aka ‘cache<altTreeNode_data_t, true, true, 1, 10000, 16, 16, 16, true, 1, 1, false, 2>’}
-     alt_tree_cache alt_tree_lut = {};
-                                    ^
-../../../../sparse_blossom_prj/src/tb.cpp:10:53: error: invalid conversion from ‘int’ to ‘choice_t’ [-fpermissive]
-     sparse_top(0, node_lut, region_lut, alt_tree_lut);
-                                                     ^
-../../../../sparse_blossom_prj/src/tb.cpp:10:19: error: cannot convert ‘node_cache’ {aka ‘cache<node_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’} to ‘FpgaGraph*’
-     sparse_top(0, node_lut, region_lut, alt_tree_lut);
-                   ^~~~~~~~
-In file included from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:195:56: note:   initializing argument 2 of ‘void sparse_top(choice_t, FpgaGraph*, syndr_t, corrections_t)’
- extern "C" void sparse_top(choice_t choice, FpgaGraph* graph, syndr_t syndrome, corrections_t corrections)
-                                             ~~~~~~~~~~~^~~~~
-make: *** [csim.mk:78: obj/tb.o] Error 1
-ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
-INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1.82 seconds. CPU system time: 0.41 seconds. Elapsed time: 2.24 seconds; current allocated memory: 0.441 MB.
-4
-[2Kvitis_hls> [11C[2Kvitis_hls> csim_design[22C[2Kvitis_hls> csim_design[22C
-INFO: [HLS 200-1510] Running: csim_design 
-INFO: [SIM 211-2] *************** CSIM start ***************
-INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
-   Compiling ../../../../sparse_blossom_prj/src/tb.cpp in debug mode
-In file included from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h: In instantiation of ‘class cache<node_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’:
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:206:29:   required from here
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:72:34: error: static assertion failed: MAIN_SIZE must be a power of 2 greater than 0
-   static_assert(((MAIN_SIZE > 0) && ((1 << ADDR_SIZE) == MAIN_SIZE)),
-                 ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:81:28: error: static assertion failed: N_SETS and/or N_WAYS and/or N_WORDS_PER_LINE are too big for the specified MAIN_SIZE
-   static_assert((MAIN_SIZE >= (N_SETS * N_WAYS * N_WORDS_PER_LINE)),
-                 ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:26,
-                 from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/l1_cache.h: In instantiation of ‘class l1_cache<node_data_t, 1000, 1, 1, 16, false, (types::storage_impl_type)3>’:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:139:37:   required from ‘class cache<node_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:206:29:   required from here
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/l1_cache.h:29:34: error: static assertion failed: MAIN_SIZE must be a power of 2 greater than 0
-   static_assert(((MAIN_SIZE > 0) && ((1 << ADDR_SIZE) == MAIN_SIZE)),
-                 ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h: In instantiation of ‘class cache<region_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’:
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:207:33:   required from here
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:72:34: error: static assertion failed: MAIN_SIZE must be a power of 2 greater than 0
-   static_assert(((MAIN_SIZE > 0) && ((1 << ADDR_SIZE) == MAIN_SIZE)),
-                 ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:81:28: error: static assertion failed: N_SETS and/or N_WAYS and/or N_WORDS_PER_LINE are too big for the specified MAIN_SIZE
-   static_assert((MAIN_SIZE >= (N_SETS * N_WAYS * N_WORDS_PER_LINE)),
-                 ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:26,
-                 from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/l1_cache.h: In instantiation of ‘class l1_cache<region_data_t, 1000, 1, 1, 16, false, (types::storage_impl_type)3>’:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:139:37:   required from ‘class cache<region_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:207:33:   required from here
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/l1_cache.h:29:34: error: static assertion failed: MAIN_SIZE must be a power of 2 greater than 0
-   static_assert(((MAIN_SIZE > 0) && ((1 << ADDR_SIZE) == MAIN_SIZE)),
-                 ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h: In instantiation of ‘class cache<altTreeNode_data_t, true, true, 1, 10000, 16, 16, 16, true, 1, 1, false, 2>’:
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:208:37:   required from here
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:72:34: error: static assertion failed: MAIN_SIZE must be a power of 2 greater than 0
-   static_assert(((MAIN_SIZE > 0) && ((1 << ADDR_SIZE) == MAIN_SIZE)),
-                 ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from /home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:26,
-                 from ../../../../sparse_blossom_prj/src/sparse_fpga.cpp:1,
-                 from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/l1_cache.h: In instantiation of ‘class l1_cache<altTreeNode_data_t, 10000, 1, 1, 16, false, (types::storage_impl_type)3>’:
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/cache.h:139:37:   required from ‘class cache<altTreeNode_data_t, true, true, 1, 10000, 16, 16, 16, true, 1, 1, false, 2>’
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:208:37:   required from here
-/home/users/davide.salonico/sparse_blossom_prj/DaCH/src/l1_cache.h:29:34: error: static assertion failed: MAIN_SIZE must be a power of 2 greater than 0
-   static_assert(((MAIN_SIZE > 0) && ((1 << ADDR_SIZE) == MAIN_SIZE)),
-                 ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp: In function ‘void sparse_top(choice_t, FpgaGraph*, syndr_t, corrections_t)’:
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:208:43: error: ‘struct FpgaGraph’ has no member named ‘alt_tree’; did you mean ‘alttree’?
-         alt_tree_cache alt_tree_lut(graph.alt_tree);
-                                           ^~~~~~~~
-                                           alttree
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:23: error: ‘decode’ was not declared in this scope
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                       ^~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:23: note: suggested alternative: ‘remove’
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                       ^~~~~~
-                       remove
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:40: error: expected primary-expression before ‘,’ token
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                        ^
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:54: error: expected primary-expression before ‘,’ token
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                      ^
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:70: error: expected primary-expression before ‘>’ token
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                      ^
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:71: error: expected primary-expression before ‘,’ token
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                       ^
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:73: error: ‘node_lut’ was not declared in this scope
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                         ^~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:73: note: suggested alternative: ‘node_t’
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                         ^~~~~~~~
-                                                                         node_t
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:83: error: ‘region_lut’ was not declared in this scope
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                                   ^~~~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:83: note: suggested alternative: ‘region_t’
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                                   ^~~~~~~~~~
-                                                                                   region_t
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:95: error: ‘alt_tree_lut’ was not declared in this scope
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                                               ^~~~~~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:214:95: note: suggested alternative: ‘alt_tree_cache’
-         cache_wrapper(decode<node_cache, region_cache, alt_tree_cache>, node_lut, region_lut, alt_tree_lut);
-                                                                                               ^~~~~~~~~~~~
-                                                                                               alt_tree_cache
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp: At global scope:
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:246:79: error: ‘err_t’ has not been declared
- void decode(T1 nodes, T2 regions, T3 alt_tree, syndr_t syndrome[MAX_N_NODES], err_t errors[MAX_N_OBS]){
-                                                                               ^~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp: In function ‘void decode(T1, T2, T3, syndr_t*, int*)’:
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:255:8: error: there are no arguments to ‘f_dispatcher’ that depend on a template parameter, so a declaration of ‘f_dispatcher’ must be available [-fpermissive]
-        f_dispatcher(&fe, done);
-        ^~~~~~~~~~~~
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:255:8: note: (if you use ‘-fpermissive’, G++ will accept your code, but allowing the use of an undeclared name is deprecated)
-../../../../sparse_blossom_prj/src/tb.cpp: In function ‘int main(int, char**)’:
-../../../../sparse_blossom_prj/src/tb.cpp:4:23: error: ‘load_graph_from_file’ was not declared in this scope
-     FpgaGraph graph = load_graph_from_file();
-                       ^~~~~~~~~~~~~~~~~~~~
-../../../../sparse_blossom_prj/src/tb.cpp:6:28: error: could not convert ‘<brace-enclosed initializer list>()’ from ‘<brace-enclosed initializer list>’ to ‘node_cache’ {aka ‘cache<node_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’}
-     node_cache node_lut = {};
-                            ^
-../../../../sparse_blossom_prj/src/tb.cpp:7:32: error: could not convert ‘<brace-enclosed initializer list>()’ from ‘<brace-enclosed initializer list>’ to ‘region_cache’ {aka ‘cache<region_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’}
-     region_cache region_lut = {};
-                                ^
-../../../../sparse_blossom_prj/src/tb.cpp:8:36: error: could not convert ‘<brace-enclosed initializer list>()’ from ‘<brace-enclosed initializer list>’ to ‘alt_tree_cache’ {aka ‘cache<altTreeNode_data_t, true, true, 1, 10000, 16, 16, 16, true, 1, 1, false, 2>’}
-     alt_tree_cache alt_tree_lut = {};
-                                    ^
-../../../../sparse_blossom_prj/src/tb.cpp:10:53: error: invalid conversion from ‘int’ to ‘choice_t’ [-fpermissive]
-     sparse_top(0, node_lut, region_lut, alt_tree_lut);
-                                                     ^
-../../../../sparse_blossom_prj/src/tb.cpp:10:19: error: cannot convert ‘node_cache’ {aka ‘cache<node_data_t, true, true, 1, 1000, 16, 16, 16, true, 1, 1, false, 2>’} to ‘FpgaGraph*’
-     sparse_top(0, node_lut, region_lut, alt_tree_lut);
-                   ^~~~~~~~
-In file included from ../../../../sparse_blossom_prj/src/tb.cpp:1:
-../../../../sparse_blossom_prj/src/sparse_fpga.cpp:195:56: note:   initializing argument 2 of ‘void sparse_top(choice_t, FpgaGraph*, syndr_t, corrections_t)’
- extern "C" void sparse_top(choice_t choice, FpgaGraph* graph, syndr_t syndrome, corrections_t corrections)
-                                             ~~~~~~~~~~~^~~~~
-make: *** [csim.mk:78: obj/tb.o] Error 1
-ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
-INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1.71 seconds. CPU system time: 0.44 seconds. Elapsed time: 2.13 seconds; current allocated memory: 0.453 MB.
-4
-[2Kvitis_hls> [11C

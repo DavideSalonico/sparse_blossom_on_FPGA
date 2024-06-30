@@ -1,6 +1,0 @@
-<xilinx:hls_fe_msgs>
-    <msg msg_groups="" msg_id="207-812" msg_severity="ERROR" msg_loc="src/kernel.hpp:4:10" msg_body="'DaCH/src/cache.h' file not found">
-        <args/>
-    </msg>
-</xilinx:hls_fe_msgs>
-

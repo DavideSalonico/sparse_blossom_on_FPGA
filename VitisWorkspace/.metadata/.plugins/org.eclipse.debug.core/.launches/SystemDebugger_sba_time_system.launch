@@ -108,14 +108,14 @@
     <stringAttribute key="profile_options.aie_trace_file_dump_interval_s" value="5"/>
     <stringAttribute key="profile_options.continuous_trace" value="false"/>
     <stringAttribute key="profile_options.continuous_trace_interval" value="10"/>
-    <stringAttribute key="profile_options.device_counters" value="false"/>
+    <stringAttribute key="profile_options.device_counters" value="true"/>
     <stringAttribute key="profile_options.device_trace" value="coarse"/>
     <stringAttribute key="profile_options.dpu_profile" value="false"/>
     <stringAttribute key="profile_options.host_trace" value="true"/>
     <stringAttribute key="profile_options.lop_trace" value="false"/>
     <stringAttribute key="profile_options.native_xrt_Trace" value="false"/>
     <stringAttribute key="profile_options.opencl_trace" value="false"/>
-    <stringAttribute key="profile_options.periodic_aie_trace_offload" value="true"/>
+    <stringAttribute key="profile_options.periodic_aie_trace_offload" value="false"/>
     <stringAttribute key="profile_options.power_profile" value="false"/>
     <stringAttribute key="profile_options.profile_interval" value="1000"/>
     <stringAttribute key="profile_options.stall_trace" value="off"/>

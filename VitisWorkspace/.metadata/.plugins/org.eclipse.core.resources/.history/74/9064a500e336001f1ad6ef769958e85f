@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ASCII"?>
+<hwlink:HwLinkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hwlink="http://www.xilinx.com/acceleration/hwlink" name="sba_time_system_hw_link" platform="/opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm" systemProject="sba_time_system" cpu="pl">
+  <configuration name="Emulation-SW" id="com.xilinx.ide.accel.config.hwlink.sw_emu.738758625">
+    <configBuildOptions xsi:type="hwlink:LinkOptions">
+      <binaryContainers name="binary_container_1">
+        <kernels name="sparse_top" projectName="sba_time_kernels">
+          <computeUnits name="sparse_top_1" slr="">
+            <args name="nodes" master="true" memory=""/>
+            <args name="syndrome"/>
+            <args name="corrections" master="true" memory=""/>
+          </computeUnits>
+        </kernels>
+      </binaryContainers>
+    </configBuildOptions>
+    <lastBuildOptions xsi:type="hwlink:LinkOptions">
+      <binaryContainers name="binary_container_1">
+        <kernels name="sparse_top" projectName="sba_time_kernels">
+          <computeUnits name="sparse_top_1" slr="">
+            <args name="nodes" master="true" memory=""/>
+            <args name="syndrome"/>
+            <args name="corrections" master="true" memory=""/>
+          </computeUnits>
+        </kernels>
+      </binaryContainers>
+    </lastBuildOptions>
+  </configuration>
+  <configuration name="Emulation-HW" id="com.xilinx.ide.accel.config.hwlink.hw_emu.537991676">
+    <configBuildOptions xsi:type="hwlink:LinkOptions" target="hw_emu">
+      <binaryContainers name="binary_container_1">
+        <kernels name="sparse_top" projectName="sba_time_kernels">
+          <computeUnits name="sparse_top_1" slr="">
+            <args name="nodes" master="true" memory=""/>
+            <args name="syndrome"/>
+            <args name="corrections" master="true" memory=""/>
+          </computeUnits>
+        </kernels>
+      </binaryContainers>
+    </configBuildOptions>
+    <lastBuildOptions xsi:type="hwlink:LinkOptions" target="hw_emu">
+      <binaryContainers name="binary_container_1">
+        <kernels name="sparse_top" projectName="sba_time_kernels">
+          <computeUnits name="sparse_top_1" slr="">
+            <args name="nodes" master="true" memory=""/>
+            <args name="syndrome"/>
+            <args name="corrections" master="true" memory=""/>
+          </computeUnits>
+        </kernels>
+      </binaryContainers>
+    </lastBuildOptions>
+  </configuration>
+  <configuration name="Hardware" id="com.xilinx.ide.accel.config.hwlink.hw.1015193477">
+    <configBuildOptions xsi:type="hwlink:LinkOptions" target="hw">
+      <binaryContainers name="binary_container_1">
+        <kernels name="sparse_top" projectName="sba_time_kernels">
+          <computeUnits name="sparse_top_1" slr="">
+            <args name="nodes" master="true" memory=""/>
+            <args name="syndrome"/>
+            <args name="corrections" master="true" memory=""/>
+          </computeUnits>
+        </kernels>
+      </binaryContainers>
+    </configBuildOptions>
+  </configuration>
+</hwlink:HwLinkProject>

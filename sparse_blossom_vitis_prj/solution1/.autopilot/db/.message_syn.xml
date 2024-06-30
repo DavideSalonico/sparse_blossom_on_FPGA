@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Messages>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0.04 seconds. Elapsed time: 10.1 seconds; current allocated memory: 876.684 MB." resolution=""/>
-	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;src/kernel.cpp&apos; ..." resolution=""/>
-	<Message severity="ERROR" prefix="[HLS 207-812]" key="HLS 207-812" tag="" content="&apos;DaCH/src/cache.h&apos; file not found (src/kernel.hpp:4:10)" resolution=""/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished Command csynth_design CPU user time: 0.22 seconds. CPU system time: 0.2 seconds. Elapsed time: 0.4 seconds; current allocated memory: 0.000 MB." resolution=""/>
-</Messages>

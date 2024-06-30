@@ -32,3 +32,31 @@ timestamp=[2024-06-30 13:20:35], mode=BUILD, duration=0:00:05.939, duration_ms=5
 timestamp=[2024-06-30 13:20:37], mode=BUILD, duration=0:00:00.483, duration_ms=483, data={name=sba_time_kernels, configuration=Emulation-SW, clean_build=false}
 timestamp=[2024-06-30 13:20:38], mode=BUILD, duration=0:00:00.756, duration_ms=756, data={name=sba_time_system_hw_link, configuration=Emulation-SW, clean_build=false}
 timestamp=[2024-06-30 13:20:55], mode=BUILD, duration=0:00:17.251, duration_ms=17251, data={name=sba_time_system, configuration=Emulation-SW, clean_build=false}
+timestamp=[2024-06-30 14:56:10], mode=WORKBENCH_START, duration=0:00:08.138, duration_ms=8138, data={}
+timestamp=[2024-06-30 14:56:11], mode=WORKBENCH_UI_INIT, duration=0:00:00.930, duration_ms=930, data={editors_count=5, platform_editors_count=0, projects_count=5, platform_projects_count=0, active_platform_editor=false, projects=RemoteSystemsTempFiles,sba_time,sba_time_kernels,sba_time_system,sba_time_system_hw_link}
+timestamp=[2024-06-30 14:56:11], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.997, duration_ms=997, data={}
+timestamp=[2024-06-30 15:04:05], mode=BUILD, duration=0:00:06.359, duration_ms=6359, data={name=sba_time, configuration=Emulation-SW, clean_build=false}
+timestamp=[2024-06-30 15:04:42], mode=BUILD, duration=0:00:06.498, duration_ms=6498, data={name=sba_time, configuration=Emulation-HW, clean_build=false}
+timestamp=[2024-06-30 15:10:35], mode=BUILD, duration=0:00:00.386, duration_ms=386, data={name=sba_time_system, configuration=Emulation-SW, clean_build=true}
+timestamp=[2024-06-30 15:10:42], mode=BUILD, duration=0:00:04.000, duration_ms=4000, data={name=sba_time, configuration=Emulation-SW, clean_build=false}
+timestamp=[2024-06-30 15:10:43], mode=BUILD, duration=0:00:00.388, duration_ms=388, data={name=sba_time_kernels, configuration=Emulation-SW, clean_build=false}
+timestamp=[2024-06-30 15:11:07], mode=BUILD, duration=0:00:23.307, duration_ms=23307, data={name=sba_time_system_hw_link, configuration=Emulation-SW, clean_build=false}
+timestamp=[2024-06-30 15:14:57], mode=BUILD, duration=0:00:00.371, duration_ms=371, data={name=sba_time_system, configuration=Emulation-HW, clean_build=true}
+timestamp=[2024-06-30 15:15:03], mode=BUILD, duration=0:00:04.283, duration_ms=4283, data={name=sba_time, configuration=Emulation-HW, clean_build=false}
+timestamp=[2024-06-30 15:15:04], mode=BUILD, duration=0:00:00.386, duration_ms=386, data={name=sba_time_kernels, configuration=Emulation-HW, clean_build=false}
+timestamp=[2024-06-30 15:15:39], mode=BUILD, duration=0:00:34.112, duration_ms=34112, data={name=sba_time_system_hw_link, configuration=Emulation-HW, clean_build=false}
+timestamp=[2024-06-30 15:16:17], mode=BUILD, duration=0:00:00.397, duration_ms=397, data={name=sba_time_system, configuration=Emulation-SW, clean_build=true}
+timestamp=[2024-06-30 15:16:27], mode=BUILD, duration=0:00:05.737, duration_ms=5737, data={name=sba_time, configuration=Emulation-SW, clean_build=false}
+timestamp=[2024-06-30 15:16:28], mode=BUILD, duration=0:00:00.377, duration_ms=377, data={name=sba_time_kernels, configuration=Emulation-SW, clean_build=false}
+timestamp=[2024-06-30 15:16:29], mode=BUILD, duration=0:00:00.374, duration_ms=374, data={name=sba_time_system_hw_link, configuration=Emulation-SW, clean_build=false}
+timestamp=[2024-06-30 15:16:46], mode=BUILD, duration=0:00:16.950, duration_ms=16950, data={name=sba_time_system, configuration=Emulation-SW, clean_build=false}
+timestamp=[2024-06-30 15:17:01], mode=BUILD, duration=0:00:05.942, duration_ms=5942, data={name=sba_time, configuration=Emulation-HW, clean_build=false}
+timestamp=[2024-06-30 15:17:02], mode=BUILD, duration=0:00:00.387, duration_ms=387, data={name=sba_time_kernels, configuration=Emulation-HW, clean_build=false}
+timestamp=[2024-06-30 15:17:07], mode=BUILD, duration=0:00:00.452, duration_ms=452, data={name=sba_time_system_hw_link, configuration=Emulation-HW, clean_build=true}
+timestamp=[2024-06-30 15:23:23], mode=BUILD, duration=0:06:15.498, duration_ms=375498, data={name=sba_time_system_hw_link, configuration=Emulation-HW, clean_build=false}
+timestamp=[2024-06-30 15:23:23], mode=BUILD, duration=0:00:00.601, duration_ms=601, data={name=sba_time_system, configuration=Emulation-HW, clean_build=true}
+timestamp=[2024-06-30 15:23:42], mode=BUILD, duration=0:00:19.050, duration_ms=19050, data={name=sba_time_system, configuration=Emulation-HW, clean_build=false}
+timestamp=[2024-06-30 15:34:21], mode=BUILD, duration=0:00:09.651, duration_ms=9651, data={name=sba_time, configuration=Hardware, clean_build=false}
+timestamp=[2024-06-30 15:35:43], mode=BUILD, duration=0:01:20.289, duration_ms=80289, data={name=sba_time_kernels, configuration=Hardware, clean_build=false}
+timestamp=[2024-06-30 17:56:07], mode=BUILD, duration=2:20:24.339, duration_ms=8424339, data={name=sba_time_system_hw_link, configuration=Hardware, clean_build=false}
+timestamp=[2024-06-30 17:56:24], mode=BUILD, duration=0:00:17.217, duration_ms=17217, data={name=sba_time_system, configuration=Hardware, clean_build=false}

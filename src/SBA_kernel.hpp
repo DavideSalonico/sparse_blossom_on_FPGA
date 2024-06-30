@@ -156,6 +156,7 @@ enum f_event_type
     REGION_SHR = 1
 };
 
+/*
 typedef struct
 {
     int num_nodes;
@@ -170,6 +171,7 @@ enum choice_t
     LOAD_GRAPH = 0,
     DECODE = 1
 };
+*/
 
 typedef ap_uint<MAX_N_NODES> syndr_t;
 typedef ap_uint<MAX_N_OBS> corrections_t;

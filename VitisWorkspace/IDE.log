@@ -32,3 +32,36 @@ Make sure that the application '<None>' is built properly for configuration '<No
 12:58:35 INFO  : Launching executable: Emulation-SW/sba_time -x ${project_loc:sba_time_system}/Emulation-SW/binary_container_1.xclbin
 13:21:37 INFO  : Launching executable: Emulation-SW/sba_time -x ${project_loc:sba_time_system}/Emulation-SW/binary_container_1.xclbin
 13:32:47 INFO  : Launching executable: Emulation-SW/sba_time -x ${project_loc:sba_time_system}/Emulation-SW/binary_container_1.xclbin
+14:56:07 DEBUG : Logs will be stored at '/home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/IDE.log'.
+14:56:08 INFO  : Launching XSCT server: xsct -n  -interactive /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/temp_xsdb_launch_script.tcl
+14:56:11 INFO  : Registering command handlers for Vitis TCF services
+14:56:11 INFO  : XSCT server has started successfully.
+14:56:11 INFO  : Successfully done setting XSCT server connection channel  
+14:56:11 INFO  : plnx-install-location is set to ''
+14:56:11 INFO  : Successfully done query RDI_DATADIR 
+14:56:11 INFO  : Successfully done setting workspace for the tool. 
+14:56:11 INFO  : Platform repository initialization has completed.
+15:04:35 INFO  : Build configuration of 'sba_time_system' is updated to 'Emulation-HW'
+15:04:35 INFO  : Build configuration of system project is automatically updated to 'Emulation-HW'.
+15:04:35 INFO  : Build configuration of 'sba_time_system_hw_link' is updated to 'Emulation-HW'
+15:04:35 INFO  : Build configuration of 'sba_time_kernels' is updated to 'Emulation-HW'
+15:10:34 INFO  : Build configuration of 'sba_time_system_hw_link' is updated to 'Emulation-SW'
+15:10:34 INFO  : Build configuration of 'sba_time_kernels' is updated to 'Emulation-SW'
+15:10:35 INFO  : Build configuration of 'sba_time' is updated to 'Emulation-SW'
+15:14:56 INFO  : Build configuration of 'sba_time_system_hw_link' is updated to 'Emulation-HW'
+15:14:56 INFO  : Build configuration of 'sba_time_kernels' is updated to 'Emulation-HW'
+15:14:56 INFO  : Build configuration of 'sba_time' is updated to 'Emulation-HW'
+15:16:16 INFO  : Build configuration of 'sba_time_system_hw_link' is updated to 'Emulation-SW'
+15:16:16 INFO  : Build configuration of 'sba_time_kernels' is updated to 'Emulation-SW'
+15:16:16 INFO  : Build configuration of 'sba_time' is updated to 'Emulation-SW'
+15:16:54 INFO  : Build configuration of 'sba_time_system_hw_link' is updated to 'Emulation-HW'
+15:16:54 INFO  : Build configuration of 'sba_time_kernels' is updated to 'Emulation-HW'
+15:16:54 INFO  : Build configuration of 'sba_time' is updated to 'Emulation-HW'
+15:32:10 INFO  : Launching executable: Emulation-HW/sba_time -x ${project_loc:sba_time_system}/Emulation-HW/binary_container_1.xclbin
+15:34:11 INFO  : Build configuration of 'sba_time_system_hw_link' is updated to 'Hardware'
+15:34:12 INFO  : Build configuration of 'sba_time_kernels' is updated to 'Hardware'
+15:34:12 INFO  : Build configuration of 'sba_time' is updated to 'Hardware'
+17:58:18 INFO  : Launching executable: Hardware/sba_time -x ${project_loc:sba_time_system}/Hardware/binary_container_1.xclbin
+17:59:12 INFO  : Launching executable: Hardware/sba_time -x ${project_loc:sba_time_system}/Hardware/binary_container_1.xclbin
+18:03:52 INFO  : Launching executable: Hardware/sba_time -x ${project_loc:sba_time_system}/Hardware/binary_container_1.xclbin
+18:16:29 INFO  : Projects exported to '/home/users/davide.salonico/sparse_blossom_prj/sba.ide.zip'

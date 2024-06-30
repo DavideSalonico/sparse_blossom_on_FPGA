@@ -1,6 +1,41 @@
-13:20:36 **** Incremental Build of configuration Emulation-SW for project sba_time_kernels ****
+15:34:22 **** Incremental Build of configuration Hardware for project sba_time_kernels ****
 make -j40 all 
-make: Nothing to be done for 'all'.
+/home/xilinx/software/Vitis/2022.2/bin/v++ --target hw --compile -I"../src" --config sparse_top-compile.cfg -o"build/sparse_top.xo" "../src/kernel.cpp"
+Option Map File Used: '/home/xilinx/software/Vitis/2022.2/data/vitis/vpp/optMap.xml'
 
-13:20:37 Build Finished (took 462ms)
+****** v++ v2022.2.2 (64-bit)
+  **** SW Build 3716524 on 2023-02-17-15:43:22
+    ** Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
+
+INFO: [v++ 60-1306] Additional information associated with this v++ compile can be found at:
+	Reports: /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_kernels/Hardware/build/reports/sparse_top
+	Log files: /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_kernels/Hardware/build/logs/sparse_top
+Running Dispatch Server on port: 43131
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_kernels/Hardware/build/sparse_top.xo.compile_summary, at Sun Jun 30 15:34:35 2024
+INFO: [v++ 60-1315] Creating rulecheck session with output '/home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_kernels/Hardware/build/reports/sparse_top/sparse_top_guidance.html', at Sun Jun 30 15:34:35 2024
+INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm
+INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/hw/hw.xsa'
+INFO: [v++ 74-78] Compiler Version string: 2022.2
+INFO: [v++ 60-585] Compiling for hardware target
+INFO: [v++ 60-423]   Target device: xilinx_u55c_gen3x16_xdma_3_202210_1
+INFO: [v++ 60-242] Creating kernel: 'sparse_top'
+
+===>The following messages were generated while  performing high-level synthesis for kernel: sparse_top Log file: /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_kernels/Hardware/build/sparse_top/sparse_top/vitis_hls.log :
+INFO: [v++ 204-61] Pipelining loop 'VITIS_LOOP_134_3'.
+INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_134_3'
+INFO: [v++ 204-61] Pipelining loop 'VITIS_LOOP_146_4'.
+INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_146_4'
+INFO: [v++ 204-61] Pipelining loop 'VITIS_LOOP_153_5'.
+INFO: [v++ 200-1470] Pipelining result : Target II = NA, Final II = 4, Depth = 80, loop 'VITIS_LOOP_153_5'
+INFO: [v++ 200-789] **** Estimated Fmax: 411.00 MHz
+INFO: [v++ 60-594] Finished kernel compilation
+INFO: [v++ 60-244] Generating system estimate report...
+INFO: [v++ 60-1092] Generated system estimate report: /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_kernels/Hardware/build/reports/sparse_top/system_estimate_sparse_top.xtxt
+INFO: [v++ 60-586] Created build/sparse_top.xo
+INFO: [v++ 60-2343] Use the vitis_analyzer tool to visualize and navigate the relevant reports. Run the following command. 
+    vitis_analyzer /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_kernels/Hardware/build/sparse_top.xo.compile_summary 
+INFO: [v++ 60-791] Total elapsed time: 0h 1m 17s
+INFO: [v++ 60-1653] Closing dispatch client.
+
+15:35:43 Build Finished (took 1m:20s.253ms)
 
