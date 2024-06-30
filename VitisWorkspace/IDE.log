@@ -1,0 +1,34 @@
+10:48:48 DEBUG : Logs will be stored at '/home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/IDE.log'.
+10:48:49 INFO  : Launching XSCT server: xsct -n  -interactive /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/temp_xsdb_launch_script.tcl
+10:48:49 INFO  : Registering command handlers for Vitis TCF services
+10:48:50 INFO  : Platform repository initialization has completed.
+10:48:51 INFO  : XSCT server has started successfully.
+10:48:51 INFO  : plnx-install-location is set to ''
+10:48:51 INFO  : Successfully done setting XSCT server connection channel  
+10:48:51 INFO  : Successfully done setting workspace for the tool. 
+10:48:51 INFO  : Successfully done query RDI_DATADIR 
+10:53:25 INFO  : Added binary container 'binary_container_1' in project 'sba_time_system_hw_link'
+10:53:25 INFO  : Added kernel '[sparse_top - sba_time_kernels/src/kernel.cpp]' in binary container 'binary_container_1' of project 'sba_time_system_hw_link'
+10:56:36 INFO  : Build configuration of 'sba_time_system_hw_link' is updated to 'Emulation-HW'
+10:56:36 INFO  : Build configuration of 'sba_time_kernels' is updated to 'Emulation-HW'
+10:56:36 INFO  : Build configuration of 'sba_time' is updated to 'Emulation-HW'
+11:51:57 INFO  : Build configuration of 'sba_time_system_hw_link' is updated to 'Emulation-SW'
+11:51:57 INFO  : Build configuration of 'sba_time_kernels' is updated to 'Emulation-SW'
+11:51:58 INFO  : Build configuration of 'sba_time' is updated to 'Emulation-SW'
+12:03:44 ERROR : Hardware specification file is not configured properly in the launch configuration 'Debugger_-Default'. 
+Make sure that the application '<None>' is built properly for configuration '<None>' before launching.
+12:25:28 INFO  : Build configuration of 'sba_time_system_hw_link' is updated to 'Emulation-HW'
+12:25:28 INFO  : Build configuration of 'sba_time_kernels' is updated to 'Emulation-HW'
+12:25:29 INFO  : Build configuration of 'sba_time' is updated to 'Emulation-HW'
+12:25:34 INFO  : Build configuration of 'sba_time_system_hw_link' is updated to 'Emulation-SW'
+12:25:34 INFO  : Build configuration of 'sba_time_kernels' is updated to 'Emulation-SW'
+12:25:35 INFO  : Build configuration of 'sba_time' is updated to 'Emulation-SW'
+12:27:37 ERROR : Hardware specification file is not configured properly in the launch configuration 'Debugger_-Default'. 
+Make sure that the application '<None>' is built properly for configuration '<None>' before launching.
+12:28:11 INFO  : XRT server has started successfully on port '4354'
+12:29:18 INFO  : Launching executable: Emulation-SW/sba_time  ${project_loc:sba_time_system}/Emulation-SW/binary_container_1.xclbin
+12:42:14 INFO  : Launching executable: Emulation-SW/sba_time  ${project_loc:sba_time_system}/Emulation-SW/binary_container_1.xclbin
+12:55:29 INFO  : Launching executable: Emulation-SW/sba_time -x ${project_loc:sba_time_system}/Emulation-SW/binary_container_1.xclbin
+12:58:35 INFO  : Launching executable: Emulation-SW/sba_time -x ${project_loc:sba_time_system}/Emulation-SW/binary_container_1.xclbin
+13:21:37 INFO  : Launching executable: Emulation-SW/sba_time -x ${project_loc:sba_time_system}/Emulation-SW/binary_container_1.xclbin
+13:32:47 INFO  : Launching executable: Emulation-SW/sba_time -x ${project_loc:sba_time_system}/Emulation-SW/binary_container_1.xclbin

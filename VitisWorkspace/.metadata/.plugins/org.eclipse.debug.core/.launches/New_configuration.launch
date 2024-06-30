@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.xilinx.sdx.aie.tcf.debug.SDXAIEx86SimLaunchConfigurationType">
+    <stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="None"/>
+    <stringAttribute key="org.eclipse.tcf.debug.ProgramArguments" value="--pkg-dir=./Work --i=.."/>
+    <stringAttribute key="org.eclipse.tcf.debug.gminitfile" value=""/>
+    <stringAttribute key="org.eclipse.tcf.debug.input-dir" value=".."/>
+    <intAttribute key="org.eclipse.tcf.debug.maxcycles" value="0"/>
+    <stringAttribute key="org.eclipse.tcf.debug.output-dir" value=""/>
+    <stringAttribute key="org.eclipse.tcf.debug.pkg-dir" value="./Work"/>
+</launchConfiguration>

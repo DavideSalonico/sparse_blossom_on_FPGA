@@ -1,0 +1,28 @@
+13:20:38 **** Incremental Build of configuration Emulation-SW for project sba_time_system ****
+make all 
+/home/xilinx/software/Vitis/2022.2/bin/v++ --package --config package.cfg ../../sba_time_system_hw_link/Emulation-SW/binary_container_1.xclbin -o binary_container_1.xclbin
+Option Map File Used: '/home/xilinx/software/Vitis/2022.2/data/vitis/vpp/optMap.xml'
+
+****** v++ v2022.2.2 (64-bit)
+  **** SW Build 3716524 on 2023-02-17-15:43:22
+    ** Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
+
+INFO: [v++ 60-1306] Additional information associated with this v++ package can be found at:
+	Reports: /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system/Emulation-SW/package.build/reports/package
+	Log files: /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system/Emulation-SW/package.build/logs/package
+Running Dispatch Server on port: 39211
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system/Emulation-SW/binary_container_1.xclbin.package_summary, at Sun Jun 30 13:20:50 2024
+INFO: [v++ 60-1315] Creating rulecheck session with output '/home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system/Emulation-SW/package.build/reports/package/v++_package_binary_container_1_guidance.html', at Sun Jun 30 13:20:50 2024
+INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm
+INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/hw/hw.xsa'
+INFO: [v++ 74-78] Compiler Version string: 2022.2
+INFO: [v++ 60-2256] Packaging for software emulation
+INFO: [v++ 60-2460] Successfully copied a temporary xclbin to the output xclbin: /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system/Emulation-SW/binary_container_1.xclbin
+INFO: [v++ 60-2343] Use the vitis_analyzer tool to visualize and navigate the relevant reports. Run the following command. 
+    vitis_analyzer /home/users/davide.salonico/sparse_blossom_prj/VitisWorkspace/sba_time_system/Emulation-SW/binary_container_1.xclbin.package_summary 
+INFO: [v++ 60-791] Total elapsed time: 0h 0m 14s
+INFO: [v++ 60-1653] Closing dispatch client.
+cp -f binary_container_1.xclbin ../../sba_time/Emulation-SW
+
+13:20:55 Build Finished (took 17s.243ms)
+

@@ -55,7 +55,7 @@ int main(int argc, char** argv) {
 
     size_t vector_size_bytes = sizeof(FpgaGraph);
 
-    auto krnl = xrt::kernel(device, uuid, "vadd");
+    auto krnl = xrt::kernel(device, uuid, "SBA");
 
     std::cout << "Allocate Buffer in Global Memory\n";
     auto bo0 = xrt::bo(device, vector_size_bytes, krnl.group_id(0));

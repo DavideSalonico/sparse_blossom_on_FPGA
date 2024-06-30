@@ -1,0 +1,18 @@
+13:20:29 **** Incremental Build of configuration Emulation-SW for project sba_time ****
+make -j40 all 
+g++ -std=c++1y -DVITIS_PLATFORM=xilinx_u55c_gen3x16_xdma_3_202210_1 -D__USE_XOPEN2K8 -I/opt/xilinx/xrt/include/ -I/home/xilinx/software/Vitis_HLS/2022.2/include/ -O0 -g -Wall -c -fmessage-length=0 -o "src/host.o" "../src/host.cpp"
+In file included from /home/xilinx/software/Vitis_HLS/2022.2/include/hls_fpo.h:143,
+                 from /home/xilinx/software/Vitis_HLS/2022.2/include/hls_half_fpo.h:18,
+                 from /home/xilinx/software/Vitis_HLS/2022.2/include/hls_half.h:25,
+                 from /home/xilinx/software/Vitis_HLS/2022.2/include/etc/ap_private.h:52,
+                 from /home/xilinx/software/Vitis_HLS/2022.2/include/ap_common.h:666,
+                 from /home/xilinx/software/Vitis_HLS/2022.2/include/ap_int.h:10,
+                 from ../src/SBA_kernel.hpp:5,
+                 from ../src/host.cpp:21:
+/home/xilinx/software/Vitis_HLS/2022.2/include/floating_point_v7_1_bitacc_cmodel.h:10:1: warning: multi-line comment [-Wcomment]
+   10 | // \   \  /  \
+      | ^
+g++ -o "sba_time" src/cmdlineparser.o src/host.o src/logger.o -luuid -lxrt_coreutil -lxilinxopencl -lpthread -lrt -lstdc++ -L/opt/xilinx/xrt/lib/ -Wl,-rpath-link,/opt/xilinx/xrt/lib
+
+13:20:35 Build Finished (took 5s.928ms)
+

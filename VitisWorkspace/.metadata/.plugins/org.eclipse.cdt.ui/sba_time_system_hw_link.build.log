@@ -1,0 +1,6 @@
+13:20:37 **** Incremental Build of configuration Emulation-SW for project sba_time_system_hw_link ****
+make all 
+make: Nothing to be done for 'all'.
+
+13:20:38 Build Finished (took 461ms)
+

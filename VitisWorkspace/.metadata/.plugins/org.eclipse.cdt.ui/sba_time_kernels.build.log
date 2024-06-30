@@ -1,0 +1,6 @@
+13:20:36 **** Incremental Build of configuration Emulation-SW for project sba_time_kernels ****
+make -j40 all 
+make: Nothing to be done for 'all'.
+
+13:20:37 Build Finished (took 462ms)
+
