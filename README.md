@@ -26,7 +26,7 @@ Plese pay attention to specify the path where you want the json file to be writt
 For a detailed documentation of stim circuits we indicate [Stim API Reference](https://github.com/quantumlib/Stim/blob/main/doc/python_api_reference_vDev.md).
 
 ## Full Report
-The full report is available [here]().
+The full report is available [here](https://github.com/DavideSalonico/sparse_blossom_on_FPGA/blob/main/deliveries/report.pdf).
 
 ## Team
 - [Filippo Corna](https://github.com/FilippoCorna)
