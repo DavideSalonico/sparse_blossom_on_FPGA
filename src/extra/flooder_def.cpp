@@ -17,7 +17,7 @@ void no_mwpm_event(mwpm_event_t *mwpm_event){
 
 /**
  *
- * it finds the next event at particular node distinguishing the case in which it is occupied by a growing top region or not
+ * finds the next event at particular node distinguishing the case in which it is occupied by a growing top region or not
  *
  * @param detector_node index of the node we want to find the next event
  * @param next_neigh_node node of the next event
@@ -153,7 +153,7 @@ NEIGH_NEXT_EVENT:
 
 /**
  *
- * it detects COLLIDE event it create a RegionHitBoundary MWPM event
+ * detects COLLIDE event and creates a RegionHitBoundary MWPM event
  *
  * @param node_data node information given by the flood_event
  * @param mwpm_event is the event that the flooder will pass to the matcher
@@ -171,7 +171,7 @@ void f_do_RhB_interaction(node_data_t node_data, mwpm_event_t *mwpm_event, node_
 
 /**
  *
- * it manage calling to the tracker, setting a desired or not desired event
+ * manages calling to the tracker, setting a desired or not desired event
  *
  * @param node_data info about the node to do a call to the tracker
  */
@@ -193,7 +193,7 @@ void f_reschedule_events_at_detector_node(node_data_t node_data, node_data_t *no
 
 /**
  *
- * it manage an ARRIVE event calling the tracker
+ * manages an ARRIVE event calling the tracker
  *
  * @param region index of the region of the node given by the flood event
  * @param empty_node neighbour
@@ -233,7 +233,7 @@ REGION_ARRIVING:
 
 /**
  *
- * it check the intereaction among neighbours and if it detects ARRIVE event it call f_do_region_arriving_at_empty_detector_node, if it detects COLLIDE event it create a RegionHitRegion MWPM event
+ * checks the intereaction among neighbors and if it detects ARRIVE event it calls f_do_region_arriving_at_empty_detector_node, if it detects COLLIDE event it creates a RegionHitRegion MWPM event
  *
  * @param src node information given by the flood_event
  * @param src_to_dst_idx index of the neighbor with whom it interacts
@@ -264,7 +264,7 @@ void f_do_N_interaction(node_data_t src,int src_to_dst_idx, node_data_t dst, mwp
 
 /**
  *
- * it handle a node-flood_event
+ * handles a node-flood_event
  *
  * @param tentative_event is a flood event given by the tracker
  * @param mwpm_event is the event that the flooder will pass to the matcher
@@ -295,7 +295,7 @@ void f_do_look_at_node(flood_event_t event, mwpm_event_t *mwpm_event, node_data_
 
 /**
  *
- * it manages the assignment of the shattered region to a specific node
+ * manages the assignment of the shattered region to a specific node
  *
  * @param node_data
  * @param region_data is the shattered region
@@ -313,7 +313,7 @@ void f_heir_region_on_shatter(node_data_t node_data, region_data_t r, node_data_
 
 /**
  *
- * it detect a IMPLODE event and create a BlossomShatterEvent MWPM event
+ * detects a IMPLODE event and create a BlossomShatterEvent MWPM event
  *
  * @param region_data is the region information given by the flood event
  * @param mwpm_event is the event that the flooder will pass to the matcher
@@ -333,7 +333,7 @@ void f_do_blossom_shattering(region_data_t region_data, mwpm_event_t *mwpm_event
 
 /**
  *
- * it detect a IMPLODE event and create a RegionHitRegion MWPM event
+ * detects a IMPLODE event and create a RegionHitRegion MWPM event
  *
  * @param region_data is the region information given by the flood event
  * @param mwpm_event is the event that the flooder will pass to the matcher
@@ -352,7 +352,7 @@ void f_do_degenerate_implosion(region_data_t region_data, mwpm_event_t *mwpm_eve
 
 /**
  *
- * it handle the reschedule of the LEAVE event
+ * handles the reschedule of the LEAVE event
  *
  * @param region_data is the region information given by the flood event
  */
@@ -379,7 +379,7 @@ SCHEDULE_EVENT:
 
 /**
  *
- * it detect a LEAVE event, call the tracker to reschedule the event and create a void MWPM No_event
+ * detects a LEAVE event, call the tracker to reschedule the event and create a void MWPM No_event
  *
  * @param region_data is the region information given by the flood event
  * @param mwpm_event is the event that the flooder will pass to the matcher
@@ -402,7 +402,7 @@ void f_do_leave_node(region_data_t region_data, mwpm_event_t *mwpm_event, node_d
 
 /**
  *
- * it handle a region-flood_event
+ * handles a region-flood_event
  *
  * @param tentative_event is a flood event given by the tracker
  * @param mwpm_event is the event that the flooder will pass to the matcher
@@ -439,7 +439,7 @@ REGION_SHRINK_CHILDREN:
 
 /**
  *
- * it handle a flood_event based on its type
+ * handles a flood_event based on its type
  *
  * @param tentative_event is a flood event given by the tracker
  */
