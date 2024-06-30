@@ -31,4 +31,5 @@ The full report is available [here](https://github.com/DavideSalonico/sparse_blo
 ## Team
 - [Filippo Corna](https://github.com/FilippoCorna)
 - [Davide Salonico](https://github.com/DavideSalonico)
+
 We would like to thank Marco Venere for his costant support.
